@@ -1,0 +1,6 @@
+-- CREATING DATABASE
+CREATE DATABASE analysis;
+USE analysis;
+
+
+
