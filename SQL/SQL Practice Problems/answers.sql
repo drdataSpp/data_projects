@@ -124,3 +124,52 @@ FROM [dbo].[Customers];
 Show the date of the first order ever made in the Orders table */
 SELECT MIN([OrderDate]) AS FIRST_ORDER
 FROM [dbo].[Orders];
+
+/* 16. Show a list of countries where the Northwind
+company has customers. */
+
+SELECT DISTINCT(COUNTRY) FROM CUSTOMERS;
+
+/* 17. Show a list of all the different values in the
+Customers table for ContactTitles. Also include a
+count for each ContactTitle.. */
+
+SELECT ContactTitle, COUNT(*) AS TOTAL_CONTACT_TITLE FROM CUSTOMERS
+GROUP BY ContactTitle
+ORDER BY TOTAL_CONTACT_TITLE DESC;
+
+/* 18. For each product, the associated
+Supplier. Show the ProductID, ProductName, and the
+CompanyName of the Supplier. Sort by ProductID */
+
+SELECT p.ProductID, p.ProductName, s.CompanyName
+FROM [dbo].[Products] AS p
+INNER JOIN [dbo].[Suppliers] AS s
+ON s.SupplierID = p.SupplierID
+ORDER BY p.ProductID ASC;
+
+/* 19. Show a list of the Orders that were
+made, including the Shipper that was used. Show the
+OrderID, OrderDate (date only), and CompanyName
+of the Shipper, and sort by OrderID.
+In order to not show all the orders (there’s more than
+800), show only those rows with an OrderID of less
+than 10300. */
+
+SELECT o.OrderID, CAST(o.OrderDate AS DATE) AS OrderDate, s.CompanyName
+FROM [dbo].[Orders] AS o
+INNER JOIN [dbo].[Shippers] AS s
+ON s.ShipperID = o.ShipVia
+WHERE o.OrderID < 10300
+ORDER BY o.OrderID ASC;
+
+/* 20. Show the total number of
+products in each category. Sort the results by the total
+number of products, in descending order */
+
+SELECT c.CategoryName, COUNT(p.ProductID) AS TotalProducts
+FROM [dbo].[Categories] AS c
+LEFT JOIN [dbo].[Products] AS p
+ON p.CategoryID = c.CategoryID
+GROUP BY c.CategoryName
+ORDER BY TotalProducts DESC;
