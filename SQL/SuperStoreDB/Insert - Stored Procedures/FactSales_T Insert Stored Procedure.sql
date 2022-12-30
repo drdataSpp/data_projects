@@ -9,7 +9,7 @@ INSERT INTO [dbo].[FactSales_T] (OrderID,OrderDate,ShipDate,ProductID,Sales,Quan
 SELECT SRC.[ORDER_ID],
 	   CAST(REPLACE(SRC.[ORDER_DATE], '-', '') AS INT)  AS ORDER_DATE,
 	   CAST(REPLACE(SRC.[SHIP_DATE], '-', '') AS INT)   AS SHIP_DATE,
-	   SRC.[PRODUCT_ID],
+	   PROD.[ProdID]									AS ProductID,
 	   CAST(SRC.[SALES] AS MONEY)						AS SALES,
 	   CAST(SRC.[QUANTITY] AS INT)						AS QUANTITY,
 	   CAST(SRC.[DISCOUNT] AS FLOAT)					AS DISCOUNT,
@@ -22,6 +22,9 @@ SELECT SRC.[ORDER_ID],
 	   MKT.[MarketID],
 	   OP.[OrderPriorityID]
 FROM [dbo].[Staging_SuperStoreSource_V] AS SRC
+
+INNER JOIN [dbo].[DimProduct_V] AS PROD ON
+PROD.[ProductID] = SRC.[PRODUCT_ID]
 
 INNER JOIN [dbo].[DimShipMode_V] AS SM ON
 SM.[Ship_Mode] = SRC.[SHIP_MODE]
