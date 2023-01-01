@@ -41,3 +41,8 @@ Kaggle SuperStore Dataset: [Link](https://www.kaggle.com/datasets/vivek468/super
 - [Profits made by Products](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20View/Profits_Made_By_Products.sql)
 - [Profits made by Markets](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20View/Profits_Made_By_Markets.sql)
 - [Profits made by Shipping Mode](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20View/Profits_Made_By_ShipMode.sql)
+- Which Category is Best Selling and Most Profitable? [SQL Query](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20View/ProfSalesQuantByCategory_V.sql)
+- What are the Best Selling and Most Profitable Sub-Category? [SQL Query](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20View/ProfSalesQuantBySubCategory_V.sql)
+- Which Customer Segment is Most Profitable? [SQL Query](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20View/ProfitBySegment_V.sql)
+- Which is the Preferred Ship Mode? [SQL Query](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20View/PreferredShipmentMode_V.sql)
+- Which Region is the Most Profitable? [SQL Query](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20View/ProfitByRegion_V.sql)
