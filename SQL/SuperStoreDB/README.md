@@ -46,3 +46,5 @@ Kaggle SuperStore Dataset: [Link](https://www.kaggle.com/datasets/vivek468/super
 - Which Customer Segment is Most Profitable? [SQL Query](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20View/ProfitBySegment_V.sql)
 - Which is the Preferred Ship Mode? [SQL Query](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20View/PreferredShipmentMode_V.sql)
 - Which Region is the Most Profitable? [SQL Query](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20View/ProfitByRegion_V.sql)
+- Top 10 & Bottom 10 Sales by States [SQL Query](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20View/Top10SalesByStates_V.sql)
+- Top 10 Loss occurred by Sub-Categories [SQL Query](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20View/Top10LossBySubCategory_V.sql)
