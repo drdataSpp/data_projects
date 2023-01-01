@@ -34,3 +34,10 @@ Kaggle SuperStore Dataset: [Link](https://www.kaggle.com/datasets/vivek468/super
 
 ### Facts and Dimension Data Model
 <img src="https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Screenshots/SuperStore_DataModel.png" alt="Data Model" title="Data Model">
+
+### Tier 3 - Analysis Views
+- [Profits made by Category](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20View/Profits_Made_By_Category.sql)
+- [Profits made by Sub Category](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20View/Profits_Made_By_SubCategory.sql)
+- [Profits made by Products](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20View/Profits_Made_By_Products.sql)
+- [Profits made by Markets](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20View/Profits_Made_By_Markets.sql)
+- [Profits made by Shipping Mode](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20View/Profits_Made_By_ShipMode.sql)
