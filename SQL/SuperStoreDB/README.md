@@ -48,3 +48,10 @@ Kaggle SuperStore Dataset: [Link](https://www.kaggle.com/datasets/vivek468/super
 - Which Region is the Most Profitable? [SQL Query](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20View/ProfitByRegion_V.sql)
 - Top 10 & Bottom 10 Sales by States [SQL Query](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20View/Top10SalesByStates_V.sql)
 - Top 10 Loss occurred by Sub-Categories [SQL Query](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20View/Top10LossBySubCategory_V.sql)
+
+
+### Tier 3 - Parameterized Stored Procedures
+- [sp_Top5ProfitableCitiesByCountry](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20-%20Stored%20Procedures/sp_Top5ProfitableCitiesByCountry.sql)
+  - This stored procedure returns top 5 State names with the highest profits for the country name that the user types when executing this *sp*. This *sp* has one parameter of VARCHAR type named 'Country Name' where the user enters the country name. 
+- [sp_Top5ProfitableCustomersByCountryAndMonthYear](https://github.com/drdataSpp/data_projects/blob/master/SQL/SuperStoreDB/Analysis%20-%20Stored%20Procedures/sp_Top5ProfitableCustomersByCountryAndMonthYear.sql)
+  - This stored procedure returns top 5 Customers names with the highest profits based on the county name, month, and year entered by the user when executing this *sp*. This *sp* has 3 parameters: Country Name (VARCHAR Type), Month (INT Type: 4 for April), Year (INT Type: 2011)
