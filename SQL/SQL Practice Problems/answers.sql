@@ -173,3 +173,20 @@ LEFT JOIN [dbo].[Products] AS p
 ON p.CategoryID = c.CategoryID
 GROUP BY c.CategoryName
 ORDER BY TotalProducts DESC;
+
+/* 21. Show the total number of
+customers per Country and City
+*/
+
+SELECT COUNTRY, CITY, COUNT(CUSTOMERID) AS TOTAL_CUSTOMERS
+FROM [dbo].[Customers]
+GROUP BY COUNTRY, CITY
+ORDER BY TOTAL_CUSTOMERS DESC;
+
+/* 22.What products do we have in our inventory that
+should be reordered*/
+
+SELECT [ProductID], [ProductName], [UnitsInStock], [ReorderLevel]
+FROM [dbo].[Products]
+WHERE [UnitsInStock] < [ReorderLevel]
+ORDER BY [ProductID] ASC;
