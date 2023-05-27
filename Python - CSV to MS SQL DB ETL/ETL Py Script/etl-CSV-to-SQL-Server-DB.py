@@ -16,3 +16,13 @@
 import numpy as np
 import pandas as pd
 import pyodbc as pySQLConn
+
+## Importing Raw CSV file and Pre-Processing
+
+raw_df = pd.read_csv(r"D:\001_Data\data_projects\data_projects\Python - CSV to MS SQL DB ETL\raw data\Credit Score Classification Dataset.csv")
+
+## Checking the import
+print(raw_df.head())
+
+## Checking the header count of the csv source file
+print(raw_df[1:0]) 
