@@ -11,6 +11,7 @@
 ## V1 - 2023-05-27 - Pushed draft files with python libraries
 ## V2 - 2023-05-27 - Added python code to check if the source csv data file exists and parameter files & folders 
 ## V3 - 2023-05-28 - Added LOGS folder to create .txt logs on failure. Added row count checks and business date checks
+## V4 - 2023-05-28 - Added code to create processed data frame & established SQL Server connection using pyodbc
 #######################################################################################
 
 ## Importing python libraries
@@ -33,6 +34,11 @@ BUSINESS_DATE = datetime.date.today().strftime("%d") + "/" + datetime.date.today
 filelist = [ f for f in os.listdir(PROJECT_PARENT_PATH + "/logs") if f.endswith(".txt") ]
 for f in filelist:
     os.remove(os.path.join(PROJECT_PARENT_PATH + "/logs", f))
+    
+## Clearing pre-processed csv files from the processed data folder before running the script
+filelist = [ f for f in os.listdir(PROJECT_PARENT_PATH + "/processed data") if f.endswith(".csv") ]
+for f in filelist:
+    os.remove(os.path.join(PROJECT_PARENT_PATH + "/processed data", f))
 
 ## Check if source data file exists
     ### Getting File name & File Path from a parameter set (With the help of a paramater file, we can make changes easily without editing the actual source code)
@@ -59,9 +65,28 @@ if isSourceDataExists == True:
         SOURCE_FILE_ROW_COUNT = int(raw_df.columns.tolist()[0])
         DF_ROW_COUNT          = int(raw_df.shape[0])
         
-        
         if SOURCE_FILE_ROW_COUNT == DF_ROW_COUNT:
-            print("Row count matches")
+            
+            ## If all three checkpoints are cleared, we will create a data frame without the header values and establish SQL Server Database connection
+            
+            ## Create data frame excluding the header count values for loading into the Database table
+            processed_df = pd.read_csv(PROJECT_PARENT_PATH + "/" + SOURCE_DATA_FOLDER_NAME + "/" + FILE_NAME, header=1)
+        
+            processed_df.to_csv(PROJECT_PARENT_PATH + "/processed data/" + datetime.date.today().strftime("%d") + "-" + datetime.date.today().strftime("%m") + "-" + datetime.date.today().strftime("%Y") + "_" + FILE_NAME)
+            
+            
+            ## SQL Server connection
+                        
+            sqlConn = pySQLConn.connect("Driver={SQL Server};"
+                      "Server=LAPTOP-MCNKFD7O;"
+                      "Database=PY_ELT_Acquisition_Db;"
+                      "Trusted_Connection=yes;")
+            
+            cursor = sqlConn.cursor()
+            
+            tableResult = pd.read_sql("SELECT * FROM CreditScore_V", sqlConn)
+            
+            print(tableResult) ## Connection works
             
         else:
             ROW_COUNT_ERROR = "FAILED in STEP 3: Source file Header Row Count and Data Count doesn't match"
