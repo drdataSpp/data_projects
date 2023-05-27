@@ -1,0 +1,3 @@
+FOLDER_NAME = raw data
+FILE_NAME = Credit Score Classification Dataset.csv
+FILE_HEADER_NAME = credit_score_data
