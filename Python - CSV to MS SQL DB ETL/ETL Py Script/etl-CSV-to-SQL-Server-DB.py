@@ -8,13 +8,15 @@
 
 ## Change history
 
-## V1: Pushed draft files with python libraries
-## V2: Added python code to check if the source csv data file exists and parameter files & folders 
-
+## V1 - 2023-05-27 - Pushed draft files with python libraries
+## V2 - 2023-05-27 - Added python code to check if the source csv data file exists and parameter files & folders 
+## V3 - 2023-05-28 - Added LOGS folder to create .txt logs on failure. Added row count checks and business date checks
 #######################################################################################
 
 ## Importing python libraries
 import sys
+import datetime
+from datetime import date
 import os.path
 import numpy as np
 import pandas as pd
@@ -23,6 +25,15 @@ import pyodbc as pySQLConn
 ## Defining Project Path
 PROJECT_PARENT_PATH = "D:/001_Data/data_projects/data_projects/Python - CSV to MS SQL DB ETL"
 
+## Defining Business Date
+## FORMAT: DD/MM/YYYY
+BUSINESS_DATE = datetime.date.today().strftime("%d") + "/" + datetime.date.today().strftime("%m") + "/" + datetime.date.today().strftime("%Y")
+
+## Clearing old logs from the LOGS folder before running the script
+filelist = [ f for f in os.listdir(PROJECT_PARENT_PATH + "/logs") if f.endswith(".txt") ]
+for f in filelist:
+    os.remove(os.path.join(PROJECT_PARENT_PATH + "/logs", f))
+
 ## Check if source data file exists
     ### Getting File name & File Path from a parameter set (With the help of a paramater file, we can make changes easily without editing the actual source code)
 
@@ -30,26 +41,51 @@ with open(PROJECT_PARENT_PATH + "/Parameter Set/PS_CreditScore.txt") as f:
     lines = f.read().splitlines() 
 
     ## Variables for file path, file name and file header
-    FILE_PATH           = str(lines[0:1]).split("=")[1].replace("']", "").strip()
-    FILE_NAME           = str(lines[1:2]).split("=")[1].replace("']", "").strip()
-    FILE_HEADER_NAME    = str(lines[2:3]).split("=")[1].replace("']", "").strip()
-
-print(PROJECT_PARENT_PATH + "/" + FILE_PATH + "/" + FILE_NAME)
+    SOURCE_DATA_FOLDER_NAME = str(lines[0:1]).split("=")[1].replace("']", "").strip()
+    FILE_NAME               = str(lines[1:2]).split("=")[1].replace("']", "").strip()
  
-isSourceDataExists = os.path.exists(PROJECT_PARENT_PATH + "/" + FILE_PATH + "/" + FILE_NAME)
+isSourceDataExists = os.path.exists(PROJECT_PARENT_PATH + "/" + SOURCE_DATA_FOLDER_NAME + "/" + FILE_NAME)
 
 if isSourceDataExists == True:
-    print("Source file exists")
-else:
-    print("Source file does not exists. Program is terminating")
-    sys.exit()
+    ## Importing Raw CSV file and Pre-Processing
+    raw_df = pd.read_csv(PROJECT_PARENT_PATH + "/" + SOURCE_DATA_FOLDER_NAME + "/" + FILE_NAME, header=0)
+    FILE_BUSINESS_DATE = raw_df.columns.tolist()[1]
     
-# ## Importing Raw CSV file and Pre-Processing
-
-# raw_df = pd.read_csv(r"D:\001_Data\data_projects\data_projects\Python - CSV to MS SQL DB ETL\raw data\Credit Score Classification Dataset.csv")
-
-# ## Checking the import
-# print(raw_df.head())
-
-# ## Checking the header count of the csv source file
-# print(raw_df[1:0]) 
+    ## Business Date comparision
+    
+    if BUSINESS_DATE == FILE_BUSINESS_DATE:
+        
+        ## If program's business date matches with source file's business date then check for row count with header row count value 
+        SOURCE_FILE_ROW_COUNT = int(raw_df.columns.tolist()[0])
+        DF_ROW_COUNT          = int(raw_df.shape[0])
+        
+        
+        if SOURCE_FILE_ROW_COUNT == DF_ROW_COUNT:
+            print("Row count matches")
+            
+        else:
+            ROW_COUNT_ERROR = "FAILED in STEP 3: Source file Header Row Count and Data Count doesn't match"
+            ROW_COUNT_ERROR_FILENAME = "RowCountError_" + str(datetime.datetime.now().date()) + "_"+ datetime.datetime.now().strftime("%H") + "_"+ datetime.datetime.now().strftime("%M") + "_"+ datetime.datetime.now().strftime("%S") + ".txt"
+            
+            with open(PROJECT_PARENT_PATH + "/logs/" + ROW_COUNT_ERROR_FILENAME, 'w') as f:
+                f.write(ROW_COUNT_ERROR)
+                
+            sys.exit()
+        
+    else:
+        BUSINESS_DATE_ERROR = "FAILED in STEP 2: Source file Business Date and Program's Business Date doesn't match"
+        BUSINESS_DATE_ERROR_FILENAME = "BusinessDateError_" + str(datetime.datetime.now().date()) + "_"+ datetime.datetime.now().strftime("%H") + "_"+ datetime.datetime.now().strftime("%M") + "_"+ datetime.datetime.now().strftime("%S") + ".txt"
+        
+        with open(PROJECT_PARENT_PATH + "/logs/" + BUSINESS_DATE_ERROR_FILENAME, 'w') as f:
+            f.write(BUSINESS_DATE_ERROR)
+            
+        sys.exit()
+        
+else:
+    FILE_MISSING_ERROR = "FAILED in STEP 1: Source file doesn't exist in the raw_data folder"
+    FILE_MISSING_ERROR_FILENAME = "SourceFileMissingError_" + str(datetime.datetime.now().date()) + "_"+ datetime.datetime.now().strftime("%H") + "_"+ datetime.datetime.now().strftime("%M") + "_"+ datetime.datetime.now().strftime("%S") + ".txt"
+        
+    with open(PROJECT_PARENT_PATH + "/logs/" + FILE_MISSING_ERROR_FILENAME, 'w') as f:
+        f.write(FILE_MISSING_ERROR)
+    
+    sys.exit()
