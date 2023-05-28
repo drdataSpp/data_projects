@@ -8,10 +8,13 @@
 
 ## Change history
 
-## V1 - 2023-05-27 - Pushed draft files with python libraries
-## V2 - 2023-05-27 - Added python code to check if the source csv data file exists and parameter files & folders 
-## V3 - 2023-05-28 - Added LOGS folder to create .txt logs on failure. Added row count checks and business date checks
-## V4 - 2023-05-28 - Added code to create processed data frame & established SQL Server connection using pyodbc
+## V1   - 2023-05-27 - Pushed draft files with python libraries
+## V2   - 2023-05-27 - Added python code to check if the source csv data file exists and parameter files & folders 
+## V3   - 2023-05-28 - Added LOGS folder to create .txt logs on failure. Added row count checks and business date checks
+## V4   - 2023-05-28 - Added code to create processed data frame & established SQL Server connection using pyodbc
+## V4.1 - 2023-05-28 - Added SQL Truncate and Load Queries
+## V4.2 - 2023-05-28 - Added ROLLBACK & COMMIT if correct data is inserted into the Target Table 
+## V4.3 - 2023-05-28 - Added archive feature when the table is successfully loaded
 #######################################################################################
 
 ## Importing python libraries
@@ -84,10 +87,26 @@ if isSourceDataExists == True:
             
             cursor = sqlConn.cursor()
             
-            tableResult = pd.read_sql("SELECT * FROM CreditScore_V", sqlConn)
+            ## Truncate table before loading
+            cursor.execute('''USE PY_ELT_Acquisition_Db;''')
+            cursor.execute('''DELETE FROM dbo.CreditScore;''')
+            sqlConn.commit()
             
-            print(tableResult) ## Connection works
-            
+           # Insert Dataframe into SQL Server:
+            for index, row in processed_df.iterrows():
+                cursor.execute("INSERT INTO dbo.CreditScore (Age ,Gender ,Income ,Education ,MaritalStatus ,NumberOfChildren ,HomeOwnership ,CreditScore) values(?,?,?,?,?,?,?,?)", row.Age, row.Gender, row.Income, row.Education, row.MaritalStatus, row.NumberOfChildren, row.HomeOwnership, row.CreditScore)
+                
+            SQL_TABLE_COUNT = int(pd.read_sql("SELECT COUNT(*) FROM  dbo.CreditScore;", sqlConn).iloc[0])
+            SOURCE_DATA_COUNT = int(processed_df.count(axis=0)[1])
+
+            if SQL_TABLE_COUNT == SOURCE_DATA_COUNT:
+                sqlConn.commit()
+                processed_df.to_csv(PROJECT_PARENT_PATH + "/archive/" + datetime.date.today().strftime("%d") + "-" + datetime.date.today().strftime("%m") + "-" + datetime.date.today().strftime("%Y") + "_" + FILE_NAME + "_" + FILE_NAME + ".gz", compression='gzip')
+            else:
+                sqlConn.rollback()
+                    
+            sqlConn.close()	
+   
         else:
             ROW_COUNT_ERROR = "FAILED in STEP 3: Source file Header Row Count and Data Count doesn't match"
             ROW_COUNT_ERROR_FILENAME = "RowCountError_" + str(datetime.datetime.now().date()) + "_"+ datetime.datetime.now().strftime("%H") + "_"+ datetime.datetime.now().strftime("%M") + "_"+ datetime.datetime.now().strftime("%S") + ".txt"

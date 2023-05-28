@@ -1,5 +1,5 @@
 165,28/05/2023,,,,,,
-Age,Gender,Income,Education,Marital Status,Number of Children,Home Ownership,Credit Score
+Age,Gender,Income,Education,MaritalStatus,NumberOfChildren,HomeOwnership,CreditScore
 25,Female,50000,Bachelor's Degree,Single,0,Rented,High
 30,Male,100000,Master's Degree,Married,2,Owned,High
 35,Female,75000,Doctorate,Married,1,Owned,High
