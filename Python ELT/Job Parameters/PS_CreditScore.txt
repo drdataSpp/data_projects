@@ -1,2 +1,0 @@
-FOLDER_NAME = raw data
-FILE_NAME = Credit Score Classification Dataset.csv

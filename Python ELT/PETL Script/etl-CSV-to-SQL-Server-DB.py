@@ -15,6 +15,9 @@
 ## V4.1 - 2023-05-28 - Added SQL Truncate and Load Queries
 ## V4.2 - 2023-05-28 - Added ROLLBACK & COMMIT if correct data is inserted into the Target Table 
 ## V4.3 - 2023-05-28 - Added archive feature when the table is successfully loaded
+## V5   - 2023-05-30 - Removed .txt Parameter Sets and added JSON Paramater sets
+## V5.1 - 2023-05-30 - Added IF TABLE EXISTS Clause before loading data
+## V5.2 - 2023-05-30 - Added Removed hardcoded values - Picks from JSON Parameter file 
 #######################################################################################
 
 ## Importing python libraries
@@ -22,12 +25,22 @@ import sys
 import datetime
 from datetime import date
 import os.path
+import json
 import numpy as np
 import pandas as pd
 import pyodbc as pySQLConn
 
+##PARAMETER FILE PATH
+
+## Using JSON files to get parameter values
+    ### With the help of a paramater file, we can make changes easily without editing the actual source code)
+PARAM_FILE = "D:/001_Data/data_projects/data_projects/Python ELT/Job Parameters/PS_CreditScores.json"
+
+with open(PARAM_FILE, 'r') as j:
+     CREDIT_SCORE_LOAD_PARAMS = json.loads(j.read())
+
 ## Defining Project Path
-PROJECT_PARENT_PATH = "D:/001_Data/data_projects/data_projects/Python - CSV to MS SQL DB ETL"
+PROJECT_PARENT_PATH = CREDIT_SCORE_LOAD_PARAMS['PROJECT_PARENT_PATH'] 
 
 ## Defining Business Date
 ## FORMAT: DD/MM/YYYY
@@ -44,14 +57,10 @@ for f in filelist:
     os.remove(os.path.join(PROJECT_PARENT_PATH + "/processed data", f))
 
 ## Check if source data file exists
-    ### Getting File name & File Path from a parameter set (With the help of a paramater file, we can make changes easily without editing the actual source code)
-
-with open(PROJECT_PARENT_PATH + "/Parameter Set/PS_CreditScore.txt") as f:
-    lines = f.read().splitlines() 
-
-    ## Variables for file path, file name and file header
-    SOURCE_DATA_FOLDER_NAME = str(lines[0:1]).split("=")[1].replace("']", "").strip()
-    FILE_NAME               = str(lines[1:2]).split("=")[1].replace("']", "").strip()
+    
+## Variables for file path & file name
+SOURCE_DATA_FOLDER_NAME = CREDIT_SCORE_LOAD_PARAMS['FOLDER_NAME']
+FILE_NAME               = CREDIT_SCORE_LOAD_PARAMS['FILE_NAME']
  
 isSourceDataExists = os.path.exists(PROJECT_PARENT_PATH + "/" + SOURCE_DATA_FOLDER_NAME + "/" + FILE_NAME)
 
@@ -79,36 +88,61 @@ if isSourceDataExists == True:
             
             
             ## SQL Server connection
-                        
+            
+            ## Getting SQL Connection values from PARAM file
+            SQL_SERVER_NAME = CREDIT_SCORE_LOAD_PARAMS['SQL_SERVER_NAME']
+            SQL_TGT_DB = CREDIT_SCORE_LOAD_PARAMS['SQL_DATABASE_NAME']
+            SQL_TGT_TABLE = CREDIT_SCORE_LOAD_PARAMS['SQL_TARGET_TABLE']
+                                              
             sqlConn = pySQLConn.connect("Driver={SQL Server};"
-                      "Server=LAPTOP-MCNKFD7O;"
-                      "Database=PY_ELT_Acquisition_Db;"
+                      "Server=" + SQL_SERVER_NAME + ";"
+                      "Database=" + SQL_TGT_DB + ";"
                       "Trusted_Connection=yes;")
             
             cursor = sqlConn.cursor()
-            
-            ## Truncate table before loading
-            cursor.execute('''USE PY_ELT_Acquisition_Db;''')
-            cursor.execute('''DELETE FROM dbo.CreditScore;''')
-            sqlConn.commit()
-            
-           # Insert Dataframe into SQL Server:
-            for index, row in processed_df.iterrows():
-                cursor.execute("INSERT INTO dbo.CreditScore (Age ,Gender ,Income ,Education ,MaritalStatus ,NumberOfChildren ,HomeOwnership ,CreditScore) values(?,?,?,?,?,?,?,?)", row.Age, row.Gender, row.Income, row.Education, row.MaritalStatus, row.NumberOfChildren, row.HomeOwnership, row.CreditScore)
-                
-            SQL_TABLE_COUNT = int(pd.read_sql("SELECT COUNT(*) FROM  dbo.CreditScore;", sqlConn).iloc[0])
-            SOURCE_DATA_COUNT = int(processed_df.count(axis=0)[1])
 
-            if SQL_TABLE_COUNT == SOURCE_DATA_COUNT:
-                sqlConn.commit()
-                processed_df.to_csv(PROJECT_PARENT_PATH + "/archive/" + datetime.date.today().strftime("%d") + "-" + datetime.date.today().strftime("%m") + "-" + datetime.date.today().strftime("%Y") + "_" + FILE_NAME + "_" + FILE_NAME + ".gz", compression='gzip')
-            else:
-                sqlConn.rollback()
+            ##Check if Target Table exists in SQL Server
+
+            isTableExistsSQL = """ IF EXISTS (SELECT 1 
+                            FROM INFORMATION_SCHEMA.TABLES 
+                            WHERE TABLE_CATALOG = ?
+                                AND TABLE_NAME=?) 
+                    SELECT 1 AS RESULT ELSE SELECT 0 AS RESULT;"""
+                
+            isTableExists = pd.read_sql_query(isTableExistsSQL, sqlConn, params=[SQL_TGT_DB, SQL_TGT_TABLE]) ##params are used to pass in the table and DB names to be checked
+            isTableExists = int(isTableExists['RESULT']) ##Binary output: 1 if Target table exists, 0 if not
+            
+            if isTableExists == 1:
+                 ## Truncate table before loading
+                cursor.execute("USE " + SQL_TGT_DB + ";")
+                cursor.execute("DELETE FROM " + SQL_TGT_TABLE + ";")
+
+                # Insert Dataframe into SQL Server:
+                for index, row in processed_df.iterrows():
+                    cursor.execute("INSERT INTO " + SQL_TGT_TABLE + " (Age ,Gender ,Income ,Education ,MaritalStatus ,NumberOfChildren ,HomeOwnership ,CreditScore) values(?,?,?,?,?,?,?,?)", row.Age, row.Gender, row.Income, row.Education, row.MaritalStatus, row.NumberOfChildren, row.HomeOwnership, row.CreditScore)
                     
-            sqlConn.close()	
+                SQL_TABLE_COUNT = int(pd.read_sql("SELECT COUNT(*) FROM " + SQL_TGT_TABLE + ";", sqlConn).iloc[0])
+                SOURCE_DATA_COUNT = int(processed_df.count(axis=0)[1])
+
+                if SQL_TABLE_COUNT == SOURCE_DATA_COUNT:
+                    sqlConn.commit()
+                    processed_df.to_csv(PROJECT_PARENT_PATH + "/archive/" + datetime.date.today().strftime("%d") + "-" + datetime.date.today().strftime("%m") + "-" + datetime.date.today().strftime("%Y") + "_" + FILE_NAME + "_" + FILE_NAME + ".gz", compression='gzip')
+                else:
+                    sqlConn.rollback()
+                        
+                sqlConn.close()
+            
+            else:
+                MISSING_TABLE_ERROR = "FAILED in STEP 4: SQL Target Table is missing. Please check both Target Table and Database and retry." 
+                MISSING_TABLE_ERROR_FILENAME = "MissingTargetTableError_" + str(datetime.datetime.now().date()) + "_"+ datetime.datetime.now().strftime("%H") + "_"+ datetime.datetime.now().strftime("%M") + "_"+ datetime.datetime.now().strftime("%S") + ".txt"
+            
+                with open(PROJECT_PARENT_PATH + "/logs/" + MISSING_TABLE_ERROR_FILENAME, 'w') as f:
+                    f.write(MISSING_TABLE_ERROR)
+                    
+                sys.exit()
    
         else:
-            ROW_COUNT_ERROR = "FAILED in STEP 3: Source file Header Row Count and Data Count doesn't match"
+            ROW_COUNT_ERROR = "FAILED in STEP 3: Source file Header Row Count " + str(SOURCE_FILE_ROW_COUNT) + " and Data Count "+ str(DF_ROW_COUNT) + " doesn't match" 
             ROW_COUNT_ERROR_FILENAME = "RowCountError_" + str(datetime.datetime.now().date()) + "_"+ datetime.datetime.now().strftime("%H") + "_"+ datetime.datetime.now().strftime("%M") + "_"+ datetime.datetime.now().strftime("%S") + ".txt"
             
             with open(PROJECT_PARENT_PATH + "/logs/" + ROW_COUNT_ERROR_FILENAME, 'w') as f:
