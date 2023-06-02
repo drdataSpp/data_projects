@@ -1,1 +1,0 @@
-FAILED in STEP 2: Source file doesn't exist in the raw_data folder
