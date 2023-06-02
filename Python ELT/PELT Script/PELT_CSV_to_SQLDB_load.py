@@ -22,6 +22,7 @@
 ## V5.2 - 2023-05-30 - Added Removed hardcoded values - Picks from JSON Parameter file
 ## V6   - 2023-06-02 - Updated folder and file names
 ## V6.1 - 2023-06-02 - Added feature to pass in a parameter file when calling the python script
+## V6.2 - 2023-06-02 - Printing success messages, if data is loaded is correctly
  
 #######################################################################################
 
@@ -137,6 +138,7 @@ if isParamFIleExists == True:
                     if SQL_TABLE_COUNT == SOURCE_DATA_COUNT:
                         sqlConn.commit()
                         processed_df.to_csv(PROJECT_PARENT_PATH + "/archive/" + datetime.date.today().strftime("%d") + "-" + datetime.date.today().strftime("%m") + "-" + datetime.date.today().strftime("%Y") + "_" + FILE_NAME + "_" + FILE_NAME + ".gz", compression='gzip')
+                        print("Successfully loaded " + str(DF_ROW_COUNT) + " rows into " + str(SQL_TGT_TABLE) + " SQL Target Table. Program is exiting.")
                     else:
                         sqlConn.rollback()
                             
