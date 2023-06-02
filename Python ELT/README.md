@@ -61,6 +61,10 @@ To run this script, follow these steps:
    GIT BASH command       : ./run_pelt_script.sh parameter_file.json
    ```
 
+## Logical Flowchart
+
+<img src="https://github.com/drdataSpp/data_projects/blob/master/Python%20ELT/Images/PELT_Logical_Img.png">
+
 ## Usage
 
 Before running the script, ensure that you have the following:
