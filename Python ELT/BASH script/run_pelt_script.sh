@@ -3,7 +3,7 @@
 ## Calling Python ELT script
 ## Arguements: Load process PARAM JSON File
 
-## IF Loop to check if Parameter file is supplied
+## IF condition to check whether Parameter file is supplied
 if [ $# -eq 0 ]
   then
     echo "Load process JSON Parameter file not supplied"
