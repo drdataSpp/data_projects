@@ -22,7 +22,7 @@
 ## V5.2 - 2023-05-30 - Added Removed hardcoded values - Picks from JSON Parameter file
 ## V6   - 2023-06-02 - Updated folder and file names
 ## V6.1 - 2023-06-02 - Added feature to pass in a parameter file when calling the python script
-## V6.2 - 2023-06-02 - Printing success messages, if data is loaded is correctly
+## V6.2 - 2023-06-02 - Generating success message logs, if data is loaded is correctly
  
 #######################################################################################
 
@@ -138,11 +138,18 @@ if isParamFIleExists == True:
                     if SQL_TABLE_COUNT == SOURCE_DATA_COUNT:
                         sqlConn.commit()
                         processed_df.to_csv(PROJECT_PARENT_PATH + "/archive/" + datetime.date.today().strftime("%d") + "-" + datetime.date.today().strftime("%m") + "-" + datetime.date.today().strftime("%Y") + "_" + FILE_NAME + "_" + FILE_NAME + ".gz", compression='gzip')
-                        print("Successfully loaded " + str(DF_ROW_COUNT) + " rows into " + str(SQL_TGT_TABLE) + " SQL Target Table. Program is exiting.")
+                        
+                        SUCCESS_MESSAGE = "Load process completed sucessfully. Loaded " + str(SOURCE_DATA_COUNT) + " rows into " + str(SQL_TGT_TABLE) + " SQL Server table."
+                        SUCCESS_MESSAGE_FILENAME = "SuccessMessage_" + str(datetime.datetime.now().date()) + "_"+ datetime.datetime.now().strftime("%H") + "_"+ datetime.datetime.now().strftime("%M") + "_"+ datetime.datetime.now().strftime("%S") + ".txt"
+                        
+                        with open(PROJECT_PARENT_PATH + "/logs/" + SUCCESS_MESSAGE_FILENAME, 'w') as f:
+                            f.write(SUCCESS_MESSAGE)
+
                     else:
                         sqlConn.rollback()
                             
                     sqlConn.close()
+                    sys.exit()
                 
                 else:
                     MISSING_TABLE_ERROR = "FAILED in STEP 5: SQL Target Table is missing. Please check both Target Table and Database and retry." 
