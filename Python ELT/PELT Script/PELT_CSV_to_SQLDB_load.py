@@ -1,10 +1,10 @@
 #######################################################################################
 
-## PROJECT NAME : Python ETL script to load CSV file into MS SQL Server Database
+## PROJECT NAME : Python ELT script to load CSV file (Flat file source) into MS SQL Server Database
 ## Developer    : Soorya Prakash Parthiban
 ## GitHub       : drdataSpp
 ## Date         : 27 May, 2023
-## Description  : This script checks the header count of the CSV file, compares with the data, if both matches then the data is loaded into the target table.
+## Description  : This PELT script checks the header row count of the CSV file, compares with the system date and file's business date, if both matches then the data is loaded into the SQL Server target table.
 
 ## Change history
 
@@ -17,7 +17,8 @@
 ## V4.3 - 2023-05-28 - Added archive feature when the table is successfully loaded
 ## V5   - 2023-05-30 - Removed .txt Parameter Sets and added JSON Paramater sets
 ## V5.1 - 2023-05-30 - Added IF TABLE EXISTS Clause before loading data
-## V5.2 - 2023-05-30 - Added Removed hardcoded values - Picks from JSON Parameter file 
+## V5.2 - 2023-05-30 - Added Removed hardcoded values - Picks from JSON Parameter file
+## V6   - 2023-06-02 - Updated folder and file names 
 #######################################################################################
 
 ## Importing python libraries
