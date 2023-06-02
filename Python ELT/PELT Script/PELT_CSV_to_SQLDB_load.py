@@ -40,7 +40,7 @@ import pyodbc as pySQLConn
 
 ## Using JSON files to get parameter values
     ### With the help of a paramater file, we can make changes easily without editing the actual source code)
-PARAM_FILE_NAME = sys.argv[1]
+PARAM_FILE_NAME = sys.argv[1] ##Getting Parameter file value from Bash script
 PARAM_FILE = "D:/001_Data/data_projects/data_projects/Python ELT/Job Parameters/" + PARAM_FILE_NAME
 
 isParamFIleExists = os.path.exists(PARAM_FILE)
