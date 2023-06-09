@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{E349CF3E-6DE9-4A60-953E-B417A96139EB}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{4B6EB39B-3C81-4843-B50B-094DFC886421}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -42,7 +42,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="D:\001_Data\SQL\archive (1)\SuperStoreOrders.csv">
+          DTS:ConnectionString="D:\001_Data\data_projects\data_projects\SQL\SuperStoreDB\Source Data\SuperStoreOrders.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -51,7 +51,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="order_id"
-              DTS:DTSID="{62B69E9A-D631-4439-97D6-4F8FA5B3AF20}"
+              DTS:DTSID="{45E800C5-1634-439D-8D55-4C44C5C6169B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -60,7 +60,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="order_date"
-              DTS:DTSID="{EC974F57-5F22-4A3A-89AB-0368B2BB1215}"
+              DTS:DTSID="{0BA622C6-3F76-4F3A-A88A-BE0CF0802719}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -69,7 +69,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ship_date"
-              DTS:DTSID="{277C4951-D1BA-4CEB-B8E5-1DC853BDB44A}"
+              DTS:DTSID="{1664F334-4B1A-4E8D-8947-E276C56BC2D1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -78,7 +78,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ship_mode"
-              DTS:DTSID="{47D37C4A-9714-481B-AC09-77EE57D4DB06}"
+              DTS:DTSID="{75982370-3169-47ED-AAC2-B7CC54AE087C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -87,7 +87,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="customer_name"
-              DTS:DTSID="{4D3A1FDB-0C59-446C-A144-EE9C818D40B7}"
+              DTS:DTSID="{95A817AA-1EF3-4C7A-90A0-6A7674AB3701}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -96,7 +96,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="segment"
-              DTS:DTSID="{E59F1B46-AC71-45A8-BB61-CF0D9DDB6EB4}"
+              DTS:DTSID="{1A9E5E42-351F-4032-9FE7-78EC01326CCD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -105,7 +105,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="state"
-              DTS:DTSID="{1A3DD4EA-78F8-4825-AE5F-9081BE87B171}"
+              DTS:DTSID="{5235D5C9-CE44-4FF9-B028-B19B514FBFDF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -114,7 +114,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="country"
-              DTS:DTSID="{681B916B-8027-422F-94B2-A0D78844EF06}"
+              DTS:DTSID="{A8F96288-1C94-4AE2-B607-288B6A5DB76E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -123,7 +123,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="market"
-              DTS:DTSID="{787A4CFD-676E-4466-ADC7-AC5BB91633BB}"
+              DTS:DTSID="{52A6DE54-D629-4D69-B221-1EE73C913E27}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -132,7 +132,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="region"
-              DTS:DTSID="{5D126F9F-1A14-49A7-B447-F738ECD0C288}"
+              DTS:DTSID="{E1D2D807-4884-4704-9A58-D2CAA62B19C5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -141,7 +141,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="product_id"
-              DTS:DTSID="{13A006CB-951B-4D3E-A61C-2374E2D58D3E}"
+              DTS:DTSID="{5C73B208-FFE0-4225-A754-5D66DD2DBFDA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -150,7 +150,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="category"
-              DTS:DTSID="{2A19791B-449C-42BD-B971-B2FEA709B26A}"
+              DTS:DTSID="{B7CC5E07-4C9F-4DF7-902F-D77ED76EBEEC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -159,7 +159,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="sub_category"
-              DTS:DTSID="{F2EAB676-C878-44EB-AC79-2741B697DC2A}"
+              DTS:DTSID="{D59C96B4-9ACA-41AF-891D-EA6C32BA84CB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -168,7 +168,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="product_name"
-              DTS:DTSID="{B68B32AB-C528-41B6-81E4-A89B4E1D236B}"
+              DTS:DTSID="{B7D2420A-3AE9-41FA-83AD-B627B4710BE1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -177,7 +177,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="sales"
-              DTS:DTSID="{6D146CC0-4E88-4D01-939C-C1A8946C43D8}"
+              DTS:DTSID="{5C938326-3FFC-454B-8589-FDB5647E3FA7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -186,7 +186,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="quantity"
-              DTS:DTSID="{07C09379-DA4F-4E32-A5B0-63E49D304C42}"
+              DTS:DTSID="{F16BCD12-6590-4C92-B50A-9493247FA195}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -195,7 +195,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="discount"
-              DTS:DTSID="{A38AB831-07B4-4FB5-BEAA-E4213A1FE643}"
+              DTS:DTSID="{0D2CE899-2D6B-49B1-8247-90151CA9987F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -204,7 +204,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="profit"
-              DTS:DTSID="{2D633818-0983-4285-9B08-E6C78A819D93}"
+              DTS:DTSID="{FEF7C0E2-B766-429C-826D-5FCD8150DA54}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -213,7 +213,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="shipping_cost"
-              DTS:DTSID="{11D95585-5F8D-48F3-9BA8-486BD2C22E58}"
+              DTS:DTSID="{6E635E41-2509-4844-8296-8066B05CC551}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -222,7 +222,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="order_priority"
-              DTS:DTSID="{99985DFD-AEAF-447C-86C5-8B0C793A2CDD}"
+              DTS:DTSID="{AA4D75D4-61C0-44BB-9258-369E7FBEAC28}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -231,7 +231,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="year"
-              DTS:DTSID="{D8AFBFE4-A060-4045-809C-2D2F75865046}"
+              DTS:DTSID="{3CA34509-C6E3-44DA-9282-95E43B890474}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -241,13 +241,13 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Super Store ETL Pipeline"
+      DTS:refId="Package\CSV data to SuperStore Staging table"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{BF2C88A1-A192-4796-9B77-43B7CE535C4D}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Super Store ETL Pipeline"
+      DTS:ObjectName="CSV data to SuperStore Staging table"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -255,11 +255,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Super Store ETL Pipeline\SQL Server Staging Table"
+              refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="SQL Server Staging Table"
+              name="Super Store DB Staging Table"
               usesDispositions="true"
               version="4">
               <properties>
@@ -312,7 +312,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Connections[OleDbConnection]"
+                  refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LAPTOP-MCNKFD7O.SuperStoreDB]"
                   connectionManagerRefId="Package.ConnectionManagers[LAPTOP-MCNKFD7O.SuperStoreDB]"
                   description="The OLE DB runtime connection used to access the database."
@@ -320,305 +320,305 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input]"
+                  refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].Columns[order_id]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].Columns[order_id]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="order_id"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_ID]"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[order_id]" />
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_ID]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[order_id]" />
                     <inputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].Columns[order_date]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].Columns[order_date]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="order_date"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_DATE]"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[order_date]" />
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_DATE]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[order_date]" />
                     <inputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].Columns[ship_date]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].Columns[ship_date]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="ship_date"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SHIP_DATE]"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[ship_date]" />
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SHIP_DATE]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[ship_date]" />
                     <inputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].Columns[ship_mode]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].Columns[ship_mode]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="ship_mode"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SHIP_MODE]"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[ship_mode]" />
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SHIP_MODE]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[ship_mode]" />
                     <inputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].Columns[customer_name]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].Columns[customer_name]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="customer_name"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_NAME]"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[customer_name]" />
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_NAME]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[customer_name]" />
                     <inputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].Columns[segment]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].Columns[segment]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="segment"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SEGMENT]"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[segment]" />
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SEGMENT]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[segment]" />
                     <inputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].Columns[state]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].Columns[state]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="state"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[STATE]"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[state]" />
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[STATE]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[state]" />
                     <inputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].Columns[country]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].Columns[country]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="country"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRY]"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[country]" />
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRY]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[country]" />
                     <inputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].Columns[market]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].Columns[market]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="market"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[MARKET]"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[market]" />
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[MARKET]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[market]" />
                     <inputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].Columns[region]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].Columns[region]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="region"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[REGION]"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[region]" />
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[REGION]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[region]" />
                     <inputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].Columns[product_id]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].Columns[product_id]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="product_id"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_ID]"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[product_id]" />
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_ID]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[product_id]" />
                     <inputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].Columns[category]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].Columns[category]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="category"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[CATEGORY]"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[category]" />
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[CATEGORY]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[category]" />
                     <inputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].Columns[sub_category]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].Columns[sub_category]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="sub_category"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SUB_CATEGORY]"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[sub_category]" />
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SUB_CATEGORY]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[sub_category]" />
                     <inputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].Columns[product_name]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].Columns[product_name]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="300"
                       cachedName="product_name"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_NAME]"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[product_name]" />
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_NAME]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[product_name]" />
                     <inputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].Columns[sales]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].Columns[sales]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="sales"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SALES]"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[sales]" />
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SALES]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[sales]" />
                     <inputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].Columns[quantity]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].Columns[quantity]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="quantity"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[QUANTITY]"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[quantity]" />
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[QUANTITY]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[quantity]" />
                     <inputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].Columns[discount]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].Columns[discount]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="discount"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[DISCOUNT]"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[discount]" />
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[DISCOUNT]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[discount]" />
                     <inputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].Columns[profit]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].Columns[profit]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="profit"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[PROFIT]"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[profit]" />
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[PROFIT]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[profit]" />
                     <inputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].Columns[shipping_cost]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].Columns[shipping_cost]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="shipping_cost"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SHIPPING_COST]"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[shipping_cost]" />
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SHIPPING_COST]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[shipping_cost]" />
                     <inputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].Columns[order_priority]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].Columns[order_priority]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="order_priority"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_PRIORITY]"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[order_priority]" />
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_PRIORITY]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[order_priority]" />
                     <inputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].Columns[year]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].Columns[year]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="year"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[YEAR]"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[year]" />
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[YEAR]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[year]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[ROW_ID]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[ROW_ID]"
                       dataType="i4"
                       name="ROW_ID" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_ID]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_ID]"
                       codePage="65001"
                       dataType="str"
                       length="255"
                       name="ORDER_ID" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_DATE]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_DATE]"
                       dataType="dbDate"
                       name="ORDER_DATE" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SHIP_DATE]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SHIP_DATE]"
                       dataType="dbDate"
                       name="SHIP_DATE" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SHIP_MODE]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SHIP_MODE]"
                       codePage="65001"
                       dataType="str"
                       length="255"
                       name="SHIP_MODE" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_NAME]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_NAME]"
                       codePage="65001"
                       dataType="str"
                       length="255"
                       name="CUSTOMER_NAME" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SEGMENT]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SEGMENT]"
                       codePage="65001"
                       dataType="str"
                       length="255"
                       name="SEGMENT" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[STATE]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[STATE]"
                       codePage="65001"
                       dataType="str"
                       length="255"
                       name="STATE" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRY]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRY]"
                       codePage="65001"
                       dataType="str"
                       length="255"
                       name="COUNTRY" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[MARKET]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[MARKET]"
                       codePage="65001"
                       dataType="str"
                       length="255"
                       name="MARKET" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[REGION]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[REGION]"
                       codePage="65001"
                       dataType="str"
                       length="255"
                       name="REGION" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_ID]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_ID]"
                       codePage="65001"
                       dataType="str"
                       length="255"
                       name="PRODUCT_ID" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[CATEGORY]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[CATEGORY]"
                       codePage="65001"
                       dataType="str"
                       length="255"
                       name="CATEGORY" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SUB_CATEGORY]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SUB_CATEGORY]"
                       codePage="65001"
                       dataType="str"
                       length="255"
                       name="SUB_CATEGORY" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_NAME]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_NAME]"
                       codePage="65001"
                       dataType="str"
                       length="300"
                       name="PRODUCT_NAME" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SALES]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SALES]"
                       codePage="65001"
                       dataType="str"
                       length="255"
                       name="SALES" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[QUANTITY]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[QUANTITY]"
                       codePage="65001"
                       dataType="str"
                       length="255"
                       name="QUANTITY" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[DISCOUNT]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[DISCOUNT]"
                       codePage="65001"
                       dataType="str"
                       length="255"
                       name="DISCOUNT" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[PROFIT]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[PROFIT]"
                       codePage="65001"
                       dataType="str"
                       length="255"
                       name="PROFIT" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SHIPPING_COST]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SHIPPING_COST]"
                       codePage="65001"
                       dataType="str"
                       length="255"
                       name="SHIPPING_COST" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_PRIORITY]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_PRIORITY]"
                       codePage="65001"
                       dataType="str"
                       length="255"
                       name="ORDER_PRIORITY" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[YEAR]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[YEAR]"
                       codePage="65001"
                       dataType="str"
                       length="255"
@@ -628,22 +628,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -652,7 +652,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Super Store ETL Pipeline\SuperStore CSV Data"
+              refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
@@ -672,25 +672,25 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Connections[FlatFileConnection]"
+                  refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Connections[FlatFileConnection]"
                   connectionManagerID="Package.ConnectionManagers[SuperStore CSV Data]"
                   connectionManagerRefId="Package.ConnectionManagers[SuperStore CSV Data]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output]"
+                  refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[order_id]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[order_id]"
                       codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[order_id]"
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[order_id]"
                       length="50"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[order_id]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[order_id]"
                       name="order_id"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -705,14 +705,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[order_date]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[order_date]"
                       codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[order_date]"
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[order_date]"
                       length="50"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[order_date]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[order_date]"
                       name="order_date"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -727,14 +727,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[ship_date]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[ship_date]"
                       codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[ship_date]"
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[ship_date]"
                       length="50"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[ship_date]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[ship_date]"
                       name="ship_date"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -749,14 +749,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[ship_mode]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[ship_mode]"
                       codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[ship_mode]"
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[ship_mode]"
                       length="50"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[ship_mode]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[ship_mode]"
                       name="ship_mode"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -771,14 +771,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[customer_name]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[customer_name]"
                       codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[customer_name]"
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[customer_name]"
                       length="50"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[customer_name]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[customer_name]"
                       name="customer_name"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -793,14 +793,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[segment]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[segment]"
                       codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[segment]"
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[segment]"
                       length="50"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[segment]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[segment]"
                       name="segment"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -815,14 +815,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[state]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[state]"
                       codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[state]"
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[state]"
                       length="50"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[state]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[state]"
                       name="state"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -837,14 +837,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[country]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[country]"
                       codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[country]"
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[country]"
                       length="50"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[country]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[country]"
                       name="country"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -859,14 +859,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[market]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[market]"
                       codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[market]"
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[market]"
                       length="50"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[market]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[market]"
                       name="market"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -881,14 +881,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[region]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[region]"
                       codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[region]"
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[region]"
                       length="50"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[region]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[region]"
                       name="region"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -903,14 +903,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[product_id]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[product_id]"
                       codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[product_id]"
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[product_id]"
                       length="50"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[product_id]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[product_id]"
                       name="product_id"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -925,14 +925,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[category]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[category]"
                       codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[category]"
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[category]"
                       length="50"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[category]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[category]"
                       name="category"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -947,14 +947,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[sub_category]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[sub_category]"
                       codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[sub_category]"
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[sub_category]"
                       length="50"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[sub_category]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[sub_category]"
                       name="sub_category"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -969,14 +969,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[product_name]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[product_name]"
                       codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[product_name]"
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[product_name]"
                       length="300"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[product_name]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[product_name]"
                       name="product_name"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -991,14 +991,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[sales]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[sales]"
                       codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[sales]"
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[sales]"
                       length="50"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[sales]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[sales]"
                       name="sales"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1013,14 +1013,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[quantity]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[quantity]"
                       codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[quantity]"
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[quantity]"
                       length="50"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[quantity]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[quantity]"
                       name="quantity"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1035,14 +1035,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[discount]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[discount]"
                       codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[discount]"
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[discount]"
                       length="50"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[discount]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[discount]"
                       name="discount"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1057,14 +1057,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[profit]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[profit]"
                       codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[profit]"
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[profit]"
                       length="50"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[profit]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[profit]"
                       name="profit"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1079,14 +1079,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[shipping_cost]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[shipping_cost]"
                       codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[shipping_cost]"
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[shipping_cost]"
                       length="50"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[shipping_cost]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[shipping_cost]"
                       name="shipping_cost"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1101,14 +1101,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[order_priority]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[order_priority]"
                       codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[order_priority]"
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[order_priority]"
                       length="50"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[order_priority]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[order_priority]"
                       name="order_priority"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1123,14 +1123,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[year]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[year]"
                       codePage="65001"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[year]"
+                      externalMetadataColumnId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[year]"
                       length="50"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[year]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].Columns[year]"
                       name="year"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1148,127 +1148,127 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[order_id]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[order_id]"
                       codePage="65001"
                       dataType="str"
                       length="50"
                       name="order_id" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[order_date]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[order_date]"
                       codePage="65001"
                       dataType="str"
                       length="50"
                       name="order_date" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[ship_date]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[ship_date]"
                       codePage="65001"
                       dataType="str"
                       length="50"
                       name="ship_date" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[ship_mode]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[ship_mode]"
                       codePage="65001"
                       dataType="str"
                       length="50"
                       name="ship_mode" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[customer_name]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[customer_name]"
                       codePage="65001"
                       dataType="str"
                       length="50"
                       name="customer_name" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[segment]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[segment]"
                       codePage="65001"
                       dataType="str"
                       length="50"
                       name="segment" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[state]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[state]"
                       codePage="65001"
                       dataType="str"
                       length="50"
                       name="state" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[country]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[country]"
                       codePage="65001"
                       dataType="str"
                       length="50"
                       name="country" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[market]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[market]"
                       codePage="65001"
                       dataType="str"
                       length="50"
                       name="market" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[region]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[region]"
                       codePage="65001"
                       dataType="str"
                       length="50"
                       name="region" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[product_id]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[product_id]"
                       codePage="65001"
                       dataType="str"
                       length="50"
                       name="product_id" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[category]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[category]"
                       codePage="65001"
                       dataType="str"
                       length="50"
                       name="category" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[sub_category]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[sub_category]"
                       codePage="65001"
                       dataType="str"
                       length="50"
                       name="sub_category" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[product_name]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[product_name]"
                       codePage="65001"
                       dataType="str"
                       length="300"
                       name="product_name" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[sales]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[sales]"
                       codePage="65001"
                       dataType="str"
                       length="50"
                       name="sales" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[quantity]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[quantity]"
                       codePage="65001"
                       dataType="str"
                       length="50"
                       name="quantity" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[discount]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[discount]"
                       codePage="65001"
                       dataType="str"
                       length="50"
                       name="discount" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[profit]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[profit]"
                       codePage="65001"
                       dataType="str"
                       length="50"
                       name="profit" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[shipping_cost]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[shipping_cost]"
                       codePage="65001"
                       dataType="str"
                       length="50"
                       name="shipping_cost" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[order_priority]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[order_priority]"
                       codePage="65001"
                       dataType="str"
                       length="50"
                       name="order_priority" />
                     <externalMetadataColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[year]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output].ExternalColumns[year]"
                       codePage="65001"
                       dataType="str"
                       length="50"
@@ -1276,27 +1276,27 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Error Output]"
+                  refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="65001"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1307,15 +1307,42 @@
           </components>
           <paths>
             <path
-              refId="Package\Super Store ETL Pipeline.Paths[Flat File Source Output]"
-              endId="Package\Super Store ETL Pipeline\SQL Server Staging Table.Inputs[OLE DB Destination Input]"
+              refId="Package\CSV data to SuperStore Staging table.Paths[Flat File Source Output]"
+              endId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
-              startId="Package\Super Store ETL Pipeline\SuperStore CSV Data.Outputs[Flat File Source Output]" />
+              startId="Package\CSV data to SuperStore Staging table\SuperStore CSV Data.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate TGT table before loading"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1047D97A-C116-4F84-8857-30958BF7FD84}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate TGT table before loading"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C54466D2-F806-474A-AEBA-EBFF15E09FCA}"
+          SQLTask:SqlStatementSource="DELETE FROM Staging_SuperStoreSource_T;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{50C23E07-1B1A-4562-AA3A-9FCC9FFE6AD7}"
+      DTS:From="Package\Truncate TGT table before loading"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\CSV data to SuperStore Staging table" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -1327,41 +1354,67 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="194.4,41.6"
-          Id="Package\Super Store ETL Pipeline"
-          TopLeft="245.500004087176,111.794119137794" />
-      </GraphLayout>
-    </LayoutInfo>
-  </Package>
-  <TaskHost
-    design-time-name="Package\Super Store ETL Pipeline">
-    <LayoutInfo>
-      <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="177.6,41.6"
-          Id="Package\Super Store ETL Pipeline\SuperStore CSV Data"
-          TopLeft="417.142864246758,123.88235467858" />
+          Size="194.4,41.6"
+          Id="Package\CSV data to SuperStore Staging table"
+          TopLeft="239.785718275577,139.323531288589" />
         <NodeLayout
-          Size="198.4,41.6"
-          Id="Package\Super Store ETL Pipeline\SQL Server Staging Table"
-          TopLeft="412.142864161609,214.117650061743" />
+          Size="189.6,44"
+          Id="Package\Truncate TGT table before loading"
+          TopLeft="240.714289813626,61.9411773392899" />
         <EdgeLayout
-          Id="Package\Super Store ETL Pipeline.Paths[Flat File Source Output]"
-          TopLeft="508.642864204183,165.48235467858">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="336.250004044601,105.94117733929">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48.6352953831631"
+              EndConnector="0,33.3823539492996"
               Start="0,0"
-              End="0,41.1352953831631">
+              End="0,25.8823539492996">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.1352953831631" />
+                    End="0,25.8823539492996" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\CSV data to SuperStore Staging table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="200.8,41.6"
+          Id="Package\CSV data to SuperStore Staging table\SuperStore CSV Data"
+          TopLeft="409.285721255809,122.352942892425" />
+        <NodeLayout
+          Size="198.4,41.6"
+          Id="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table"
+          TopLeft="412.142864161609,214.117650061743" />
+        <EdgeLayout
+          Id="Package\CSV data to SuperStore Staging table.Paths[Flat File Source Output]"
+          TopLeft="510.514292708709,163.952942892425">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.1647071693183"
+              Start="0,0"
+              End="0,42.6647071693183">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.6647071693183" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1374,7 +1427,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Super Store ETL Pipeline\SQL Server Staging Table">
+    design-time-name="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
