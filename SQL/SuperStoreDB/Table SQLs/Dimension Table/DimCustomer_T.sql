@@ -4,5 +4,6 @@ DROP TABLE IF EXISTS DimCustomer_T;
 
 CREATE TABLE DimCustomer_T(
 	CustomerID INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	Customer_Name VARCHAR(255) NOT NULL
+	Customer_Name VARCHAR(255) NOT NULL,
+	RecInsertTime DEFAULT GetDate() NOT NULL 
 );

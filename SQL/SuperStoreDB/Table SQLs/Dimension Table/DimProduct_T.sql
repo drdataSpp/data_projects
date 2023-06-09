@@ -7,5 +7,6 @@ CREATE TABLE DimProduct_T(
 	ProductID VARCHAR(255) NOT NULL,
 	ProductName VARCHAR(255) NOT NULL,
 	SubCategoryID INT NOT NULL,
+	RecInsertTime DEFAULT GetDate() NOT NULL,
 	CONSTRAINT FK_SubCategory FOREIGN KEY (SubCategoryID) REFERENCES DimSubCategory_T(SubCategoryID)
 );
