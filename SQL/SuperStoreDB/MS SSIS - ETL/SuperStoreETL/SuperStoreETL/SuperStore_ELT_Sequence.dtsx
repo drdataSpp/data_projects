@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{4B6EB39B-3C81-4843-B50B-094DFC886421}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{EF2FB4DC-E7FF-4A8E-A6BD-8C4FB00511B7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -623,6 +623,10 @@
                       dataType="str"
                       length="255"
                       name="YEAR" />
+                    <externalMetadataColumn
+                      refId="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[RecInsertTime]"
+                      dataType="dbDate"
+                      name="RecInsertTime" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1316,6 +1320,21 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Load Customer data STG to DimCust TGT"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E523F5B8-5682-46E7-8F78-C5BA04DBBCAC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Customer data STG to DimCust TGT"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Truncate TGT table before loading"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -1342,6 +1361,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\CSV data to SuperStore Staging table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{0737D6AE-C0D3-49E2-95E2-EC673BEE79FA}"
+      DTS:From="Package\CSV data to SuperStore Staging table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Load Customer data STG to DimCust TGT" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1354,29 +1381,67 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="194.4,41.6"
           Id="Package\CSV data to SuperStore Staging table"
-          TopLeft="239.785718275577,139.323531288589" />
+          TopLeft="240.500004002027,141.617648967822" />
+        <NodeLayout
+          Size="274.4,41.6"
+          Id="Package\Load Customer data STG to DimCust TGT"
+          TopLeft="58.5714295688941,237.058826854072" />
         <NodeLayout
           Size="189.6,44"
           Id="Package\Truncate TGT table before loading"
           TopLeft="240.714289813626,61.9411773392899" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="336.250004044601,105.94117733929">
+          TopLeft="336.607146907826,105.94117733929">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.3823539492996"
+              EndConnector="0,35.6764716285326"
               Start="0,0"
-              End="0,25.8823539492996">
+              End="0,28.1764716285326">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.8823539492996" />
+                    End="0,28.1764716285326" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="337.700004002027,183.217648967822">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-141.928574433133,53.84117788625"
+              Start="0,0"
+              End="-141.928574433133,46.34117788625">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.920588943125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.920588943125"
+                    Point2="0,26.920588943125"
+                    Point3="-4,26.920588943125" />
+                  <mssgle:LineSegment
+                    End="-137.928574433133,26.920588943125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-137.928574433133,26.920588943125"
+                    Point2="-141.928574433133,26.920588943125"
+                    Point3="-141.928574433133,30.920588943125" />
+                  <mssgle:LineSegment
+                    End="-141.928574433133,46.34117788625" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1400,21 +1465,21 @@
         <NodeLayout
           Size="198.4,41.6"
           Id="Package\CSV data to SuperStore Staging table\Super Store DB Staging Table"
-          TopLeft="412.142864161609,214.117650061743" />
+          TopLeft="411.428578435159,212.588238275588" />
         <EdgeLayout
           Id="Package\CSV data to SuperStore Staging table.Paths[Flat File Source Output]"
-          TopLeft="510.514292708709,163.952942892425">
+          TopLeft="510.157149845484,163.952942892425">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50.1647071693183"
+              EndConnector="0,48.6352953831627"
               Start="0,0"
-              End="0,42.6647071693183">
+              End="0,41.1352953831627">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.6647071693183" />
+                    End="0,41.1352953831627" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1439,5 +1504,55 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load Customer data STG to DimCust TGT">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="23"
+          TopLeft="196,179" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="2"
+          TopLeft="197,257" />
+        <EdgeLayout
+          Id="63"
+          TopLeft="270.8,220.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.4,36.4"
+              Start="0,0"
+              End="11.4,28.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.2"
+                    Point2="0,18.2"
+                    Point3="4,18.2" />
+                  <mssgle:LineSegment
+                    End="7.40000000000003,18.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.40000000000003,18.2"
+                    Point2="11.4,18.2"
+                    Point3="11.4,22.2" />
+                  <mssgle:LineSegment
+                    End="11.4,28.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
