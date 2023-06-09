@@ -6,6 +6,6 @@ CREATE TABLE DimSubCategory_T(
 	SubCategoryID INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	CategoryID INT NOT NULL,
 	Sub_Category_Name VARCHAR(255) NOT NULL,
-	RecInsertTime DEFAULT GetDate() NOT NULL
+	RecInsertTime DATE DEFAULT GetDate() NOT NULL
 	CONSTRAINT FK_Category FOREIGN KEY (CategoryID) REFERENCES DimCategory_T(CategoryID)
 );
