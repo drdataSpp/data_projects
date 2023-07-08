@@ -74,7 +74,10 @@ The script assumes the following file structure:
 |   |-- source_file1.csv
 |   |-- source_file2.csv
 |-- archive_data
+|   |-- source_file.csv.gz
 |-- stage_data
+|   |-- detail_file.csv
+|   |-- control_file.ctl
 ```
 
 You can modify the `PARENT_DIR` variable in the script to match your file structure.
