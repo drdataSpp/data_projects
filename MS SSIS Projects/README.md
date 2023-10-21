@@ -27,3 +27,19 @@ https://www.wiseowl.co.uk/integration-services/exercises/standard/data-flow-task
 <img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX2_Output_CSV_file.png" width="50%" height="50%">
 
 ***
+
+## Exercises Three: Use a data conversion task to import Excel text data to SQL Server varchar columns
+
+**Exercises Link**:
+https://www.wiseowl.co.uk/integration-services/exercises/standard/data-conversion-transforms/4761/
+
+### Solution screenshot
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX3_Control_Flow.png" width="50%" height="50%">
+
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX3_Data_Flow.png" width="50%" height="50%">
+
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX3_Data_Conversion.png" width="50%" height="50%">
+
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX3_SQL_TGT_TBL.png" width="50%" height="50%">
+
+***
