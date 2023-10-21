@@ -13,3 +13,17 @@ https://www.wiseowl.co.uk/integration-services/exercises/standard/data-flow-task
 <img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX1_SQL_TGT_TBL.png" width="50%" height="50%">
 
 ***
+
+## Exercises Two: Generate a new CSV file by exporting a SQL Server table
+
+**Exercises Link**:
+https://www.wiseowl.co.uk/integration-services/exercises/standard/data-flow-tasks/4758/
+
+### Solution screenshot
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX2_Control_Flow.png" width="50%" height="50%">
+
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX2_Data_Flow.png" width="50%" height="50%">
+
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX2_Output_CSV_file.png" width="50%" height="50%">
+
+***
