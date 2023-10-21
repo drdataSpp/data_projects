@@ -11,11 +11,23 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{EA13A3C8-E159-4CE0-844B-327B02381BBF}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{65861850-C1A6-4B9E-8E67-F6A92919CEB1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{AA0B4692-D408-4CD6-9482-8C0682C4BEA0}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\001_Data\data_projects\data_projects\MS SSIS Projects\Source Data\Million-sellers.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LAPTOP-MCNKFD7O.DEV_SSIS_DB]"
       DTS:CreationName="OLEDB"
@@ -126,6 +138,7 @@
       DTS:refId="Package\Export DB data to a CSV flat file destination"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{d826dc79-8b90-4e41-9033-58d0e3aa28b0}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -509,6 +522,471 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Import Excel text data to SQL Server varchar columns"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{ee19d1c2-4242-46de-b3f1-7ea5e5d416b3}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import Excel text data to SQL Server varchar columns"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar)"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion (Unicode to Varchar)"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar).Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar).Inputs[Data Conversion Input].Columns[Artist]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Artist"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].Columns[Artist]" />
+                    <inputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar).Inputs[Data Conversion Input].Columns[Title]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Title"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].Columns[Title]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar).Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar).Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar).Outputs[Data Conversion Output].Columns[Artist_NonUnicode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar).Outputs[Data Conversion Output].Columns[Artist_NonUnicode]"
+                      name="Artist_NonUnicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].Columns[Artist]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar).Outputs[Data Conversion Output].Columns[Title_NonUnicode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar).Outputs[Data Conversion Output].Columns[Title_NonUnicode]"
+                      name="Title_NonUnicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].Columns[Title]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar).Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar).Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar).Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar).Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar).Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar).Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers)"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source (Million Sellers)"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">'Million-sellers$'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].Columns[Artist]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].ExternalColumns[Artist]"
+                      length="255"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].Columns[Artist]"
+                      name="Artist"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].Columns[Rank]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].ExternalColumns[Rank]"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].Columns[Rank]"
+                      name="Rank"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].Columns[Sales]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].ExternalColumns[Sales]"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].Columns[Sales]"
+                      name="Sales"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].Columns[Title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].ExternalColumns[Title]"
+                      length="255"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].Columns[Title]"
+                      name="Title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].Columns[Year]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].ExternalColumns[Year]"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].Columns[Year]"
+                      name="Year"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].ExternalColumns[Artist]"
+                      dataType="wstr"
+                      length="255"
+                      name="Artist" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].ExternalColumns[Rank]"
+                      dataType="r8"
+                      name="Rank" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].ExternalColumns[Sales]"
+                      dataType="r8"
+                      name="Sales" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="255"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].ExternalColumns[Year]"
+                      dataType="r8"
+                      name="Year" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Error Output].Columns[Artist]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Error Output].Columns[Artist]"
+                      name="Artist" />
+                    <outputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Error Output].Columns[Rank]"
+                      dataType="r8"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Error Output].Columns[Rank]"
+                      name="Rank" />
+                    <outputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Error Output].Columns[Sales]"
+                      dataType="r8"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Error Output].Columns[Sales]"
+                      name="Sales" />
+                    <outputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Error Output].Columns[Title]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Error Output].Columns[Title]"
+                      name="Title" />
+                    <outputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Error Output].Columns[Year]"
+                      dataType="r8"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Error Output].Columns[Year]"
+                      name="Year" />
+                    <outputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="SQL Server TGT DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[MillionSellers]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-MCNKFD7O.DEV_SSIS_DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-MCNKFD7O.DEV_SSIS_DB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB.Inputs[OLE DB Destination Input].Columns[Sales]"
+                      cachedDataType="r8"
+                      cachedName="Sales"
+                      externalMetadataColumnId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB.Inputs[OLE DB Destination Input].ExternalColumns[Sales]"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].Columns[Sales]" />
+                    <inputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB.Inputs[OLE DB Destination Input].Columns[Year]"
+                      cachedDataType="r8"
+                      cachedName="Year"
+                      externalMetadataColumnId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB.Inputs[OLE DB Destination Input].ExternalColumns[SongYear]"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output].Columns[Year]" />
+                    <inputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB.Inputs[OLE DB Destination Input].Columns[Title_NonUnicode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Title_NonUnicode"
+                      externalMetadataColumnId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar).Outputs[Data Conversion Output].Columns[Title_NonUnicode]" />
+                    <inputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB.Inputs[OLE DB Destination Input].Columns[Artist_NonUnicode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Artist_NonUnicode"
+                      externalMetadataColumnId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB.Inputs[OLE DB Destination Input].ExternalColumns[Artist]"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar).Outputs[Data Conversion Output].Columns[Artist_NonUnicode]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB.Inputs[OLE DB Destination Input].ExternalColumns[Artist]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Artist" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB.Inputs[OLE DB Destination Input].ExternalColumns[Sales]"
+                      dataType="numeric"
+                      name="Sales"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB.Inputs[OLE DB Destination Input].ExternalColumns[SongYear]"
+                      dataType="i4"
+                      name="SongYear" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import Excel text data to SQL Server varchar columns.Paths[Data Conversion Output]"
+              endId="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar).Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Import Excel text data to SQL Server varchar columns.Paths[Excel Source Output]"
+              endId="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar).Inputs[Data Conversion Input]"
+              name="Excel Source Output"
+              startId="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers).Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Load CSV data to SQL Table"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
@@ -866,16 +1344,20 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
+          Size="284,41.6"
+          Id="Package\Export DB data to a CSV flat file destination"
+          TopLeft="307.71428572645,489.411762636013" />
+        <NodeLayout
           Size="236,48"
           Id="Package\Load CSV data to SQL Table"
-          TopLeft="307,312" />
+          TopLeft="307,250.05882266071" />
         <NodeLayout
           Size="240.8,41.6"
           Id="Package\Truncate TGT table before loading"
-          TopLeft="304,226" />
+          TopLeft="304,164.05882266071" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="424.75,268">
+          TopLeft="424.75,206.05882266071">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
@@ -913,10 +1395,6 @@
             </mssge:FontInfo>
           </AnnotationLayout.FontInfo>
         </AnnotationLayout>
-        <NodeLayout
-          Size="284,41.6"
-          Id="Package\Export DB data to a CSV flat file destination"
-          TopLeft="310.57142863225,529.176469076051" />
         <AnnotationLayout
           Text="SSIS Wise Owl: &#xA;Use a data flow task to export UK built-up areas data from a SQL Server table to a CSV and TXT file"
           ParentId="Package"
@@ -935,72 +1413,31 @@
             </mssge:FontInfo>
           </AnnotationLayout.FontInfo>
         </AnnotationLayout>
+        <NodeLayout
+          Size="332,41.6"
+          Id="Package\Import Excel text data to SQL Server varchar columns"
+          TopLeft="305.5714285471,713.188231894384" />
+        <AnnotationLayout
+          Text="SSIS Wise Owl: &#xA;Use a data conversion task to import Excel text data to SQL Server varchar columns"
+          ParentId="Package"
+          Size="626.4,58.4"
+          Id="d89f09a0-d0b6-48a5-95fe-4956644fa82c"
+          TopLeft="116,630.776469076051">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="14.25"
+              Color="#FFFFFFFF"
+              Weight="Bold">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <TaskHost
-    design-time-name="Package\Load CSV data to SQL Table">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="204.8,41.6"
-          Id="Package\Load CSV data to SQL Table\UK Built Up Area CSV Data"
-          TopLeft="215,210" />
-        <NodeLayout
-          Size="244,41.6"
-          Id="Package\Load CSV data to SQL Table\SQL DEV_SSIS_DB UKBuiltUpAreas"
-          TopLeft="213,305" />
-        <EdgeLayout
-          Id="Package\Load CSV data to SQL Table.Paths[Flat File Source Output]"
-          TopLeft="317.5,252">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="17.5,53"
-              Start="0,0"
-              End="17.5,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.5"
-                    Point2="0,26.5"
-                    Point3="4,26.5" />
-                  <mssgle:LineSegment
-                    End="13.5,26.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="13.5,26.5"
-                    Point2="17.5,26.5"
-                    Point3="17.5,30.5" />
-                  <mssgle:LineSegment
-                    End="17.5,45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load CSV data to SQL Table\SQL DEV_SSIS_DB UKBuiltUpAreas">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Export DB data to a CSV flat file destination">
     <LayoutInfo>
@@ -1067,6 +1504,159 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load CSV data to SQL Table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\Load CSV data to SQL Table\UK Built Up Area CSV Data"
+          TopLeft="215,210" />
+        <NodeLayout
+          Size="244,41.6"
+          Id="Package\Load CSV data to SQL Table\SQL DEV_SSIS_DB UKBuiltUpAreas"
+          TopLeft="213,305" />
+        <EdgeLayout
+          Id="Package\Load CSV data to SQL Table.Paths[Flat File Source Output]"
+          TopLeft="317.5,252">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="17.5,53"
+              Start="0,0"
+              End="17.5,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="4,26.5" />
+                  <mssgle:LineSegment
+                    End="13.5,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.5,26.5"
+                    Point2="17.5,26.5"
+                    Point3="17.5,30.5" />
+                  <mssgle:LineSegment
+                    End="17.5,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load CSV data to SQL Table\SQL DEV_SSIS_DB UKBuiltUpAreas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Import Excel text data to SQL Server varchar columns">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="213.6,41.6"
+          Id="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers)"
+          TopLeft="227.142861011077,117.764707533959" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB"
+          TopLeft="253.571432889725,300.529415979518" />
+        <NodeLayout
+          Size="256.8,41.6"
+          Id="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar)"
+          TopLeft="205.714289217579,208.764708810199" />
+        <EdgeLayout
+          Id="Package\Import Excel text data to SQL Server varchar columns.Paths[Excel Source Output]"
+          TopLeft="334.028575114328,159.364707533959">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,49.4000012762407"
+              Start="0,0"
+              End="0,41.9000012762407">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.9000012762407" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Excel text data to SQL Server varchar columns.Paths[Data Conversion Output]"
+          TopLeft="336.442861053652,250.364708810199">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,50.1647071693183"
+              Start="0,0"
+              End="0,42.6647071693183">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.6647071693183" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
