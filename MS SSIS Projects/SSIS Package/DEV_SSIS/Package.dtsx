@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{300B4FCB-7A92-4E59-8D33-D583AA673A6F}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{86B43DBC-C297-4337-B688-D3A934AAB0D7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,6 +26,50 @@
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=LAPTOP-MCNKFD7O;Initial Catalog=DEV_SSIS_DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Output FF Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{3BE00475-EE57-45C6-B18B-0A84BE8E8B41}"
+      DTS:ObjectName="Output FF Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="5129"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\001_Data\data_projects\data_projects\MS SSIS Projects\Output Data\UK_Built_Area_by_Pop.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Rank"
+              DTS:DTSID="{D9DD8547-0C02-441A-9AA3-A64E8100B5F2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AreaName"
+              DTS:DTSID="{FC4EBA96-FFAE-4EFE-BC99-021FA7EC78D4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Population"
+              DTS:DTSID="{6958BC72-0E71-4573-A285-D84D42A45603}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -78,6 +122,392 @@
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Export DB data to a CSV flat file destination"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{d826dc79-8b90-4e41-9033-58d0e3aa28b0}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Export DB data to a CSV flat file destination"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Export DB data to a CSV flat file destination\Sort by &quot;Population&quot; Desc"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort by &quot;Population&quot; Desc"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Export DB data to a CSV flat file destination\Sort by &quot;Population&quot; Desc.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Export DB data to a CSV flat file destination\Sort by &quot;Population&quot; Desc.Inputs[Sort Input].Columns[Rank]"
+                      cachedDataType="i4"
+                      cachedName="Rank"
+                      lineageId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Output].Columns[Rank]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Export DB data to a CSV flat file destination\Sort by &quot;Population&quot; Desc.Inputs[Sort Input].Columns[AreaName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="AreaName"
+                      lineageId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Output].Columns[AreaName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Export DB data to a CSV flat file destination\Sort by &quot;Population&quot; Desc.Inputs[Sort Input].Columns[Population]"
+                      cachedDataType="i8"
+                      cachedName="Population"
+                      lineageId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Output].Columns[Population]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">-1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Export DB data to a CSV flat file destination\Sort by &quot;Population&quot; Desc.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Export DB data to a CSV flat file destination\Sort by &quot;Population&quot; Desc.Outputs[Sort Output].Columns[Rank]"
+                      dataType="i4"
+                      lineageId="Package\Export DB data to a CSV flat file destination\Sort by &quot;Population&quot; Desc.Outputs[Sort Output].Columns[Rank]"
+                      name="Rank">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Output].Columns[Rank]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Export DB data to a CSV flat file destination\Sort by &quot;Population&quot; Desc.Outputs[Sort Output].Columns[AreaName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Export DB data to a CSV flat file destination\Sort by &quot;Population&quot; Desc.Outputs[Sort Output].Columns[AreaName]"
+                      name="AreaName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Output].Columns[AreaName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Export DB data to a CSV flat file destination\Sort by &quot;Population&quot; Desc.Outputs[Sort Output].Columns[Population]"
+                      dataType="i8"
+                      lineageId="Package\Export DB data to a CSV flat file destination\Sort by &quot;Population&quot; Desc.Outputs[Sort Output].Columns[Population]"
+                      name="Population"
+                      sortKeyPosition="-1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Output].Columns[Population]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection)"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="UK Built Up Area (Source DB connection)"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[UKBuiltUpAreas]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-MCNKFD7O.DEV_SSIS_DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-MCNKFD7O.DEV_SSIS_DB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Output].Columns[Rank]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Output].ExternalColumns[Rank]"
+                      lineageId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Output].Columns[Rank]"
+                      name="Rank"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Output].Columns[AreaName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Output].ExternalColumns[AreaName]"
+                      length="255"
+                      lineageId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Output].Columns[AreaName]"
+                      name="AreaName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Output].Columns[Population]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Output].ExternalColumns[Population]"
+                      lineageId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Output].Columns[Population]"
+                      name="Population"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Output].ExternalColumns[Rank]"
+                      dataType="i4"
+                      name="Rank" />
+                    <externalMetadataColumn
+                      refId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Output].ExternalColumns[AreaName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="AreaName" />
+                    <externalMetadataColumn
+                      refId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Output].ExternalColumns[Population]"
+                      dataType="i8"
+                      name="Population" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Error Output].Columns[Rank]"
+                      dataType="i4"
+                      lineageId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Error Output].Columns[Rank]"
+                      name="Rank" />
+                    <outputColumn
+                      refId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Error Output].Columns[AreaName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Error Output].Columns[AreaName]"
+                      name="AreaName" />
+                    <outputColumn
+                      refId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Error Output].Columns[Population]"
+                      dataType="i8"
+                      lineageId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Error Output].Columns[Population]"
+                      name="Population" />
+                    <outputColumn
+                      refId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Export DB data to a CSV flat file destination\UK Built Up area by Population (CSV File)"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="5129"
+              name="UK Built Up area by Population (CSV File)"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header">AA</property>
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Export DB data to a CSV flat file destination\UK Built Up area by Population (CSV File).Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Output FF Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Output FF Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Export DB data to a CSV flat file destination\UK Built Up area by Population (CSV File).Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Export DB data to a CSV flat file destination\UK Built Up area by Population (CSV File).Inputs[Flat File Destination Input].Columns[Rank]"
+                      cachedDataType="i4"
+                      cachedName="Rank"
+                      externalMetadataColumnId="Package\Export DB data to a CSV flat file destination\UK Built Up area by Population (CSV File).Inputs[Flat File Destination Input].ExternalColumns[Rank]"
+                      lineageId="Package\Export DB data to a CSV flat file destination\Sort by &quot;Population&quot; Desc.Outputs[Sort Output].Columns[Rank]" />
+                    <inputColumn
+                      refId="Package\Export DB data to a CSV flat file destination\UK Built Up area by Population (CSV File).Inputs[Flat File Destination Input].Columns[Population]"
+                      cachedDataType="i8"
+                      cachedName="Population"
+                      cachedSortKeyPosition="-1"
+                      externalMetadataColumnId="Package\Export DB data to a CSV flat file destination\UK Built Up area by Population (CSV File).Inputs[Flat File Destination Input].ExternalColumns[Population]"
+                      lineageId="Package\Export DB data to a CSV flat file destination\Sort by &quot;Population&quot; Desc.Outputs[Sort Output].Columns[Population]" />
+                    <inputColumn
+                      refId="Package\Export DB data to a CSV flat file destination\UK Built Up area by Population (CSV File).Inputs[Flat File Destination Input].Columns[AreaName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="AreaName"
+                      externalMetadataColumnId="Package\Export DB data to a CSV flat file destination\UK Built Up area by Population (CSV File).Inputs[Flat File Destination Input].ExternalColumns[AreaName]"
+                      lineageId="Package\Export DB data to a CSV flat file destination\Sort by &quot;Population&quot; Desc.Outputs[Sort Output].Columns[AreaName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Export DB data to a CSV flat file destination\UK Built Up area by Population (CSV File).Inputs[Flat File Destination Input].ExternalColumns[Rank]"
+                      dataType="i4"
+                      name="Rank" />
+                    <externalMetadataColumn
+                      refId="Package\Export DB data to a CSV flat file destination\UK Built Up area by Population (CSV File).Inputs[Flat File Destination Input].ExternalColumns[Population]"
+                      dataType="i8"
+                      name="Population" />
+                    <externalMetadataColumn
+                      refId="Package\Export DB data to a CSV flat file destination\UK Built Up area by Population (CSV File).Inputs[Flat File Destination Input].ExternalColumns[AreaName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="AreaName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Export DB data to a CSV flat file destination.Paths[OLE DB Source Output]"
+              endId="Package\Export DB data to a CSV flat file destination\Sort by &quot;Population&quot; Desc.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection).Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Export DB data to a CSV flat file destination.Paths[Sort Output]"
+              endId="Package\Export DB data to a CSV flat file destination\UK Built Up area by Population (CSV File).Inputs[Flat File Destination Input]"
+              name="Sort Output"
+              startId="Package\Export DB data to a CSV flat file destination\Sort by &quot;Population&quot; Desc.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Load CSV data to SQL Table"
       DTS:CreationName="Microsoft.Pipeline"
@@ -432,13 +862,13 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
           Size="236,48"
           Id="Package\Load CSV data to SQL Table"
           TopLeft="307,312" />
         <NodeLayout
-          Size="241,42"
+          Size="240.8,41.6"
           Id="Package\Truncate TGT table before loading"
           TopLeft="304,226" />
         <EdgeLayout
@@ -446,7 +876,7 @@
           TopLeft="424.75,268">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,44"
               Start="0,0"
               End="0,36.5">
@@ -464,11 +894,33 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
-          Text="SSIS Wise Owl: &#xD;&#xA;Use a data flow task to export CSV records of UK built-up areas to a SQL Server table"
+          Text="SSIS Wise Owl: &#xA;Use a data flow task to import CSV records of UK built-up areas to a SQL Server table"
           ParentId="Package"
-          Size="572,76"
+          Size="636.8,58.4"
           Id="adfc3db6-b7ba-412d-81aa-14261b437877"
           TopLeft="116,95">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="14.25"
+              Color="#FFFFFFFF"
+              Weight="Bold">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <NodeLayout
+          Size="284,41.6"
+          Id="Package\Export DB data to a CSV flat file destination"
+          TopLeft="310.57142863225,529.176469076051" />
+        <AnnotationLayout
+          Text="SSIS Wise Owl: &#xA;Use a data flow task to export UK built-up areas data from a SQL Server table to a CSV and TXT file"
+          ParentId="Package"
+          Size="736,58.4"
+          Id="88740caa-4085-4c13-aea9-0c94b7dd304d"
+          TopLeft="116,420">
           <AnnotationLayout.FontInfo>
             <mssge:FontInfo
               Family="Tahoma"
@@ -490,11 +942,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="205,42"
+          Size="204.8,41.6"
           Id="Package\Load CSV data to SQL Table\UK Built Up Area CSV Data"
           TopLeft="215,210" />
         <NodeLayout
-          Size="244,42"
+          Size="244,41.6"
           Id="Package\Load CSV data to SQL Table\SQL DEV_SSIS_DB UKBuiltUpAreas"
           TopLeft="213,305" />
         <EdgeLayout
@@ -536,6 +988,83 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Load CSV data to SQL Table\SQL DEV_SSIS_DB UKBuiltUpAreas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Export DB data to a CSV flat file destination">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="271.2,41.6"
+          Id="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection)"
+          TopLeft="186.428574603431,83.3529423454641" />
+        <NodeLayout
+          Size="272.8,41.6"
+          Id="Package\Export DB data to a CSV flat file destination\UK Built Up area by Population (CSV File)"
+          TopLeft="182.857145971182,270.705886149489" />
+        <NodeLayout
+          Size="199.2,41.6"
+          Id="Package\Export DB data to a CSV flat file destination\Sort by &quot;Population&quot; Desc"
+          TopLeft="225.714289558177,172.058825942472" />
+        <EdgeLayout
+          Id="Package\Export DB data to a CSV flat file destination.Paths[OLE DB Source Output]"
+          TopLeft="323.671432080804,124.952942345464">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,47.1058835970077"
+              Start="0,0"
+              End="0,39.6058835970077">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.6058835970077" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Export DB data to a CSV flat file destination.Paths[Sort Output]"
+          TopLeft="322.285717764679,213.658825942472">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,57.0470602070172"
+              Start="0,0"
+              End="0,49.5470602070172">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5470602070172" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Export DB data to a CSV flat file destination\UK Built Up Area (Source DB connection)">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
