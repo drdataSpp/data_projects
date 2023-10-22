@@ -43,3 +43,17 @@ https://www.wiseowl.co.uk/integration-services/exercises/standard/data-conversio
 <img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX3_SQL_TGT_TBL.png" width="50%" height="50%">
 
 ***
+
+## Exercises Four: Use data conversion and union all transforms to combine two data sources (Excel and CSV) into a single table
+
+**Exercises Link**:
+https://www.wiseowl.co.uk/integration-services/exercises/standard/data-conversion-transforms/4764/
+
+### Solution screenshot
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX4_Control_Flow.png" width="50%" height="50%">
+
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX4_Data_Flow.png" width="50%" height="50%">
+
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX4_SQL_TGT_TBL.png" width="50%" height="50%">
+
+***
