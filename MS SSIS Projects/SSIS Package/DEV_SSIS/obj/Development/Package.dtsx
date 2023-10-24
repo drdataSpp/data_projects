@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{B00C9FCB-63DC-4833-B919-BA23A3B8B1FF}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{94E1D17A-5B84-4B5D-B317-431DC2AF4A8D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -181,9 +181,539 @@
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Whale CSV]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{97D4B50D-B471-4B56-AC3A-AF58747ED004}"
+      DTS:ObjectName="Whale CSV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="5129"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\001_Data\data_projects\data_projects\MS SSIS Projects\Source Data\Whales with porpoises.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Seen by"
+              DTS:DTSID="{62A3BDDE-DAB5-4951-8643-8AE64A258C48}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date"
+              DTS:DTSID="{300657FC-F883-46ED-B2E5-8D54761BC32E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Location"
+              DTS:DTSID="{5FFA72CE-917A-4C00-B518-D4D9E70F1EF8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="No"
+              DTS:DTSID="{C8AC8C1C-70AE-40D4-9F6E-A648763A80EF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Species"
+              DTS:DTSID="{39042368-1721-4247-8D48-E4590F792BA9}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
-  <DTS:Variables />
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F83E13F9-CD6A-4CAA-9DB3-A7FEE7A8ADC0}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NumberHarbourPorpoises">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A39E4717-8212-4744-9F4A-1B1E71FC0E15}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NumberOtherSightings">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Conditional Split (Whale counting)"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{ecb849b5-d46e-48bb-b9fd-09aca7d89951}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Conditional Split (Whale counting)"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Conditional Split (Whale counting)\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Conditional Split (Whale counting)\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Conditional Split (Whale counting)\Conditional Split.Inputs[Conditional Split Input].Columns[Species]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Species"
+                      lineageId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].Columns[Species]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Conditional Split (Whale counting)\Conditional Split.Outputs[Harbour_Porpoises]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Harbour_Porpoises"
+                  synchronousInputId="Package\Conditional Split (Whale counting)\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].Columns[Species]} == "Harbour Porpoise"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">Species == "Harbour Porpoise"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Conditional Split (Whale counting)\Conditional Split.Outputs[Non_Harbour_Porpoises]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Non_Harbour_Porpoises"
+                  synchronousInputId="Package\Conditional Split (Whale counting)\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].Columns[Species]} != "Harbour Porpoise"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">Species != "Harbour Porpoise"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Conditional Split (Whale counting)\Conditional Split.Outputs[Bad_Rows]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Bad_Rows"
+                  synchronousInputId="Package\Conditional Split (Whale counting)\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Conditional Split (Whale counting)\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Conditional Split (Whale counting)\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conditional Split (Whale counting)\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Conditional Split (Whale counting)\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Whale counting)\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Conditional Split (Whale counting)\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Conditional Split (Whale counting)\Multicast"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Multicast">
+              <inputs>
+                <input
+                  refId="Package\Conditional Split (Whale counting)\Multicast.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Conditional Split (Whale counting)\Multicast.Outputs[Multicast Output 1]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\Conditional Split (Whale counting)\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Conditional Split (Whale counting)\NumberHarbourPorpoises"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="NumberHarbourPorpoises">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::NumberHarbourPorpoises</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Conditional Split (Whale counting)\NumberHarbourPorpoises.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Conditional Split (Whale counting)\NumberHarbourPorpoises.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Conditional Split (Whale counting)\NumberHarbourPorpoises.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Conditional Split (Whale counting)\NumberOtherSightings"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="NumberOtherSightings">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::NumberOtherSightings</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Conditional Split (Whale counting)\NumberOtherSightings.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Conditional Split (Whale counting)\NumberOtherSightings.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Conditional Split (Whale counting)\NumberOtherSightings.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Conditional Split (Whale counting)\Whale data"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="5129"
+              name="Whale data"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Conditional Split (Whale counting)\Whale data.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Whale CSV]"
+                  connectionManagerRefId="Package.ConnectionManagers[Whale CSV]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].Columns[Seen by]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].ExternalColumns[Seen by]"
+                      length="50"
+                      lineageId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].Columns[Seen by]"
+                      name="Seen by"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].Columns[Date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                      length="50"
+                      lineageId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].Columns[Location]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].ExternalColumns[Location]"
+                      length="50"
+                      lineageId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].Columns[Location]"
+                      name="Location"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].Columns[No]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].ExternalColumns[No]"
+                      length="50"
+                      lineageId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].Columns[No]"
+                      name="No"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].Columns[Species]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].ExternalColumns[Species]"
+                      length="50"
+                      lineageId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].Columns[Species]"
+                      name="Species"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].ExternalColumns[Seen by]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Seen by" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].ExternalColumns[Location]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Location" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].ExternalColumns[No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="No" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output].ExternalColumns[Species]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Species" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Conditional Split (Whale counting).Paths[Bad_Rows]"
+              endId="Package\Conditional Split (Whale counting)\Multicast.Inputs[Multicast Input 1]"
+              name="Bad_Rows"
+              startId="Package\Conditional Split (Whale counting)\Conditional Split.Outputs[Bad_Rows]" />
+            <path
+              refId="Package\Conditional Split (Whale counting).Paths[Flat File Source Output]"
+              endId="Package\Conditional Split (Whale counting)\Conditional Split.Inputs[Conditional Split Input]"
+              name="Flat File Source Output"
+              startId="Package\Conditional Split (Whale counting)\Whale data.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Conditional Split (Whale counting).Paths[Harbour_Porpoises]"
+              endId="Package\Conditional Split (Whale counting)\NumberHarbourPorpoises.Inputs[Row Count Input 1]"
+              name="Harbour_Porpoises"
+              startId="Package\Conditional Split (Whale counting)\Conditional Split.Outputs[Harbour_Porpoises]" />
+            <path
+              refId="Package\Conditional Split (Whale counting).Paths[Non_Harbour_Porpoises]"
+              endId="Package\Conditional Split (Whale counting)\NumberOtherSightings.Inputs[Row Count Input 1]"
+              name="Non_Harbour_Porpoises"
+              startId="Package\Conditional Split (Whale counting)\Conditional Split.Outputs[Non_Harbour_Porpoises]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Export DB data to a CSV flat file destination"
       DTS:CreationName="Microsoft.Pipeline"
@@ -575,6 +1105,7 @@
       DTS:refId="Package\Import Excel &amp; CSV data to SQL Server table"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{c1195ddf-d12b-4400-9ec7-5cafcb8dd0de}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -2140,6 +2671,10 @@
           Id="Package\Export DB data to a CSV flat file destination"
           TopLeft="307.71428572645,489.411762636013" />
         <NodeLayout
+          Size="290,42"
+          Id="Package\Import Excel &amp; CSV data to SQL Server table"
+          TopLeft="305.5714285471,897.599994712717" />
+        <NodeLayout
           Size="332,42"
           Id="Package\Import Excel text data to SQL Server varchar columns"
           TopLeft="305.5714285471,713.188231894384" />
@@ -2227,16 +2762,34 @@
             </mssge:FontInfo>
           </AnnotationLayout.FontInfo>
         </AnnotationLayout>
-        <NodeLayout
-          Size="290,42"
-          Id="Package\Import Excel &amp; CSV data to SQL Server table"
-          TopLeft="305.5714285471,897.599994712717" />
         <AnnotationLayout
           Text="SSIS Wise Owl: &#xA;Use data conversion and union all transforms to combine two data sources (Excel and CSV) into a single table"
           ParentId="Package"
           Size="813,58"
           Id="0d7b6e7f-f515-49c6-a602-267268d411a9"
           TopLeft="116,815.188231894384">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="14.25"
+              Color="#FFFFFFFF"
+              Weight="Bold">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <NodeLayout
+          Size="239,42"
+          Id="Package\Conditional Split (Whale counting)"
+          TopLeft="354.5714285471,1082.01175753105" />
+        <AnnotationLayout
+          Text="SSIS Wise Owl: &#xA;Conditional split transforms exercise: Count the number of types of marine mammal in a CSV file, using a conditional split to differentiate"
+          ParentId="Package"
+          Size="1012,58"
+          Id="1cb49187-b17c-414c-9ae0-513fdb256679"
+          TopLeft="115,1000.59999471272">
           <AnnotationLayout.FontInfo>
             <mssge:FontInfo
               Family="Tahoma"
@@ -2256,7 +2809,7 @@
     design-time-name="Package\Export DB data to a CSV flat file destination">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="273,42"
           Id="Package\Export DB data to a CSV flat file destination\UK Built Up area by Population (CSV File)"
@@ -2288,7 +2841,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2310,7 +2865,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2330,36 +2887,60 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Import Excel text data to SQL Server varchar columns">
+    design-time-name="Package\Import Excel &amp; CSV data to SQL Server table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="213.6,41.6"
-          Id="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers)"
-          TopLeft="227.142861011077,117.764707533959" />
+          Size="324,42"
+          Id="Package\Import Excel &amp; CSV data to SQL Server table\Data Conversion (Converting into Unicode Columns)"
+          TopLeft="526,183" />
         <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB"
-          TopLeft="253.571432889725,300.529415979518" />
+          Size="171,42"
+          Id="Package\Import Excel &amp; CSV data to SQL Server table\OLE DB Destination"
+          TopLeft="384,546" />
         <NodeLayout
-          Size="256.8,41.6"
-          Id="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar)"
-          TopLeft="205.714289217579,208.764708810199" />
+          Size="139,42"
+          Id="Package\Import Excel &amp; CSV data to SQL Server table\Excel Source"
+          TopLeft="267,82" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Import Excel &amp; CSV data to SQL Server table\Flat File Source"
+          TopLeft="437,80" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Import Excel &amp; CSV data to SQL Server table\Union All"
+          TopLeft="387,325" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Import Excel &amp; CSV data to SQL Server table\Data Conversion"
+          TopLeft="378,439" />
         <EdgeLayout
-          Id="Package\Import Excel text data to SQL Server varchar columns.Paths[Excel Source Output]"
-          TopLeft="334.028575114328,159.364707533959">
+          Id="Package\Import Excel &amp; CSV data to SQL Server table.Paths[Union All Output 1]"
+          TopLeft="447.5,367">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,49.4000012762407"
+              EndConnector="8.5,72"
               Start="0,0"
-              End="0,41.9000012762407">
+              End="8.5,64.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.9000012762407" />
+                    End="0,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32"
+                    Point2="0,36"
+                    Point3="4,36" />
+                  <mssgle:LineSegment
+                    End="4.5,36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.5,36"
+                    Point2="8.5,36"
+                    Point3="8.5,40" />
+                  <mssgle:LineSegment
+                    End="8.5,64.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2368,6 +2949,188 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Excel &amp; CSV data to SQL Server table.Paths[Flat File Source Output]"
+          TopLeft="512.5,122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="175.5,61"
+              Start="0,0"
+              End="175.5,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.5"
+                    Point2="0,30.5"
+                    Point3="4,30.5" />
+                  <mssgle:LineSegment
+                    End="171.5,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="171.5,30.5"
+                    Point2="175.5,30.5"
+                    Point3="175.5,34.5" />
+                  <mssgle:LineSegment
+                    End="175.5,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Excel &amp; CSV data to SQL Server table.Paths[Excel Source Output]"
+          TopLeft="336.5,124">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="92.1666666666667,201"
+              Start="0,0"
+              End="92.1666666666667,193.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,115.026101141925" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,115.026101141925"
+                    Point2="0,119.026101141925"
+                    Point3="4,119.026101141925" />
+                  <mssgle:LineSegment
+                    End="88.1666666666667,119.026101141925" />
+                  <mssgle:CubicBezierSegment
+                    Point1="88.1666666666667,119.026101141925"
+                    Point2="92.1666666666667,119.026101141925"
+                    Point3="92.1666666666667,123.026101141925" />
+                  <mssgle:LineSegment
+                    End="92.1666666666667,193.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Excel &amp; CSV data to SQL Server table.Paths[Data Conversion Output1]"
+          TopLeft="456,481">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="13.5,65"
+              Start="0,0"
+              End="13.5,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.5"
+                    Point2="0,32.5"
+                    Point3="4,32.5" />
+                  <mssgle:LineSegment
+                    End="9.5,32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9.5,32.5"
+                    Point2="13.5,32.5"
+                    Point3="13.5,36.5" />
+                  <mssgle:LineSegment
+                    End="13.5,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Excel &amp; CSV data to SQL Server table.Paths[Data Conversion Output]"
+          TopLeft="688,225">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-221.666666666667,100"
+              Start="0,0"
+              End="-221.666666666667,92.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.2169657422512" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,55.2169657422512"
+                    Point2="0,59.2169657422512"
+                    Point3="-4,59.2169657422512" />
+                  <mssgle:LineSegment
+                    End="-217.666666666667,59.2169657422512" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-217.666666666667,59.2169657422512"
+                    Point2="-221.666666666667,59.2169657422512"
+                    Point3="-221.666666666667,63.2169657422512" />
+                  <mssgle:LineSegment
+                    End="-221.666666666667,92.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Excel &amp; CSV data to SQL Server table\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Excel &amp; CSV data to SQL Server table\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Import Excel text data to SQL Server varchar columns">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Import Excel text data to SQL Server varchar columns\SQL Server TGT DB"
+          TopLeft="253.571432889725,300.529415979518" />
+        <NodeLayout
+          Size="213.6,41.6"
+          Id="Package\Import Excel text data to SQL Server varchar columns\Excel Source (Million Sellers)"
+          TopLeft="227.142861011077,117.764707533959" />
+        <NodeLayout
+          Size="256.8,41.6"
+          Id="Package\Import Excel text data to SQL Server varchar columns\Data Conversion (Unicode to Varchar)"
+          TopLeft="205.714289217579,208.764708810199" />
         <EdgeLayout
           Id="Package\Import Excel text data to SQL Server varchar columns.Paths[Data Conversion Output]"
           TopLeft="336.442861053652,250.364708810199">
@@ -2387,7 +3150,33 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Excel text data to SQL Server varchar columns.Paths[Excel Source Output]"
+          TopLeft="334.028575114328,159.364707533959">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,49.4000012762407"
+              Start="0,0"
+              End="0,41.9000012762407">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.9000012762407" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2485,52 +3274,44 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Import Excel &amp; CSV data to SQL Server table">
+    design-time-name="Package\Conditional Split (Whale counting)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="139,42"
-          Id="Package\Import Excel &amp; CSV data to SQL Server table\Excel Source"
-          TopLeft="267,82" />
+          Size="132,42"
+          Id="Package\Conditional Split (Whale counting)\Whale data"
+          TopLeft="381,74.1666666666667" />
         <NodeLayout
-          Size="151,42"
-          Id="Package\Import Excel &amp; CSV data to SQL Server table\Flat File Source"
-          TopLeft="437,80" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Import Excel &amp; CSV data to SQL Server table\OLE DB Destination"
-          TopLeft="384,546" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Import Excel &amp; CSV data to SQL Server table\Union All"
-          TopLeft="387,325" />
+          Size="155,42"
+          Id="Package\Conditional Split (Whale counting)\Conditional Split"
+          TopLeft="374.166666666667,196.666666666667" />
         <EdgeLayout
-          Id="Package\Import Excel &amp; CSV data to SQL Server table.Paths[Excel Source Output]"
-          TopLeft="336.5,124">
+          Id="Package\Conditional Split (Whale counting).Paths[Flat File Source Output]"
+          TopLeft="447,116.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="92.1666666666667,201"
+              EndConnector="-19.8333333333333,80.5"
               Start="0,0"
-              End="92.1666666666667,193.5">
+              End="-19.8333333333333,73">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,115.026101141925" />
+                    End="0,43.8065134099617" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,115.026101141925"
-                    Point2="0,119.026101141925"
-                    Point3="4,119.026101141925" />
+                    Point1="0,43.8065134099617"
+                    Point2="0,47.8065134099617"
+                    Point3="-4,47.8065134099617" />
                   <mssgle:LineSegment
-                    End="88.1666666666667,119.026101141925" />
+                    End="-15.8333333333333,47.8065134099617" />
                   <mssgle:CubicBezierSegment
-                    Point1="88.1666666666667,119.026101141925"
-                    Point2="92.1666666666667,119.026101141925"
-                    Point3="92.1666666666667,123.026101141925" />
+                    Point1="-15.8333333333333,47.8065134099617"
+                    Point2="-19.8333333333333,47.8065134099617"
+                    Point3="-19.8333333333333,51.8065134099617" />
                   <mssgle:LineSegment
-                    End="92.1666666666667,193.5" />
+                    End="-19.8333333333333,73" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2540,177 +3321,127 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="324,42"
-          Id="Package\Import Excel &amp; CSV data to SQL Server table\Data Conversion (Converting into Unicode Columns)"
-          TopLeft="526,183" />
+          Size="199,42"
+          Id="Package\Conditional Split (Whale counting)\NumberHarbourPorpoises"
+          TopLeft="33.3333333333334,348.333333333333" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Conditional Split (Whale counting)\NumberOtherSightings"
+          TopLeft="646.666666666667,360.833333333333" />
         <EdgeLayout
-          Id="Package\Import Excel &amp; CSV data to SQL Server table.Paths[Flat File Source Output]"
-          TopLeft="512.5,122">
+          Id="Package\Conditional Split (Whale counting).Paths[Harbour_Porpoises]"
+          TopLeft="427.166666666667,238.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="175.5,61"
+              EndConnector="-294.333333333333,109.666666666667"
               Start="0,0"
-              End="175.5,53.5">
+              End="-294.333333333333,102.166666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.5" />
+                    End="0,40.5389527458493" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.5"
-                    Point2="0,30.5"
-                    Point3="4,30.5" />
+                    Point1="0,40.5389527458493"
+                    Point2="0,44.5389527458493"
+                    Point3="-4,44.5389527458493" />
                   <mssgle:LineSegment
-                    End="171.5,30.5" />
+                    End="-290.333333333333,44.5389527458493" />
                   <mssgle:CubicBezierSegment
-                    Point1="171.5,30.5"
-                    Point2="175.5,30.5"
-                    Point3="175.5,34.5" />
+                    Point1="-290.333333333333,44.5389527458493"
+                    Point2="-294.333333333333,44.5389527458493"
+                    Point3="-294.333333333333,48.5389527458493" />
                   <mssgle:LineSegment
-                    End="175.5,53.5" />
+                    End="-294.333333333333,102.166666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-198.157897135417,49.5389527458493,101.9824609375,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import Excel &amp; CSV data to SQL Server table.Paths[Data Conversion Output]"
-          TopLeft="688,225">
+          Id="Package\Conditional Split (Whale counting).Paths[Non_Harbour_Porpoises]"
+          TopLeft="476.166666666667,238.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="-221.666666666667,100"
+              EndConnector="263.5,122.166666666667"
               Start="0,0"
-              End="-221.666666666667,92.5">
+              End="263.5,114.666666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,55.2169657422512" />
+                    End="0,45.6155810983397" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,55.2169657422512"
-                    Point2="0,59.2169657422512"
-                    Point3="-4,59.2169657422512" />
+                    Point1="0,45.6155810983397"
+                    Point2="0,49.6155810983397"
+                    Point3="4,49.6155810983397" />
                   <mssgle:LineSegment
-                    End="-217.666666666667,59.2169657422512" />
+                    End="259.5,49.6155810983397" />
                   <mssgle:CubicBezierSegment
-                    Point1="-217.666666666667,59.2169657422512"
-                    Point2="-221.666666666667,59.2169657422512"
-                    Point3="-221.666666666667,63.2169657422512" />
+                    Point1="259.5,49.6155810983397"
+                    Point2="263.5,49.6155810983397"
+                    Point3="263.5,53.6155810983397" />
                   <mssgle:LineSegment
-                    End="-221.666666666667,92.5" />
+                    End="263.5,114.666666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="78.057421875,54.6155810983397,107.38515625,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="156,42"
-          Id="Package\Import Excel &amp; CSV data to SQL Server table\Data Conversion"
-          TopLeft="378,439" />
+          Size="120,42"
+          Id="Package\Conditional Split (Whale counting)\Multicast"
+          TopLeft="754.166666666667,119.166666666667" />
         <EdgeLayout
-          Id="Package\Import Excel &amp; CSV data to SQL Server table.Paths[Union All Output 1]"
-          TopLeft="447.5,367">
+          Id="Package\Conditional Split (Whale counting).Paths[Bad_Rows]"
+          TopLeft="476.166666666667,196.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="8.5,72"
+              EndConnector="338,-35.5"
               Start="0,0"
-              End="8.5,64.5">
+              End="338,-28">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32" />
+                    End="0,-10.4176245210728" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,32"
-                    Point2="0,36"
-                    Point3="4,36" />
+                    Point1="0,-10.4176245210728"
+                    Point2="0,-14.4176245210728"
+                    Point3="4,-14.4176245210728" />
                   <mssgle:LineSegment
-                    End="4.5,36" />
+                    End="334,-14.4176245210728" />
                   <mssgle:CubicBezierSegment
-                    Point1="4.5,36"
-                    Point2="8.5,36"
-                    Point3="8.5,40" />
+                    Point1="334,-14.4176245210728"
+                    Point2="338,-14.4176245210728"
+                    Point3="338,-18.4176245210728" />
                   <mssgle:LineSegment
-                    End="8.5,64.5" />
+                    End="338,-28" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Excel &amp; CSV data to SQL Server table.Paths[Data Conversion Output1]"
-          TopLeft="456,481">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="13.5,65"
-              Start="0,0"
-              End="13.5,57.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.5"
-                    Point2="0,32.5"
-                    Point3="4,32.5" />
-                  <mssgle:LineSegment
-                    End="9.5,32.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="9.5,32.5"
-                    Point2="13.5,32.5"
-                    Point3="13.5,36.5" />
-                  <mssgle:LineSegment
-                    End="13.5,57.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="136.76876953125,-9.4176245210728,64.4624609375,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import Excel &amp; CSV data to SQL Server table\Excel Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import Excel &amp; CSV data to SQL Server table\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
