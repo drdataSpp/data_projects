@@ -57,3 +57,15 @@ https://www.wiseowl.co.uk/integration-services/exercises/standard/data-conversio
 <img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX4_SQL_TGT_TBL.png" width="50%" height="50%">
 
 ***
+
+## Exercises Five: Conditional split transforms - Count the number of types of marine mammals in a CSV file
+
+**Exercises Link**:
+https://www.wiseowl.co.uk/integration-services/exercises/standard/conditional-split-transforms/4765/
+
+### Solution screenshot
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX5_Control_Flow.png" width="50%" height="50%">
+
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX5_Data_Flow.png" width="50%" height="50%">
+
+***
