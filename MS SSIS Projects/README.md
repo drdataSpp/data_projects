@@ -69,3 +69,19 @@ https://www.wiseowl.co.uk/integration-services/exercises/standard/conditional-sp
 <img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX5_Data_Flow.png" width="50%" height="50%">
 
 ***
+
+## Exercises Six: Conditional split transforms - Use a conditional split and derived column transforms to divide rollercoasters by scariness
+
+**Exercises Link**:
+https://www.wiseowl.co.uk/integration-services/exercises/standard/conditional-split-transforms/4767/
+
+### Solution screenshot
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX6_Control_Flow.png" width="50%" height="50%">
+
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX6_Data_Flow.png" width="50%" height="50%">
+
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX6_BRE.png" width="50%" height="50%">
+
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX6_Output_CSV_file.png" width="50%" height="50%">
+
+***
