@@ -11,11 +11,112 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{94E1D17A-5B84-4B5D-B317-431DC2AF4A8D}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{0A65A76C-2D78-43F0-A492-1167948570D1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CC Kaggle Data]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{2BED1EDE-50A4-498B-ACC9-D0E89931F0F9}"
+      DTS:ObjectName="CC Kaggle Data">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="5129"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\001_Data\data_projects\data_projects\MS SSIS Projects\Source Data\credit_card_transaction_flow.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Customer ID"
+              DTS:DTSID="{7DCA9B4D-B9C5-4369-A070-E6974B653078}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{244DAF10-861D-4AE5-A2CC-EFB45072C2DC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Surname"
+              DTS:DTSID="{76C90852-858D-4C1B-8A1E-2BD85A864157}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{99DA9F3B-A518-40C2-8CE8-B90E8A02E9D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Birthdate"
+              DTS:DTSID="{6CC804D1-ABEF-4E22-BEFA-07A3C6DF55E3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Transaction Amount"
+              DTS:DTSID="{8F254BAE-CE78-4983-88C7-266BF650BF11}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date"
+              DTS:DTSID="{0FD34CBB-4F79-436C-BBDE-C9062AED65E0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Merchant Name"
+              DTS:DTSID="{4DB054CC-D7E4-4557-82F5-9E19545A5C6C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Category"
+              DTS:DTSID="{075D274E-97B4-4A8E-AC94-81A400AFE7B1}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
       DTS:CreationName="EXCEL"
@@ -38,6 +139,107 @@
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
           DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\001_Data\data_projects\data_projects\MS SSIS Projects\Source Data\TV programs.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 2]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{C85C6679-0E5E-43D3-8B78-9EE4DB06CD6D}"
+      DTS:ObjectName="Excel Connection Manager 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\001_Data\data_projects\data_projects\MS SSIS Projects\Source Data\Life is a Rollercoaster.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager - RC_Scariness]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{0FFA2343-C574-4BEE-9D4C-EE6C278F423D}"
+      DTS:ObjectName="Flat File Connection Manager - RC_Scariness">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="5129"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\001_Data\data_projects\data_projects\MS SSIS Projects\Output Data\Rollercoaster_scariness.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Roller Coaster"
+              DTS:DTSID="{A19B6402-7AC8-49D6-8CB0-6C915FD6E7DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Amusement Park"
+              DTS:DTSID="{B802E6EE-025A-4A4D-A830-332AFE08BCC3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Type"
+              DTS:DTSID="{2CC8C469-257F-42FB-B944-D663BAD563C2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Design"
+              DTS:DTSID="{4EB9982B-A502-4715-BE0E-406FB3DB4292}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Status"
+              DTS:DTSID="{1D2136A1-C24C-48F3-BE01-B63C2DB2E6E5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Opened"
+              DTS:DTSID="{08F3BA5F-7FEB-40C8-B56C-5AB627A1DBAD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Speed ( mph )"
+              DTS:DTSID="{E8CA022D-377E-481E-9B32-BE66316385F0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="6"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Scariness"
+              DTS:DTSID="{8A5FEE6A-3CCF-4A76-BE72-E43D6C6E4B0B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -269,9 +471,1496 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
+      DTS:refId="Package\Conditional Split (Rollercoasters by Scariness)"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1c6a699f-1a78-42e8-a876-23c2b14a67c9}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Conditional Split (Rollercoasters by Scariness)"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Merging Source Data with Scariness Metric"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 1].Columns[Roller Coaster]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Roller Coaster"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Roller Coaster]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Roller Coaster]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 1].Columns[Amusement Park]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Amusement Park"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Amusement Park]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Amusement Park]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 1].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Type"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 1].Columns[Design]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Design"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Design]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Design]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 1].Columns[Status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Status"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Status]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Status]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 1].Columns[Opened]"
+                      cachedDataType="r8"
+                      cachedName="Opened"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Opened]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Opened]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 1].Columns[Speed ( mph )]"
+                      cachedDataType="r8"
+                      cachedName="Speed ( mph )"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Speed ( mph )]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Speed ( mph )]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 1].Columns[Scariness]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="Scariness"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to SCARY.Outputs[Derived Column Output].Columns[Scariness]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Scariness]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 2].Columns[Roller Coaster]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Roller Coaster"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Roller Coaster]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Roller Coaster]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 2].Columns[Amusement Park]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Amusement Park"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Amusement Park]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Amusement Park]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 2].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Type"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 2].Columns[Design]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Design"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Design]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Design]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 2].Columns[Status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Status"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Status]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Status]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 2].Columns[Opened]"
+                      cachedDataType="r8"
+                      cachedName="Opened"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Opened]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Opened]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 2].Columns[Speed ( mph )]"
+                      cachedDataType="r8"
+                      cachedName="Speed ( mph )"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Speed ( mph )]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Speed ( mph )]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 2].Columns[Scariness]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="Scariness"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to MEDIUM.Outputs[Derived Column Output].Columns[Scariness]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Scariness]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 3]"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 3].Columns[Roller Coaster]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Roller Coaster"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Roller Coaster]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Roller Coaster]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 3].Columns[Amusement Park]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Amusement Park"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Amusement Park]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Amusement Park]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 3].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Type"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 3].Columns[Design]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Design"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Design]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Design]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 3].Columns[Status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Status"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Status]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Status]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 3].Columns[Opened]"
+                      cachedDataType="r8"
+                      cachedName="Opened"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Opened]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Opened]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 3].Columns[Speed ( mph )]"
+                      cachedDataType="r8"
+                      cachedName="Speed ( mph )"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Speed ( mph )]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Speed ( mph )]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 3].Columns[Scariness]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Scariness"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to LOW.Outputs[Derived Column Output].Columns[Scariness]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Scariness]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 4]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 4">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Roller Coaster]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Roller Coaster]"
+                      name="Roller Coaster" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Amusement Park]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Amusement Park]"
+                      name="Amusement Park" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Type]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Type]"
+                      name="Type" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Design]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Design]"
+                      name="Design" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Status]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Status]"
+                      name="Status" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Opened]"
+                      dataType="r8"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Opened]"
+                      name="Opened" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Speed ( mph )]"
+                      dataType="r8"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Speed ( mph )]"
+                      name="Speed ( mph )" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Scariness]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Scariness]"
+                      name="Scariness" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Rollercoast Excel Source Data"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Coasters$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Roller Coaster]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].ExternalColumns[Roller Coaster]"
+                      length="255"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Roller Coaster]"
+                      name="Roller Coaster"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Amusement Park]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].ExternalColumns[Amusement Park]"
+                      length="255"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Amusement Park]"
+                      name="Amusement Park"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].ExternalColumns[Type]"
+                      length="255"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Type]"
+                      name="Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Design]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].ExternalColumns[Design]"
+                      length="255"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Design]"
+                      name="Design"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].ExternalColumns[Status]"
+                      length="255"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Status]"
+                      name="Status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Opened]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].ExternalColumns[Opened]"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Opened]"
+                      name="Opened"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Speed ( mph )]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].ExternalColumns[Speed ( mph )]"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Speed ( mph )]"
+                      name="Speed ( mph )"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].ExternalColumns[Roller Coaster]"
+                      dataType="wstr"
+                      length="255"
+                      name="Roller Coaster" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].ExternalColumns[Amusement Park]"
+                      dataType="wstr"
+                      length="255"
+                      name="Amusement Park" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].ExternalColumns[Type]"
+                      dataType="wstr"
+                      length="255"
+                      name="Type" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].ExternalColumns[Design]"
+                      dataType="wstr"
+                      length="255"
+                      name="Design" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].ExternalColumns[Status]"
+                      dataType="wstr"
+                      length="255"
+                      name="Status" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].ExternalColumns[Opened]"
+                      dataType="r8"
+                      name="Opened" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].ExternalColumns[Speed ( mph )]"
+                      dataType="r8"
+                      name="Speed ( mph )" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Error Output].Columns[Roller Coaster]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Error Output].Columns[Roller Coaster]"
+                      name="Roller Coaster" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Error Output].Columns[Amusement Park]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Error Output].Columns[Amusement Park]"
+                      name="Amusement Park" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Error Output].Columns[Type]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Error Output].Columns[Type]"
+                      name="Type" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Error Output].Columns[Design]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Error Output].Columns[Design]"
+                      name="Design" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Error Output].Columns[Status]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Error Output].Columns[Status]"
+                      name="Status" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Error Output].Columns[Opened]"
+                      dataType="r8"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Error Output].Columns[Opened]"
+                      name="Opened" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Error Output].Columns[Speed ( mph )]"
+                      dataType="r8"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Error Output].Columns[Speed ( mph )]"
+                      name="Speed ( mph )" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Scariness category"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category.Inputs[Conditional Split Input].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Type"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Type]" />
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category.Inputs[Conditional Split Input].Columns[Design]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Design"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Design]" />
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category.Inputs[Conditional Split Input].Columns[Opened]"
+                      cachedDataType="r8"
+                      cachedName="Opened"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Opened]" />
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category.Inputs[Conditional Split Input].Columns[Speed ( mph )]"
+                      cachedDataType="r8"
+                      cachedName="Speed ( mph )"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Speed ( mph )]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category.Outputs[VERY_SCARY]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="VERY_SCARY"
+                  synchronousInputId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Speed ( mph )]} &gt; 40 &amp;&amp; #{Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Type]} == "Wood"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">[Speed ( mph )] &gt; 40 &amp;&amp; Type == "Wood"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category.Outputs[QUITE_SCARY]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="QUITE_SCARY"
+                  synchronousInputId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Opened]} &lt; 1990 || #{Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output].Columns[Design]} != "Sit Down"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">Opened &lt; 1990 || Design != "Sit Down"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category.Outputs[NOT_SCARY]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="NOT_SCARY"
+                  synchronousInputId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to LOW"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Set Scariness to LOW"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to LOW.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to LOW.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to LOW.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to LOW.Outputs[Derived Column Output].Columns[Scariness]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to LOW.Outputs[Derived Column Output].Columns[Scariness]"
+                      name="Scariness"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"LOW"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"LOW"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to LOW.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to LOW.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to LOW.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to LOW.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to LOW.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to LOW.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to MEDIUM"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Set Scariness to MEDIUM"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to MEDIUM.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to MEDIUM.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to MEDIUM.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to MEDIUM.Outputs[Derived Column Output].Columns[Scariness]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="6"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to MEDIUM.Outputs[Derived Column Output].Columns[Scariness]"
+                      name="Scariness"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"MEDIUM"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"MEDIUM"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to MEDIUM.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to MEDIUM.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to MEDIUM.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to MEDIUM.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to MEDIUM.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to MEDIUM.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to SCARY"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Set Scariness to SCARY"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to SCARY.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to SCARY.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to SCARY.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to SCARY.Outputs[Derived Column Output].Columns[Scariness]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="5"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to SCARY.Outputs[Derived Column Output].Columns[Scariness]"
+                      name="Scariness"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"SCARY"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"SCARY"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to SCARY.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to SCARY.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to SCARY.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to SCARY.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to SCARY.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to SCARY.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort by Roller Coaster Name Ascending Order"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Inputs[Sort Input].Columns[Roller Coaster]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Roller Coaster"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Roller Coaster]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Inputs[Sort Input].Columns[Amusement Park]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Amusement Park"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Amusement Park]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Inputs[Sort Input].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Type"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Type]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Inputs[Sort Input].Columns[Design]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Design"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Design]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Inputs[Sort Input].Columns[Status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Status"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Status]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Inputs[Sort Input].Columns[Opened]"
+                      cachedDataType="r8"
+                      cachedName="Opened"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Opened]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Inputs[Sort Input].Columns[Speed ( mph )]"
+                      cachedDataType="r8"
+                      cachedName="Speed ( mph )"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Speed ( mph )]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Inputs[Sort Input].Columns[Scariness]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="Scariness"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Scariness]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Roller Coaster]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Roller Coaster]"
+                      name="Roller Coaster"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Roller Coaster]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Amusement Park]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Amusement Park]"
+                      name="Amusement Park">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Amusement Park]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Type]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Type]"
+                      name="Type">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Type]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Design]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Design]"
+                      name="Design">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Design]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Status]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Status]"
+                      name="Status">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Status]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Opened]"
+                      dataType="r8"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Opened]"
+                      name="Opened">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Opened]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Speed ( mph )]"
+                      dataType="r8"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Speed ( mph )]"
+                      name="Speed ( mph )">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Speed ( mph )]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Scariness]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Scariness]"
+                      name="Scariness">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1].Columns[Scariness]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="5129"
+              name="Store Roller Coaster by Scariness - CSV File"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager - RC_Scariness]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager - RC_Scariness]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].Columns[Roller Coaster]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Roller Coaster"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].ExternalColumns[Roller Coaster]"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Roller Coaster]" />
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].Columns[Amusement Park]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Amusement Park"
+                      externalMetadataColumnId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].ExternalColumns[Amusement Park]"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Amusement Park]" />
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Type"
+                      externalMetadataColumnId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].ExternalColumns[Type]"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Type]" />
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].Columns[Design]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Design"
+                      externalMetadataColumnId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].ExternalColumns[Design]"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Design]" />
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].Columns[Status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Status"
+                      externalMetadataColumnId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].ExternalColumns[Status]"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Status]" />
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].Columns[Opened]"
+                      cachedDataType="r8"
+                      cachedName="Opened"
+                      externalMetadataColumnId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].ExternalColumns[Opened]"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Opened]" />
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].Columns[Speed ( mph )]"
+                      cachedDataType="r8"
+                      cachedName="Speed ( mph )"
+                      externalMetadataColumnId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].ExternalColumns[Speed ( mph )]"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Speed ( mph )]" />
+                    <inputColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].Columns[Scariness]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="Scariness"
+                      externalMetadataColumnId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].ExternalColumns[Scariness]"
+                      lineageId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output].Columns[Scariness]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].ExternalColumns[Roller Coaster]"
+                      dataType="wstr"
+                      length="255"
+                      name="Roller Coaster" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].ExternalColumns[Amusement Park]"
+                      dataType="wstr"
+                      length="255"
+                      name="Amusement Park" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].ExternalColumns[Type]"
+                      dataType="wstr"
+                      length="255"
+                      name="Type" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].ExternalColumns[Design]"
+                      dataType="wstr"
+                      length="255"
+                      name="Design" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].ExternalColumns[Status]"
+                      dataType="wstr"
+                      length="255"
+                      name="Status" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].ExternalColumns[Opened]"
+                      dataType="r8"
+                      name="Opened" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].ExternalColumns[Speed ( mph )]"
+                      dataType="r8"
+                      name="Speed ( mph )" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input].ExternalColumns[Scariness]"
+                      dataType="wstr"
+                      length="6"
+                      name="Scariness" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Conditional Split (Rollercoasters by Scariness).Paths[Derived Column Output]"
+              endId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 1]"
+              name="Derived Column Output"
+              startId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to SCARY.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Conditional Split (Rollercoasters by Scariness).Paths[Derived Column Output1]"
+              endId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to MEDIUM.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Conditional Split (Rollercoasters by Scariness).Paths[Derived Column Output2]"
+              endId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Inputs[Union All Input 3]"
+              name="Derived Column Output"
+              startId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to LOW.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Conditional Split (Rollercoasters by Scariness).Paths[Excel Source Output]"
+              endId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category.Inputs[Conditional Split Input]"
+              name="Excel Source Output"
+              startId="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Conditional Split (Rollercoasters by Scariness).Paths[NOT_SCARY]"
+              endId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to LOW.Inputs[Derived Column Input]"
+              name="NOT_SCARY"
+              startId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category.Outputs[NOT_SCARY]" />
+            <path
+              refId="Package\Conditional Split (Rollercoasters by Scariness).Paths[QUITE_SCARY]"
+              endId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to MEDIUM.Inputs[Derived Column Input]"
+              name="QUITE_SCARY"
+              startId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category.Outputs[QUITE_SCARY]" />
+            <path
+              refId="Package\Conditional Split (Rollercoasters by Scariness).Paths[Sort Output]"
+              endId="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File.Inputs[Flat File Destination Input]"
+              name="Sort Output"
+              startId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Outputs[Sort Output]" />
+            <path
+              refId="Package\Conditional Split (Rollercoasters by Scariness).Paths[Union All Output 1]"
+              endId="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order.Inputs[Sort Input]"
+              name="Union All Output 1"
+              startId="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric.Outputs[Union All Output 1]" />
+            <path
+              refId="Package\Conditional Split (Rollercoasters by Scariness).Paths[VERY_SCARY]"
+              endId="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to SCARY.Inputs[Derived Column Input]"
+              name="VERY_SCARY"
+              startId="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category.Outputs[VERY_SCARY]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Conditional Split (Whale counting)"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{ecb849b5-d46e-48bb-b9fd-09aca7d89951}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -2667,15 +4356,19 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
-          Size="284,42"
+          Size="239.2,41.6"
+          Id="Package\Conditional Split (Whale counting)"
+          TopLeft="354.5714285471,1082.01175753105" />
+        <NodeLayout
+          Size="284,41.6"
           Id="Package\Export DB data to a CSV flat file destination"
           TopLeft="307.71428572645,489.411762636013" />
         <NodeLayout
-          Size="290,42"
+          Size="289.6,41.6"
           Id="Package\Import Excel &amp; CSV data to SQL Server table"
           TopLeft="305.5714285471,897.599994712717" />
         <NodeLayout
-          Size="332,42"
+          Size="332,41.6"
           Id="Package\Import Excel text data to SQL Server varchar columns"
           TopLeft="305.5714285471,713.188231894384" />
         <NodeLayout
@@ -2683,7 +4376,7 @@
           Id="Package\Load CSV data to SQL Table"
           TopLeft="307,250.05882266071" />
         <NodeLayout
-          Size="241,42"
+          Size="240.8,41.6"
           Id="Package\Truncate TGT table before loading"
           TopLeft="304,164.05882266071" />
         <EdgeLayout
@@ -2711,7 +4404,7 @@
         <AnnotationLayout
           Text="SSIS Wise Owl: &#xA;Use a data flow task to import CSV records of UK built-up areas to a SQL Server table"
           ParentId="Package"
-          Size="637,58"
+          Size="636.8,58.4"
           Id="adfc3db6-b7ba-412d-81aa-14261b437877"
           TopLeft="116,95">
           <AnnotationLayout.FontInfo>
@@ -2729,7 +4422,7 @@
         <AnnotationLayout
           Text="SSIS Wise Owl: &#xA;Use a data flow task to export UK built-up areas data from a SQL Server table to a CSV and TXT file"
           ParentId="Package"
-          Size="736,58"
+          Size="736,58.4"
           Id="88740caa-4085-4c13-aea9-0c94b7dd304d"
           TopLeft="116,420">
           <AnnotationLayout.FontInfo>
@@ -2747,7 +4440,7 @@
         <AnnotationLayout
           Text="SSIS Wise Owl: &#xA;Use a data conversion task to import Excel text data to SQL Server varchar columns"
           ParentId="Package"
-          Size="626,58"
+          Size="625.6,76"
           Id="d89f09a0-d0b6-48a5-95fe-4956644fa82c"
           TopLeft="116,630.776469076051">
           <AnnotationLayout.FontInfo>
@@ -2765,7 +4458,7 @@
         <AnnotationLayout
           Text="SSIS Wise Owl: &#xA;Use data conversion and union all transforms to combine two data sources (Excel and CSV) into a single table"
           ParentId="Package"
-          Size="813,58"
+          Size="812.8,58.4"
           Id="0d7b6e7f-f515-49c6-a602-267268d411a9"
           TopLeft="116,815.188231894384">
           <AnnotationLayout.FontInfo>
@@ -2780,16 +4473,34 @@
             </mssge:FontInfo>
           </AnnotationLayout.FontInfo>
         </AnnotationLayout>
-        <NodeLayout
-          Size="239,42"
-          Id="Package\Conditional Split (Whale counting)"
-          TopLeft="354.5714285471,1082.01175753105" />
         <AnnotationLayout
           Text="SSIS Wise Owl: &#xA;Conditional split transforms exercise: Count the number of types of marine mammal in a CSV file, using a conditional split to differentiate"
           ParentId="Package"
-          Size="1012,58"
+          Size="1012,58.4"
           Id="1cb49187-b17c-414c-9ae0-513fdb256679"
           TopLeft="115,1000.59999471272">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="14.25"
+              Color="#FFFFFFFF"
+              Weight="Bold">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <NodeLayout
+          Size="292.8,41.6"
+          Id="Package\Conditional Split (Rollercoasters by Scariness)"
+          TopLeft="354.5714285471,1265.02352034938" />
+        <AnnotationLayout
+          Text="SSIS Wise Owl: &#xA;Conditional split transforms exercise: Use a conditional split and derived column transforms to divide rollercoasters by scariness"
+          ParentId="Package"
+          Size="947.2,58.4"
+          Id="1d7d1e1d-6505-452b-81fb-4994d6ee7fc2"
+          TopLeft="115,1183.61175753105">
           <AnnotationLayout.FontInfo>
             <mssge:FontInfo
               Family="Tahoma"
@@ -2805,6 +4516,178 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\Conditional Split (Whale counting)">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Conditional Split (Whale counting)\Whale data"
+          TopLeft="381,74.1666666666667" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Conditional Split (Whale counting)\NumberOtherSightings"
+          TopLeft="646.666666666667,360.833333333333" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Conditional Split (Whale counting)\NumberHarbourPorpoises"
+          TopLeft="33.3333333333334,348.333333333333" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Conditional Split (Whale counting)\Conditional Split"
+          TopLeft="374.166666666667,196.666666666667" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Conditional Split (Whale counting)\Multicast"
+          TopLeft="754.166666666667,119.166666666667" />
+        <EdgeLayout
+          Id="Package\Conditional Split (Whale counting).Paths[Non_Harbour_Porpoises]"
+          TopLeft="476.166666666667,238.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="263.5,122.166666666667"
+              Start="0,0"
+              End="263.5,114.666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.6155810983397" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.6155810983397"
+                    Point2="0,49.6155810983397"
+                    Point3="4,49.6155810983397" />
+                  <mssgle:LineSegment
+                    End="259.5,49.6155810983397" />
+                  <mssgle:CubicBezierSegment
+                    Point1="259.5,49.6155810983397"
+                    Point2="263.5,49.6155810983397"
+                    Point3="263.5,53.6155810983397" />
+                  <mssgle:LineSegment
+                    End="263.5,114.666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="78.057421875,54.6155810983397,107.38515625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conditional Split (Whale counting).Paths[Harbour_Porpoises]"
+          TopLeft="427.166666666667,238.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-294.333333333333,109.666666666667"
+              Start="0,0"
+              End="-294.333333333333,102.166666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5389527458493" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.5389527458493"
+                    Point2="0,44.5389527458493"
+                    Point3="-4,44.5389527458493" />
+                  <mssgle:LineSegment
+                    End="-290.333333333333,44.5389527458493" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-290.333333333333,44.5389527458493"
+                    Point2="-294.333333333333,44.5389527458493"
+                    Point3="-294.333333333333,48.5389527458493" />
+                  <mssgle:LineSegment
+                    End="-294.333333333333,102.166666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-198.157897135417,49.5389527458493,101.9824609375,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conditional Split (Whale counting).Paths[Flat File Source Output]"
+          TopLeft="447,116.166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-19.8333333333333,80.5"
+              Start="0,0"
+              End="-19.8333333333333,73">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.8065134099617" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.8065134099617"
+                    Point2="0,47.8065134099617"
+                    Point3="-4,47.8065134099617" />
+                  <mssgle:LineSegment
+                    End="-15.8333333333333,47.8065134099617" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15.8333333333333,47.8065134099617"
+                    Point2="-19.8333333333333,47.8065134099617"
+                    Point3="-19.8333333333333,51.8065134099617" />
+                  <mssgle:LineSegment
+                    End="-19.8333333333333,73" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conditional Split (Whale counting).Paths[Bad_Rows]"
+          TopLeft="476.166666666667,196.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="338,-35.5"
+              Start="0,0"
+              End="338,-28">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-10.4176245210728" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-10.4176245210728"
+                    Point2="0,-14.4176245210728"
+                    Point3="4,-14.4176245210728" />
+                  <mssgle:LineSegment
+                    End="334,-14.4176245210728" />
+                  <mssgle:CubicBezierSegment
+                    Point1="334,-14.4176245210728"
+                    Point2="338,-14.4176245210728"
+                    Point3="338,-18.4176245210728" />
+                  <mssgle:LineSegment
+                    End="338,-28" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="136.76876953125,-9.4176245210728,64.4624609375,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <TaskHost
     design-time-name="Package\Export DB data to a CSV flat file destination">
     <LayoutInfo>
@@ -2890,7 +4773,7 @@
     design-time-name="Package\Import Excel &amp; CSV data to SQL Server table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="324,42"
           Id="Package\Import Excel &amp; CSV data to SQL Server table\Data Conversion (Converting into Unicode Columns)"
@@ -2946,7 +4829,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2980,7 +4865,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3014,7 +4901,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3048,7 +4937,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3082,7 +4973,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3274,44 +5167,32 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Conditional Split (Whale counting)">
+    design-time-name="Package\Conditional Split (Rollercoasters by Scariness)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="132,42"
-          Id="Package\Conditional Split (Whale counting)\Whale data"
-          TopLeft="381,74.1666666666667" />
+          Size="218.4,41.6"
+          Id="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data"
+          TopLeft="279.285719041922,46.6470594777368" />
         <NodeLayout
-          Size="155,42"
-          Id="Package\Conditional Split (Whale counting)\Conditional Split"
-          TopLeft="374.166666666667,196.666666666667" />
+          Size="166.4,42.4"
+          Id="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category"
+          TopLeft="305.000005194119,118.529413427036" />
         <EdgeLayout
-          Id="Package\Conditional Split (Whale counting).Paths[Flat File Source Output]"
-          TopLeft="447,116.166666666667">
+          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[Excel Source Output]"
+          TopLeft="388.34286211802,88.2470594777369">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="-19.8333333333333,80.5"
+              EndConnector="0,30.2823539492992"
               Start="0,0"
-              End="-19.8333333333333,73">
+              End="0,22.7823539492992">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.8065134099617" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43.8065134099617"
-                    Point2="0,47.8065134099617"
-                    Point3="-4,47.8065134099617" />
-                  <mssgle:LineSegment
-                    End="-15.8333333333333,47.8065134099617" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-15.8333333333333,47.8065134099617"
-                    Point2="-19.8333333333333,47.8065134099617"
-                    Point3="-19.8333333333333,51.8065134099617" />
-                  <mssgle:LineSegment
-                    End="-19.8333333333333,73" />
+                    End="0,22.7823539492992" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3321,127 +5202,274 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="199,42"
-          Id="Package\Conditional Split (Whale counting)\NumberHarbourPorpoises"
-          TopLeft="33.3333333333334,348.333333333333" />
+          Size="188,41.6"
+          Id="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to SCARY"
+          TopLeft="55.0000009366445,271.470592042567" />
         <NodeLayout
-          Size="186,42"
-          Id="Package\Conditional Split (Whale counting)\NumberOtherSightings"
-          TopLeft="646.666666666667,360.833333333333" />
+          Size="197.6,41.6"
+          Id="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to MEDIUM"
+          TopLeft="293.571433570921,271.470592042567" />
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to LOW"
+          TopLeft="534.285723384546,268.411768470256" />
         <EdgeLayout
-          Id="Package\Conditional Split (Whale counting).Paths[Harbour_Porpoises]"
-          TopLeft="427.166666666667,238.666666666667">
+          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[VERY_SCARY]"
+          TopLeft="348.600005194119,160.929413427036">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="-294.333333333333,109.666666666667"
+              EndConnector="-199.600004257475,110.541178615531"
               Start="0,0"
-              End="-294.333333333333,102.166666666667">
+              End="-199.600004257475,103.041178615531">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.5389527458493" />
+                    End="0,34.0094273472961" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,40.5389527458493"
-                    Point2="0,44.5389527458493"
-                    Point3="-4,44.5389527458493" />
+                    Point1="0,34.0094273472961"
+                    Point2="0,38.0094273472961"
+                    Point3="-4,38.0094273472961" />
                   <mssgle:LineSegment
-                    End="-290.333333333333,44.5389527458493" />
+                    End="-195.600004257475,38.0094273472961" />
                   <mssgle:CubicBezierSegment
-                    Point1="-290.333333333333,44.5389527458493"
-                    Point2="-294.333333333333,44.5389527458493"
-                    Point3="-294.333333333333,48.5389527458493" />
+                    Point1="-195.600004257475,38.0094273472961"
+                    Point2="-199.600004257475,38.0094273472961"
+                    Point3="-199.600004257475,42.0094273472961" />
                   <mssgle:LineSegment
-                    End="-294.333333333333,102.166666666667" />
+                    End="-199.600004257475,103.041178615531" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-198.157897135417,49.5389527458493,101.9824609375,16"
+              BoundingBox="-130.132131034987,43.0094273472961,60.6642578125,10.8671875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Conditional Split (Whale counting).Paths[Non_Harbour_Porpoises]"
-          TopLeft="476.166666666667,238.666666666667">
+          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[QUITE_SCARY]"
+          TopLeft="390.28571938252,160.929413427036">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="263.5,122.166666666667"
+              EndConnector="0,110.54117861553"
               Start="0,0"
-              End="263.5,114.666666666667">
+              End="0,103.04117861553">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,45.6155810983397" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,45.6155810983397"
-                    Point2="0,49.6155810983397"
-                    Point3="4,49.6155810983397" />
-                  <mssgle:LineSegment
-                    End="259.5,49.6155810983397" />
-                  <mssgle:CubicBezierSegment
-                    Point1="259.5,49.6155810983397"
-                    Point2="263.5,49.6155810983397"
-                    Point3="263.5,53.6155810983397" />
-                  <mssgle:LineSegment
-                    End="263.5,114.666666666667" />
+                    End="0,103.04117861553" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="78.057421875,54.6155810983397,107.38515625,11.609375"
+              BoundingBox="-32.78646484375,45.8526205577652,65.5729296875,11.3359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[NOT_SCARY]"
+          TopLeft="427.800005194119,160.929413427036">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="196.085718190427,107.48235504322"
+              Start="0,0"
+              End="196.085718190427,99.98235504322">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.9576552041356" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.9576552041356"
+                    Point2="0,36.9576552041356"
+                    Point3="4,36.9576552041356" />
+                  <mssgle:LineSegment
+                    End="192.085718190427,36.9576552041356" />
+                  <mssgle:CubicBezierSegment
+                    Point1="192.085718190427,36.9576552041356"
+                    Point2="196.085718190427,36.9576552041356"
+                    Point3="196.085718190427,40.9576552041356" />
+                  <mssgle:LineSegment
+                    End="196.085718190427,99.98235504322" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="70.0789137827135,41.9576552041356,55.927890625,10.88671875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="120,42"
-          Id="Package\Conditional Split (Whale counting)\Multicast"
-          TopLeft="754.166666666667,119.166666666667" />
+          Size="279.2,41.6"
+          Id="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric"
+          TopLeft="250.000004257475,385.411770111137" />
         <EdgeLayout
-          Id="Package\Conditional Split (Whale counting).Paths[Bad_Rows]"
-          TopLeft="476.166666666667,196.666666666667">
+          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[Derived Column Output]"
+          TopLeft="149.000000936644,313.070592042567">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="338,-35.5"
+              EndConnector="172.80000332083,72.3411780685702"
               Start="0,0"
-              End="338,-28">
+              End="172.80000332083,64.8411780685702">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-10.4176245210728" />
+                    End="0,43.7711847605128" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-10.4176245210728"
-                    Point2="0,-14.4176245210728"
-                    Point3="4,-14.4176245210728" />
+                    Point1="0,43.7711847605128"
+                    Point2="0,47.7711847605128"
+                    Point3="4,47.7711847605128" />
                   <mssgle:LineSegment
-                    End="334,-14.4176245210728" />
+                    End="168.80000332083,47.7711847605128" />
                   <mssgle:CubicBezierSegment
-                    Point1="334,-14.4176245210728"
-                    Point2="338,-14.4176245210728"
-                    Point3="338,-18.4176245210728" />
+                    Point1="168.80000332083,47.7711847605128"
+                    Point2="172.80000332083,47.7711847605128"
+                    Point3="172.80000332083,51.7711847605128" />
                   <mssgle:LineSegment
-                    End="338,-28" />
+                    End="172.80000332083,64.8411780685702" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="136.76876953125,-9.4176245210728,64.4624609375,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[Derived Column Output1]"
+          TopLeft="390.985718914198,313.070592042567">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,72.3411780685705"
+              Start="0,0"
+              End="0,64.8411780685705">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.8411780685705" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[Derived Column Output2]"
+          TopLeft="623.885723384546,310.011768470256">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-166.485719127071,75.400001640881"
+              Start="0,0"
+              End="-166.485719127071,67.900001640881">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.7911079899101" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.7911079899101"
+                    Point2="0,49.7911079899101"
+                    Point3="-4,49.7911079899101" />
+                  <mssgle:LineSegment
+                    End="-162.485719127071,49.7911079899101" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-162.485719127071,49.7911079899101"
+                    Point2="-166.485719127071,49.7911079899101"
+                    Point3="-166.485719127071,53.7911079899101" />
+                  <mssgle:LineSegment
+                    End="-166.485719127071,67.900001640881" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="292.8,41.6"
+          Id="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order"
+          TopLeft="242.857146992975,468.141182991213" />
+        <NodeLayout
+          Size="282.4,41.6"
+          Id="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File"
+          TopLeft="246.964289920062,556.744124288336" />
+        <EdgeLayout
+          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[Union All Output 1]"
+          TopLeft="389.428575625225,427.011770111137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,41.1294128800756"
+              Start="0,0"
+              End="0,33.6294128800756">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.6294128800756" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[Sort Output]"
+          TopLeft="388.710718456519,509.741182991213">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,47.0029412971236"
+              Start="0,0"
+              End="0,39.5029412971236">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5029412971236" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
