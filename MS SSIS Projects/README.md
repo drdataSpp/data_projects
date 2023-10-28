@@ -85,3 +85,19 @@ https://www.wiseowl.co.uk/integration-services/exercises/standard/conditional-sp
 <img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX6_Output_CSV_file.png" width="50%" height="50%">
 
 ***
+
+## Exercises Seven: Conditional split transforms - Use a conditional split to create two destination files based on rules
+
+**Exercises Link**:
+https://www.wiseowl.co.uk/integration-services/exercises/standard/conditional-split-transforms/4766/
+
+### Solution screenshot
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX7_Control_Flow.png" width="50%" height="50%">
+
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX7_Data_Flow.png" width="50%" height="50%">
+
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX7_BRE.png" width="50%" height="50%">
+
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX7_Output_flat_files.png" width="50%" height="50%">
+
+***
