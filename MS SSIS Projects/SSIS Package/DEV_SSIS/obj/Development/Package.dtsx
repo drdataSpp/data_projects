@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{0A65A76C-2D78-43F0-A492-1167948570D1}">
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{F9E39462-855A-41DF-B48F-1C695673F515}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -154,6 +154,72 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 3]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{96879BF8-E405-4591-884B-F1BC1E0E0143}"
+      DTS:ObjectName="Excel Connection Manager 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\001_Data\data_projects\data_projects\MS SSIS Projects\Source Data\Disney Princesses.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{1238BEB0-723C-4BA8-A129-574DC0F258DA}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="5129"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\001_Data\data_projects\data_projects\MS SSIS Projects\Output Data\princess.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{DA508BC3-1135-4D8B-8D11-DBB44F504D5F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Feminist rating"
+              DTS:DTSID="{28C33196-E0A5-4DD9-B3A6-DD0B2D57A30F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="First appeared"
+              DTS:DTSID="{6228330B-4463-4412-A185-1C5E41A3E82E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vehicle"
+              DTS:DTSID="{91E382D6-CC47-41CC-BB6B-05B62287A30A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager - RC_Scariness]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{0FFA2343-C574-4BEE-9D4C-EE6C278F423D}"
@@ -237,6 +303,60 @@
               DTS:TextQualified="True"
               DTS:ObjectName="Scariness"
               DTS:DTSID="{8A5FEE6A-3CCF-4A76-BE72-E43D6C6E4B0B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{433BD577-720F-4A60-9C85-754735D21DFD}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="5129"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\001_Data\data_projects\data_projects\MS SSIS Projects\Output Data\not_drippy.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{F9F3A43B-E1BD-4CEA-AAD0-BA129CE664BA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Feminist rating"
+              DTS:DTSID="{9990E1E1-E28E-4731-9431-5824CD311D10}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="First appeared"
+              DTS:DTSID="{4C437677-2C72-45AD-B00A-1338890F63CC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vehicle"
+              DTS:DTSID="{72617D44-787D-48F3-8438-BC872EC441FA}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -471,9 +591,502 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
+      DTS:refId="Package\Conditional Split (Create 2 flat files based on rules)"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{b79491c7-a8cd-4fea-b592-1ae805dd4e84}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Conditional Split (Create 2 flat files based on rules)"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating Princess CSV file for Feisty records"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="5129"
+              name="Creating Princess CSV file for Feisty records"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating Princess CSV file for Feisty records.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating Princess CSV file for Feisty records.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating Princess CSV file for Feisty records.Inputs[Flat File Destination Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\Conditional Split (Create 2 flat files based on rules)\Creating Princess CSV file for Feisty records.Inputs[Flat File Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating Princess CSV file for Feisty records.Inputs[Flat File Destination Input].Columns[Feminist rating]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Feminist rating"
+                      externalMetadataColumnId="Package\Conditional Split (Create 2 flat files based on rules)\Creating Princess CSV file for Feisty records.Inputs[Flat File Destination Input].ExternalColumns[Feminist rating]"
+                      lineageId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].Columns[Feminist rating]" />
+                    <inputColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating Princess CSV file for Feisty records.Inputs[Flat File Destination Input].Columns[First appeared]"
+                      cachedDataType="r8"
+                      cachedName="First appeared"
+                      externalMetadataColumnId="Package\Conditional Split (Create 2 flat files based on rules)\Creating Princess CSV file for Feisty records.Inputs[Flat File Destination Input].ExternalColumns[First appeared]"
+                      lineageId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].Columns[First appeared]" />
+                    <inputColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating Princess CSV file for Feisty records.Inputs[Flat File Destination Input].Columns[Vehicle]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Vehicle"
+                      externalMetadataColumnId="Package\Conditional Split (Create 2 flat files based on rules)\Creating Princess CSV file for Feisty records.Inputs[Flat File Destination Input].ExternalColumns[Vehicle]"
+                      lineageId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].Columns[Vehicle]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating Princess CSV file for Feisty records.Inputs[Flat File Destination Input].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating Princess CSV file for Feisty records.Inputs[Flat File Destination Input].ExternalColumns[Feminist rating]"
+                      dataType="wstr"
+                      length="255"
+                      name="Feminist rating" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating Princess CSV file for Feisty records.Inputs[Flat File Destination Input].ExternalColumns[First appeared]"
+                      dataType="r8"
+                      name="First appeared" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating Princess CSV file for Feisty records.Inputs[Flat File Destination Input].ExternalColumns[Vehicle]"
+                      dataType="wstr"
+                      length="255"
+                      name="Vehicle" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating txt file for Not Drippy records"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="5129"
+              name="Creating txt file for Not Drippy records"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating txt file for Not Drippy records.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating txt file for Not Drippy records.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating txt file for Not Drippy records.Inputs[Flat File Destination Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\Conditional Split (Create 2 flat files based on rules)\Creating txt file for Not Drippy records.Inputs[Flat File Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating txt file for Not Drippy records.Inputs[Flat File Destination Input].Columns[Feminist rating]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Feminist rating"
+                      externalMetadataColumnId="Package\Conditional Split (Create 2 flat files based on rules)\Creating txt file for Not Drippy records.Inputs[Flat File Destination Input].ExternalColumns[Feminist rating]"
+                      lineageId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].Columns[Feminist rating]" />
+                    <inputColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating txt file for Not Drippy records.Inputs[Flat File Destination Input].Columns[First appeared]"
+                      cachedDataType="r8"
+                      cachedName="First appeared"
+                      externalMetadataColumnId="Package\Conditional Split (Create 2 flat files based on rules)\Creating txt file for Not Drippy records.Inputs[Flat File Destination Input].ExternalColumns[First appeared]"
+                      lineageId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].Columns[First appeared]" />
+                    <inputColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating txt file for Not Drippy records.Inputs[Flat File Destination Input].Columns[Vehicle]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Vehicle"
+                      externalMetadataColumnId="Package\Conditional Split (Create 2 flat files based on rules)\Creating txt file for Not Drippy records.Inputs[Flat File Destination Input].ExternalColumns[Vehicle]"
+                      lineageId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].Columns[Vehicle]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating txt file for Not Drippy records.Inputs[Flat File Destination Input].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating txt file for Not Drippy records.Inputs[Flat File Destination Input].ExternalColumns[Feminist rating]"
+                      dataType="wstr"
+                      length="255"
+                      name="Feminist rating" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating txt file for Not Drippy records.Inputs[Flat File Destination Input].ExternalColumns[First appeared]"
+                      dataType="r8"
+                      name="First appeared" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Creating txt file for Not Drippy records.Inputs[Flat File Destination Input].ExternalColumns[Vehicle]"
+                      dataType="wstr"
+                      length="255"
+                      name="Vehicle" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Disney Princess Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Princesses$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 3]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 3]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].ExternalColumns[Name]"
+                      length="255"
+                      lineageId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].Columns[Feminist rating]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].ExternalColumns[Feminist rating]"
+                      length="255"
+                      lineageId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].Columns[Feminist rating]"
+                      name="Feminist rating"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].Columns[First appeared]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].ExternalColumns[First appeared]"
+                      lineageId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].Columns[First appeared]"
+                      name="First appeared"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].Columns[Vehicle]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].ExternalColumns[Vehicle]"
+                      length="255"
+                      lineageId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].Columns[Vehicle]"
+                      name="Vehicle"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].ExternalColumns[Feminist rating]"
+                      dataType="wstr"
+                      length="255"
+                      name="Feminist rating" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].ExternalColumns[First appeared]"
+                      dataType="r8"
+                      name="First appeared" />
+                    <externalMetadataColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].ExternalColumns[Vehicle]"
+                      dataType="wstr"
+                      length="255"
+                      name="Vehicle" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Error Output].Columns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Error Output].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Error Output].Columns[Feminist rating]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Error Output].Columns[Feminist rating]"
+                      name="Feminist rating" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Error Output].Columns[First appeared]"
+                      dataType="r8"
+                      lineageId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Error Output].Columns[First appeared]"
+                      name="First appeared" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Error Output].Columns[Vehicle]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Error Output].Columns[Vehicle]"
+                      name="Vehicle" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney princesses Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Disney princesses Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney princesses Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney princesses Conditional Split.Inputs[Conditional Split Input].Columns[Feminist rating]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Feminist rating"
+                      lineageId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].Columns[Feminist rating]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney princesses Conditional Split.Outputs[Princesses]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Princesses"
+                  synchronousInputId="Package\Conditional Split (Create 2 flat files based on rules)\Disney princesses Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[UPPER](#{Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].Columns[Feminist rating]}) == "FEISTY"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">UPPER([Feminist rating]) == "FEISTY"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney princesses Conditional Split.Outputs[Not_Drippy]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Not_Drippy"
+                  synchronousInputId="Package\Conditional Split (Create 2 flat files based on rules)\Disney princesses Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[LOWER](#{Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output].Columns[Feminist rating]}) != "drippy"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">LOWER([Feminist rating]) != "drippy"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney princesses Conditional Split.Outputs[Ignored_records]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Ignored_records"
+                  synchronousInputId="Package\Conditional Split (Create 2 flat files based on rules)\Disney princesses Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney princesses Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Conditional Split (Create 2 flat files based on rules)\Disney princesses Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney princesses Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Conditional Split (Create 2 flat files based on rules)\Disney princesses Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Conditional Split (Create 2 flat files based on rules)\Disney princesses Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Conditional Split (Create 2 flat files based on rules)\Disney princesses Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Conditional Split (Create 2 flat files based on rules).Paths[Excel Source Output]"
+              endId="Package\Conditional Split (Create 2 flat files based on rules)\Disney princesses Conditional Split.Inputs[Conditional Split Input]"
+              name="Excel Source Output"
+              startId="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Conditional Split (Create 2 flat files based on rules).Paths[Not_Drippy]"
+              endId="Package\Conditional Split (Create 2 flat files based on rules)\Creating txt file for Not Drippy records.Inputs[Flat File Destination Input]"
+              name="Not_Drippy"
+              startId="Package\Conditional Split (Create 2 flat files based on rules)\Disney princesses Conditional Split.Outputs[Not_Drippy]" />
+            <path
+              refId="Package\Conditional Split (Create 2 flat files based on rules).Paths[Princesses]"
+              endId="Package\Conditional Split (Create 2 flat files based on rules)\Creating Princess CSV file for Feisty records.Inputs[Flat File Destination Input]"
+              name="Princesses"
+              startId="Package\Conditional Split (Create 2 flat files based on rules)\Disney princesses Conditional Split.Outputs[Princesses]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Conditional Split (Rollercoasters by Scariness)"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{1c6a699f-1a78-42e8-a876-23c2b14a67c9}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -4356,32 +4969,36 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
+          Size="292.8,41.6"
+          Id="Package\Conditional Split (Rollercoasters by Scariness)"
+          TopLeft="452.623378268863,1265.02352034938" />
+        <NodeLayout
           Size="239.2,41.6"
           Id="Package\Conditional Split (Whale counting)"
-          TopLeft="354.5714285471,1082.01175753105" />
+          TopLeft="452.623378268863,1082.01175753105" />
         <NodeLayout
           Size="284,41.6"
           Id="Package\Export DB data to a CSV flat file destination"
-          TopLeft="307.71428572645,489.411762636013" />
+          TopLeft="405.766235448213,489.411762636013" />
         <NodeLayout
           Size="289.6,41.6"
           Id="Package\Import Excel &amp; CSV data to SQL Server table"
-          TopLeft="305.5714285471,897.599994712717" />
+          TopLeft="403.623378268863,897.599994712717" />
         <NodeLayout
           Size="332,41.6"
           Id="Package\Import Excel text data to SQL Server varchar columns"
-          TopLeft="305.5714285471,713.188231894384" />
+          TopLeft="403.623378268863,713.188231894384" />
         <NodeLayout
           Size="236,48"
           Id="Package\Load CSV data to SQL Table"
-          TopLeft="307,250.05882266071" />
+          TopLeft="405.051949721763,250.05882266071" />
         <NodeLayout
           Size="240.8,41.6"
           Id="Package\Truncate TGT table before loading"
-          TopLeft="304,164.05882266071" />
+          TopLeft="402.051949721763,164.05882266071" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="424.75,206.05882266071">
+          TopLeft="522.801949721763,206.05882266071">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
@@ -4406,7 +5023,7 @@
           ParentId="Package"
           Size="636.8,58.4"
           Id="adfc3db6-b7ba-412d-81aa-14261b437877"
-          TopLeft="116,95">
+          TopLeft="214.051949721763,95">
           <AnnotationLayout.FontInfo>
             <mssge:FontInfo
               Family="Tahoma"
@@ -4424,7 +5041,7 @@
           ParentId="Package"
           Size="736,58.4"
           Id="88740caa-4085-4c13-aea9-0c94b7dd304d"
-          TopLeft="116,420">
+          TopLeft="214.051949721763,420">
           <AnnotationLayout.FontInfo>
             <mssge:FontInfo
               Family="Tahoma"
@@ -4442,7 +5059,7 @@
           ParentId="Package"
           Size="625.6,76"
           Id="d89f09a0-d0b6-48a5-95fe-4956644fa82c"
-          TopLeft="116,630.776469076051">
+          TopLeft="214.051949721763,630.776469076051">
           <AnnotationLayout.FontInfo>
             <mssge:FontInfo
               Family="Tahoma"
@@ -4460,7 +5077,7 @@
           ParentId="Package"
           Size="812.8,58.4"
           Id="0d7b6e7f-f515-49c6-a602-267268d411a9"
-          TopLeft="116,815.188231894384">
+          TopLeft="214.051949721763,815.188231894384">
           <AnnotationLayout.FontInfo>
             <mssge:FontInfo
               Family="Tahoma"
@@ -4478,7 +5095,25 @@
           ParentId="Package"
           Size="1012,58.4"
           Id="1cb49187-b17c-414c-9ae0-513fdb256679"
-          TopLeft="115,1000.59999471272">
+          TopLeft="213.051949721763,1000.59999471272">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="14.25"
+              Color="#FFFFFFFF"
+              Weight="Bold">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <AnnotationLayout
+          Text="SSIS Wise Owl: &#xA;Conditional split transforms exercise: Use a conditional split and derived column transforms to divide rollercoasters by scariness"
+          ParentId="Package"
+          Size="947.2,58.4"
+          Id="1d7d1e1d-6505-452b-81fb-4994d6ee7fc2"
+          TopLeft="213.051949721763,1183.61175753105">
           <AnnotationLayout.FontInfo>
             <mssge:FontInfo
               Family="Tahoma"
@@ -4492,15 +5127,15 @@
           </AnnotationLayout.FontInfo>
         </AnnotationLayout>
         <NodeLayout
-          Size="292.8,41.6"
-          Id="Package\Conditional Split (Rollercoasters by Scariness)"
-          TopLeft="354.5714285471,1265.02352034938" />
+          Size="317.6,41.6"
+          Id="Package\Conditional Split (Create 2 flat files based on rules)"
+          TopLeft="452.623378268863,1448.03528316771" />
         <AnnotationLayout
-          Text="SSIS Wise Owl: &#xA;Conditional split transforms exercise: Use a conditional split and derived column transforms to divide rollercoasters by scariness"
+          Text="SSIS Wise Owl: &#xA;Conditional split transforms exercise: Use a conditional split transform to divide the Disney princesses into feisty, drippy and other categories and create 2 flat files&#xD;&#xA;"
           ParentId="Package"
-          Size="947.2,58.4"
-          Id="1d7d1e1d-6505-452b-81fb-4994d6ee7fc2"
-          TopLeft="115,1183.61175753105">
+          Size="1197.6,76"
+          Id="c0065612-dca6-4ad2-b613-9be49745c83c"
+          TopLeft="115,1365.92833317385">
           <AnnotationLayout.FontInfo>
             <mssge:FontInfo
               Family="Tahoma"
@@ -4516,6 +5151,323 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\Conditional Split (Rollercoasters by Scariness)">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="188,41.6"
+          Id="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to SCARY"
+          TopLeft="55.0000009366445,271.470592042567" />
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to LOW"
+          TopLeft="534.285723384546,268.411768470256" />
+        <NodeLayout
+          Size="218.4,41.6"
+          Id="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data"
+          TopLeft="279.285719041922,46.6470594777368" />
+        <NodeLayout
+          Size="166.4,42.4"
+          Id="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category"
+          TopLeft="305.000005194119,118.529413427036" />
+        <NodeLayout
+          Size="292.8,41.6"
+          Id="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order"
+          TopLeft="242.857146992975,468.141182991213" />
+        <NodeLayout
+          Size="197.6,41.6"
+          Id="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to MEDIUM"
+          TopLeft="293.571433570921,271.470592042567" />
+        <NodeLayout
+          Size="282.4,41.6"
+          Id="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File"
+          TopLeft="246.964289920062,556.744124288336" />
+        <NodeLayout
+          Size="279.2,41.6"
+          Id="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric"
+          TopLeft="250.000004257475,385.411770111137" />
+        <EdgeLayout
+          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[VERY_SCARY]"
+          TopLeft="348.600005194119,160.929413427036">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-199.600004257475,110.541178615531"
+              Start="0,0"
+              End="-199.600004257475,103.041178615531">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.0094273472961" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.0094273472961"
+                    Point2="0,38.0094273472961"
+                    Point3="-4,38.0094273472961" />
+                  <mssgle:LineSegment
+                    End="-195.600004257475,38.0094273472961" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-195.600004257475,38.0094273472961"
+                    Point2="-199.600004257475,38.0094273472961"
+                    Point3="-199.600004257475,42.0094273472961" />
+                  <mssgle:LineSegment
+                    End="-199.600004257475,103.041178615531" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-130.132131034987,43.0094273472961,60.6642578125,10.8671875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[Union All Output 1]"
+          TopLeft="389.428575625225,427.011770111137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,41.1294128800756"
+              Start="0,0"
+              End="0,33.6294128800756">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.6294128800756" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[Sort Output]"
+          TopLeft="388.710718456519,509.741182991213">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,47.0029412971236"
+              Start="0,0"
+              End="0,39.5029412971236">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5029412971236" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[QUITE_SCARY]"
+          TopLeft="390.28571938252,160.929413427036">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,110.54117861553"
+              Start="0,0"
+              End="0,103.04117861553">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,103.04117861553" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-32.78646484375,45.8526205577652,65.5729296875,11.3359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[NOT_SCARY]"
+          TopLeft="427.800005194119,160.929413427036">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="196.085718190427,107.48235504322"
+              Start="0,0"
+              End="196.085718190427,99.98235504322">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.9576552041356" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.9576552041356"
+                    Point2="0,36.9576552041356"
+                    Point3="4,36.9576552041356" />
+                  <mssgle:LineSegment
+                    End="192.085718190427,36.9576552041356" />
+                  <mssgle:CubicBezierSegment
+                    Point1="192.085718190427,36.9576552041356"
+                    Point2="196.085718190427,36.9576552041356"
+                    Point3="196.085718190427,40.9576552041356" />
+                  <mssgle:LineSegment
+                    End="196.085718190427,99.98235504322" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="70.0789137827135,41.9576552041356,55.927890625,10.88671875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[Excel Source Output]"
+          TopLeft="388.34286211802,88.2470594777369">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,30.2823539492992"
+              Start="0,0"
+              End="0,22.7823539492992">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.7823539492992" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[Derived Column Output2]"
+          TopLeft="623.885723384546,310.011768470256">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-166.485719127071,75.400001640881"
+              Start="0,0"
+              End="-166.485719127071,67.900001640881">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.7911079899101" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.7911079899101"
+                    Point2="0,49.7911079899101"
+                    Point3="-4,49.7911079899101" />
+                  <mssgle:LineSegment
+                    End="-162.485719127071,49.7911079899101" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-162.485719127071,49.7911079899101"
+                    Point2="-166.485719127071,49.7911079899101"
+                    Point3="-166.485719127071,53.7911079899101" />
+                  <mssgle:LineSegment
+                    End="-166.485719127071,67.900001640881" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[Derived Column Output1]"
+          TopLeft="390.985718914198,313.070592042567">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,72.3411780685705"
+              Start="0,0"
+              End="0,64.8411780685705">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.8411780685705" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[Derived Column Output]"
+          TopLeft="149.000000936644,313.070592042567">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="172.80000332083,72.3411780685702"
+              Start="0,0"
+              End="172.80000332083,64.8411780685702">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.7711847605128" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.7711847605128"
+                    Point2="0,47.7711847605128"
+                    Point3="4,47.7711847605128" />
+                  <mssgle:LineSegment
+                    End="168.80000332083,47.7711847605128" />
+                  <mssgle:CubicBezierSegment
+                    Point1="168.80000332083,47.7711847605128"
+                    Point2="172.80000332083,47.7711847605128"
+                    Point3="172.80000332083,51.7711847605128" />
+                  <mssgle:LineSegment
+                    End="172.80000332083,64.8411780685702" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Conditional Split (Whale counting)">
     <LayoutInfo>
@@ -5167,32 +6119,32 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Conditional Split (Rollercoasters by Scariness)">
+    design-time-name="Package\Conditional Split (Create 2 flat files based on rules)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="218.4,41.6"
-          Id="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data"
-          TopLeft="279.285719041922,46.6470594777368" />
+          Size="214.4,41.6"
+          Id="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source"
+          TopLeft="379.56349852742,122.459152044241" />
         <NodeLayout
-          Size="166.4,42.4"
-          Id="Package\Conditional Split (Rollercoasters by Scariness)\Scariness category"
-          TopLeft="305.000005194119,118.529413427036" />
+          Size="240.8,44"
+          Id="Package\Conditional Split (Create 2 flat files based on rules)\Disney princesses Conditional Split"
+          TopLeft="367.063498314546,227.287584886969" />
         <EdgeLayout
-          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[Excel Source Output]"
-          TopLeft="388.34286211802,88.2470594777369">
+          Id="Package\Conditional Split (Create 2 flat files based on rules).Paths[Excel Source Output]"
+          TopLeft="487.113498420983,164.059152044241">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,30.2823539492992"
+              EndConnector="0,63.2284328427281"
               Start="0,0"
-              End="0,22.7823539492992">
+              End="0,55.7284328427281">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.7823539492992" />
+                    End="0,55.7284328427281" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5202,264 +6154,90 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="188,41.6"
-          Id="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to SCARY"
-          TopLeft="55.0000009366445,271.470592042567" />
-        <NodeLayout
-          Size="197.6,41.6"
-          Id="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to MEDIUM"
-          TopLeft="293.571433570921,271.470592042567" />
-        <NodeLayout
-          Size="179.2,41.6"
-          Id="Package\Conditional Split (Rollercoasters by Scariness)\Set Scariness to LOW"
-          TopLeft="534.285723384546,268.411768470256" />
+          Size="283.2,41.6"
+          Id="Package\Conditional Split (Create 2 flat files based on rules)\Creating Princess CSV file for Feisty records"
+          TopLeft="172.857145800882,377.76471118036" />
         <EdgeLayout
-          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[VERY_SCARY]"
-          TopLeft="348.600005194119,160.929413427036">
+          Id="Package\Conditional Split (Create 2 flat files based on rules).Paths[Princesses]"
+          TopLeft="487.463498314546,271.287584886969">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="-199.600004257475,110.541178615531"
+              EndConnector="-173.006352513664,106.477126293391"
               Start="0,0"
-              End="-199.600004257475,103.041178615531">
+              End="-173.006352513664,98.9771262933913">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.0094273472961" />
+                    End="0,49.2385631466957" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,34.0094273472961"
-                    Point2="0,38.0094273472961"
-                    Point3="-4,38.0094273472961" />
+                    Point1="0,49.2385631466957"
+                    Point2="0,53.2385631466957"
+                    Point3="-4,53.2385631466957" />
                   <mssgle:LineSegment
-                    End="-195.600004257475,38.0094273472961" />
+                    End="-169.006352513664,53.2385631466957" />
                   <mssgle:CubicBezierSegment
-                    Point1="-195.600004257475,38.0094273472961"
-                    Point2="-199.600004257475,38.0094273472961"
-                    Point3="-199.600004257475,42.0094273472961" />
+                    Point1="-169.006352513664,53.2385631466957"
+                    Point2="-173.006352513664,53.2385631466957"
+                    Point3="-173.006352513664,57.2385631466957" />
                   <mssgle:LineSegment
-                    End="-199.600004257475,103.041178615531" />
+                    End="-173.006352513664,98.9771262933913" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-130.132131034987,43.0094273472961,60.6642578125,10.8671875"
+              BoundingBox="-109.785754381832,58.2385631466957,46.56515625,9.451171875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="259.2,41.6"
+          Id="Package\Conditional Split (Create 2 flat files based on rules)\Creating txt file for Not Drippy records"
+          TopLeft="550.000009366444,378.529417073438" />
         <EdgeLayout
-          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[QUITE_SCARY]"
-          TopLeft="390.28571938252,160.929413427036">
+          Id="Package\Conditional Split (Create 2 flat files based on rules).Paths[Not_Drippy]"
+          TopLeft="526.263498314546,271.287584886969">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,110.54117861553"
+              EndConnector="153.336511051898,107.241832186469"
               Start="0,0"
-              End="0,103.04117861553">
+              End="153.336511051898,99.741832186469">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,103.04117861553" />
+                    End="0,39.3214530020588" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.3214530020588"
+                    Point2="0,43.3214530020588"
+                    Point3="4,43.3214530020588" />
+                  <mssgle:LineSegment
+                    End="149.336511051898,43.3214530020588" />
+                  <mssgle:CubicBezierSegment
+                    Point1="149.336511051898,43.3214530020588"
+                    Point2="153.336511051898,43.3214530020588"
+                    Point3="153.336511051898,47.3214530020588" />
+                  <mssgle:LineSegment
+                    End="153.336511051898,99.741832186469" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-32.78646484375,45.8526205577652,65.5729296875,11.3359375"
+              BoundingBox="51.2463219321992,48.3214530020588,50.8438671875,11.3310546875"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[NOT_SCARY]"
-          TopLeft="427.800005194119,160.929413427036">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="196.085718190427,107.48235504322"
-              Start="0,0"
-              End="196.085718190427,99.98235504322">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.9576552041356" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.9576552041356"
-                    Point2="0,36.9576552041356"
-                    Point3="4,36.9576552041356" />
-                  <mssgle:LineSegment
-                    End="192.085718190427,36.9576552041356" />
-                  <mssgle:CubicBezierSegment
-                    Point1="192.085718190427,36.9576552041356"
-                    Point2="196.085718190427,36.9576552041356"
-                    Point3="196.085718190427,40.9576552041356" />
-                  <mssgle:LineSegment
-                    End="196.085718190427,99.98235504322" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="70.0789137827135,41.9576552041356,55.927890625,10.88671875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="279.2,41.6"
-          Id="Package\Conditional Split (Rollercoasters by Scariness)\Merging Source Data with Scariness Metric"
-          TopLeft="250.000004257475,385.411770111137" />
-        <EdgeLayout
-          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[Derived Column Output]"
-          TopLeft="149.000000936644,313.070592042567">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="172.80000332083,72.3411780685702"
-              Start="0,0"
-              End="172.80000332083,64.8411780685702">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.7711847605128" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43.7711847605128"
-                    Point2="0,47.7711847605128"
-                    Point3="4,47.7711847605128" />
-                  <mssgle:LineSegment
-                    End="168.80000332083,47.7711847605128" />
-                  <mssgle:CubicBezierSegment
-                    Point1="168.80000332083,47.7711847605128"
-                    Point2="172.80000332083,47.7711847605128"
-                    Point3="172.80000332083,51.7711847605128" />
-                  <mssgle:LineSegment
-                    End="172.80000332083,64.8411780685702" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[Derived Column Output1]"
-          TopLeft="390.985718914198,313.070592042567">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,72.3411780685705"
-              Start="0,0"
-              End="0,64.8411780685705">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,64.8411780685705" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[Derived Column Output2]"
-          TopLeft="623.885723384546,310.011768470256">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-166.485719127071,75.400001640881"
-              Start="0,0"
-              End="-166.485719127071,67.900001640881">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.7911079899101" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,45.7911079899101"
-                    Point2="0,49.7911079899101"
-                    Point3="-4,49.7911079899101" />
-                  <mssgle:LineSegment
-                    End="-162.485719127071,49.7911079899101" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-162.485719127071,49.7911079899101"
-                    Point2="-166.485719127071,49.7911079899101"
-                    Point3="-166.485719127071,53.7911079899101" />
-                  <mssgle:LineSegment
-                    End="-166.485719127071,67.900001640881" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="292.8,41.6"
-          Id="Package\Conditional Split (Rollercoasters by Scariness)\Sort by Roller Coaster Name Ascending Order"
-          TopLeft="242.857146992975,468.141182991213" />
-        <NodeLayout
-          Size="282.4,41.6"
-          Id="Package\Conditional Split (Rollercoasters by Scariness)\Store Roller Coaster by Scariness - CSV File"
-          TopLeft="246.964289920062,556.744124288336" />
-        <EdgeLayout
-          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[Union All Output 1]"
-          TopLeft="389.428575625225,427.011770111137">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,41.1294128800756"
-              Start="0,0"
-              End="0,33.6294128800756">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.6294128800756" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Conditional Split (Rollercoasters by Scariness).Paths[Sort Output]"
-          TopLeft="388.710718456519,509.741182991213">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,47.0029412971236"
-              Start="0,0"
-              End="0,39.5029412971236">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.5029412971236" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Conditional Split (Rollercoasters by Scariness)\Rollercoast Excel Source Data">
+    design-time-name="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
