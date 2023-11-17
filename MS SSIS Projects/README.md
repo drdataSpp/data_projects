@@ -101,3 +101,17 @@ https://www.wiseowl.co.uk/integration-services/exercises/standard/conditional-sp
 <img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX7_Output_flat_files.png" width="50%" height="50%">
 
 ***
+
+## Exercises Eight: Lookup transforms - Use a lookup transform to find those dinosaurs whose time periods don't exist in a SQL Server table
+
+**Exercises Link**:
+https://www.wiseowl.co.uk/integration-services/exercises/standard/lookup-transforms/4770/
+
+### Solution screenshot
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX8_Control_Flow.png" width="50%" height="75%">
+
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX8_Data_Flow.png" width="50%" height="75%">
+
+<img src="https://github.com/drdataSpp/data_projects/blob/master/MS%20SSIS%20Projects/Screenshots/SSIS_EX8_Output_MisMatch_Rows.png" width="50%" height="75%">
+
+***
