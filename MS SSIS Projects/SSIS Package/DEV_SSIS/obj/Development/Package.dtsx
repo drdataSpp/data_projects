@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="30"
-  DTS:VersionGUID="{F9E39462-855A-41DF-B48F-1C695673F515}">
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{40692E8D-6479-4089-86D6-68FA92088F2B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -163,6 +163,18 @@
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
           DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\001_Data\data_projects\data_projects\MS SSIS Projects\Source Data\Disney Princesses.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 4]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{59B80083-3035-4E61-9FAC-CD6F6716E8DA}"
+      DTS:ObjectName="Excel Connection Manager 4">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\001_Data\data_projects\data_projects\MS SSIS Projects\Source Data\Dino File.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -594,6 +606,7 @@
       DTS:refId="Package\Conditional Split (Create 2 flat files based on rules)"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{b79491c7-a8cd-4fea-b592-1ae805dd4e84}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -4928,6 +4941,518 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Lookup Exercise - Dinosaurs Exercise"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{8badcc80-6863-48d9-b92f-78c2639d900c}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Lookup Exercise - Dinosaurs Exercise"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Dino Source File"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Specimens$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 4]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 4]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[Name]"
+                      length="255"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Meaning of Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[Meaning of Name]"
+                      length="255"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Meaning of Name]"
+                      name="Meaning of Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Pronunciation]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[Pronunciation]"
+                      length="255"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Pronunciation]"
+                      name="Pronunciation"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Period]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[Period]"
+                      length="255"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Period]"
+                      name="Period"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Diet]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[Diet]"
+                      length="255"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Diet]"
+                      name="Diet"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Length (m)]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[Length (m)]"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Length (m)]"
+                      name="Length (m)"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Height  (m)]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[Height  (m)]"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Height  (m)]"
+                      name="Height  (m)"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Mass kg]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[Mass kg]"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Mass kg]"
+                      name="Mass kg"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[No# of feet it walked on?]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[No# of feet it walked on?]"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[No# of feet it walked on?]"
+                      name="No# of feet it walked on?"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Hip Type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[Hip Type]"
+                      length="255"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Hip Type]"
+                      name="Hip Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Group]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[Group]"
+                      length="255"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Group]"
+                      name="Group"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[Meaning of Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Meaning of Name" />
+                    <externalMetadataColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[Pronunciation]"
+                      dataType="wstr"
+                      length="255"
+                      name="Pronunciation" />
+                    <externalMetadataColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[Period]"
+                      dataType="wstr"
+                      length="255"
+                      name="Period" />
+                    <externalMetadataColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[Diet]"
+                      dataType="wstr"
+                      length="255"
+                      name="Diet" />
+                    <externalMetadataColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[Length (m)]"
+                      dataType="r8"
+                      name="Length (m)" />
+                    <externalMetadataColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[Height  (m)]"
+                      dataType="r8"
+                      name="Height  (m)" />
+                    <externalMetadataColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[Mass kg]"
+                      dataType="r8"
+                      name="Mass kg" />
+                    <externalMetadataColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[No# of feet it walked on?]"
+                      dataType="r8"
+                      name="No# of feet it walked on?" />
+                    <externalMetadataColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[Hip Type]"
+                      dataType="wstr"
+                      length="255"
+                      name="Hip Type" />
+                    <externalMetadataColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].ExternalColumns[Group]"
+                      dataType="wstr"
+                      length="255"
+                      name="Group" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[Meaning of Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[Meaning of Name]"
+                      name="Meaning of Name" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[Pronunciation]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[Pronunciation]"
+                      name="Pronunciation" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[Period]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[Period]"
+                      name="Period" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[Diet]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[Diet]"
+                      name="Diet" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[Length (m)]"
+                      dataType="r8"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[Length (m)]"
+                      name="Length (m)" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[Height  (m)]"
+                      dataType="r8"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[Height  (m)]"
+                      name="Height  (m)" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[Mass kg]"
+                      dataType="r8"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[Mass kg]"
+                      name="Mass kg" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[No# of feet it walked on?]"
+                      dataType="r8"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[No# of feet it walked on?]"
+                      name="No# of feet it walked on?" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[Hip Type]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[Hip Type]"
+                      name="Hip Type" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[Group]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[Group]"
+                      name="Group" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lookup Exercise - Dinosaurs Exercise\Find Corresponding Periods"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Find Corresponding Periods"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Periods_Dino]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Periods_Dino]) [refTable]
+where [refTable].[Period] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Period" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Period]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lookup Exercise - Dinosaurs Exercise\Find Corresponding Periods.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-MCNKFD7O.DEV_SSIS_DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-MCNKFD7O.DEV_SSIS_DB]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Lookup Exercise - Dinosaurs Exercise\Find Corresponding Periods.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Find Corresponding Periods.Inputs[Lookup Input].Columns[Period]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Period"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output].Columns[Period]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Period</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Lookup Exercise - Dinosaurs Exercise\Find Corresponding Periods.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Lookup Exercise - Dinosaurs Exercise\Find Corresponding Periods.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Find Corresponding Periods.Outputs[Lookup Match Output].Columns[Period]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copy Column"
+                      length="255"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Find Corresponding Periods.Outputs[Lookup Match Output].Columns[Period]"
+                      name="Period"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Period</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Lookup Exercise - Dinosaurs Exercise\Find Corresponding Periods.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Lookup Exercise - Dinosaurs Exercise\Find Corresponding Periods.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Lookup Exercise - Dinosaurs Exercise\Find Corresponding Periods.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Lookup Exercise - Dinosaurs Exercise\Find Corresponding Periods.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Find Corresponding Periods.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Find Corresponding Periods.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lookup Exercise - Dinosaurs Exercise\Find Corresponding Periods.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lookup Exercise - Dinosaurs Exercise\Find Corresponding Periods.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lookup Exercise - Dinosaurs Exercise\Multicast"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Multicast">
+              <inputs>
+                <input
+                  refId="Package\Lookup Exercise - Dinosaurs Exercise\Multicast.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Lookup Exercise - Dinosaurs Exercise\Multicast.Outputs[Multicast Output 1]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\Lookup Exercise - Dinosaurs Exercise\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Lookup Exercise - Dinosaurs Exercise.Paths[Excel Source Output]"
+              endId="Package\Lookup Exercise - Dinosaurs Exercise\Find Corresponding Periods.Inputs[Lookup Input]"
+              name="Excel Source Output"
+              startId="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Lookup Exercise - Dinosaurs Exercise.Paths[Lookup No Match Output]"
+              endId="Package\Lookup Exercise - Dinosaurs Exercise\Multicast.Inputs[Multicast Input 1]"
+              name="Lookup No Match Output"
+              startId="Package\Lookup Exercise - Dinosaurs Exercise\Find Corresponding Periods.Outputs[Lookup No Match Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Truncate TGT table before loading"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -4967,7 +5492,11 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <NodeLayout
+          Size="317.6,41.6"
+          Id="Package\Conditional Split (Create 2 flat files based on rules)"
+          TopLeft="452.623378268863,1448.03528316771" />
         <NodeLayout
           Size="292.8,41.6"
           Id="Package\Conditional Split (Rollercoasters by Scariness)"
@@ -5126,12 +5655,8 @@
             </mssge:FontInfo>
           </AnnotationLayout.FontInfo>
         </AnnotationLayout>
-        <NodeLayout
-          Size="317.6,41.6"
-          Id="Package\Conditional Split (Create 2 flat files based on rules)"
-          TopLeft="452.623378268863,1448.03528316771" />
         <AnnotationLayout
-          Text="SSIS Wise Owl: &#xA;Conditional split transforms exercise: Use a conditional split transform to divide the Disney princesses into feisty, drippy and other categories and create 2 flat files&#xD;&#xA;"
+          Text="SSIS Wise Owl: &#xA;Conditional split transforms exercise: Use a conditional split transform to divide the Disney princesses into feisty, drippy and other categories and create 2 flat files&#xA;"
           ParentId="Package"
           Size="1197.6,76"
           Id="c0065612-dca6-4ad2-b613-9be49745c83c"
@@ -5148,9 +5673,164 @@
             </mssge:FontInfo>
           </AnnotationLayout.FontInfo>
         </AnnotationLayout>
+        <NodeLayout
+          Size="252.8,41.6"
+          Id="Package\Lookup Exercise - Dinosaurs Exercise"
+          TopLeft="464.051949892062,1615.68340940694" />
+        <AnnotationLayout
+          Text="Use a lookup transform to find those dinosaurs whose time periods don't exist in a SQL Server table&#xA;"
+          ParentId="Package"
+          Size="742.4,58.4"
+          Id="7c378cc7-4ae0-4044-a709-07b8cff735d5"
+          TopLeft="166.428572304395,1550.39998906079">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="14.25"
+              Color="#FFFFFFFF"
+              Weight="Bold">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\Conditional Split (Create 2 flat files based on rules)">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="240.8,44"
+          Id="Package\Conditional Split (Create 2 flat files based on rules)\Disney princesses Conditional Split"
+          TopLeft="367.063498314546,227.287584886969" />
+        <NodeLayout
+          Size="214.4,41.6"
+          Id="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source"
+          TopLeft="379.56349852742,122.459152044241" />
+        <NodeLayout
+          Size="259.2,41.6"
+          Id="Package\Conditional Split (Create 2 flat files based on rules)\Creating txt file for Not Drippy records"
+          TopLeft="550.000009366444,378.529417073438" />
+        <NodeLayout
+          Size="283.2,41.6"
+          Id="Package\Conditional Split (Create 2 flat files based on rules)\Creating Princess CSV file for Feisty records"
+          TopLeft="172.857145800882,377.76471118036" />
+        <EdgeLayout
+          Id="Package\Conditional Split (Create 2 flat files based on rules).Paths[Princesses]"
+          TopLeft="487.463498314546,271.287584886969">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-173.006352513664,106.477126293391"
+              Start="0,0"
+              End="-173.006352513664,98.9771262933913">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.2385631466957" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,49.2385631466957"
+                    Point2="0,53.2385631466957"
+                    Point3="-4,53.2385631466957" />
+                  <mssgle:LineSegment
+                    End="-169.006352513664,53.2385631466957" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-169.006352513664,53.2385631466957"
+                    Point2="-173.006352513664,53.2385631466957"
+                    Point3="-173.006352513664,57.2385631466957" />
+                  <mssgle:LineSegment
+                    End="-173.006352513664,98.9771262933913" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-109.785754381832,58.2385631466957,46.56515625,9.451171875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conditional Split (Create 2 flat files based on rules).Paths[Not_Drippy]"
+          TopLeft="526.263498314546,271.287584886969">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="153.336511051898,107.241832186469"
+              Start="0,0"
+              End="153.336511051898,99.741832186469">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.3214530020588" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.3214530020588"
+                    Point2="0,43.3214530020588"
+                    Point3="4,43.3214530020588" />
+                  <mssgle:LineSegment
+                    End="149.336511051898,43.3214530020588" />
+                  <mssgle:CubicBezierSegment
+                    Point1="149.336511051898,43.3214530020588"
+                    Point2="153.336511051898,43.3214530020588"
+                    Point3="153.336511051898,47.3214530020588" />
+                  <mssgle:LineSegment
+                    End="153.336511051898,99.741832186469" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="51.2463219321992,48.3214530020588,50.8438671875,11.3310546875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Conditional Split (Create 2 flat files based on rules).Paths[Excel Source Output]"
+          TopLeft="487.113498420983,164.059152044241">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,63.2284328427281"
+              Start="0,0"
+              End="0,55.7284328427281">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.7284328427281" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Conditional Split (Rollercoasters by Scariness)">
     <LayoutInfo>
@@ -6119,32 +6799,32 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Conditional Split (Create 2 flat files based on rules)">
+    design-time-name="Package\Lookup Exercise - Dinosaurs Exercise">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="214.4,41.6"
-          Id="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source"
-          TopLeft="379.56349852742,122.459152044241" />
+          Size="154.4,41.6"
+          Id="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File"
+          TopLeft="64.2857153804935,159.823531653229" />
         <NodeLayout
-          Size="240.8,44"
-          Id="Package\Conditional Split (Create 2 flat files based on rules)\Disney princesses Conditional Split"
-          TopLeft="367.063498314546,227.287584886969" />
+          Size="207.2,41.6"
+          Id="Package\Lookup Exercise - Dinosaurs Exercise\Find Corresponding Periods"
+          TopLeft="296.42857647672,159.058825760152" />
         <EdgeLayout
-          Id="Package\Conditional Split (Create 2 flat files based on rules).Paths[Excel Source Output]"
-          TopLeft="487.113498420983,164.059152044241">
+          Id="Package\Lookup Exercise - Dinosaurs Exercise.Paths[Excel Source Output]"
+          TopLeft="218.685715380493,180.241178706691">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,63.2284328427281"
+              EndConnector="77.7428610962264,0"
               Start="0,0"
-              End="0,55.7284328427281">
+              End="70.2428610962264,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,55.7284328427281" />
+                    End="70.2428610962264,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6154,82 +6834,30 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="283.2,41.6"
-          Id="Package\Conditional Split (Create 2 flat files based on rules)\Creating Princess CSV file for Feisty records"
-          TopLeft="172.857145800882,377.76471118036" />
+          Size="120,41.6"
+          Id="Package\Lookup Exercise - Dinosaurs Exercise\Multicast"
+          TopLeft="647.857153890085,159.823531653229" />
         <EdgeLayout
-          Id="Package\Conditional Split (Create 2 flat files based on rules).Paths[Princesses]"
-          TopLeft="487.463498314546,271.287584886969">
+          Id="Package\Lookup Exercise - Dinosaurs Exercise.Paths[Lookup No Match Output]"
+          TopLeft="503.62857647672,180.241178706691">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="-173.006352513664,106.477126293391"
+              EndConnector="144.228577413365,0"
               Start="0,0"
-              End="-173.006352513664,98.9771262933913">
+              End="136.728577413365,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.2385631466957" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,49.2385631466957"
-                    Point2="0,53.2385631466957"
-                    Point3="-4,53.2385631466957" />
-                  <mssgle:LineSegment
-                    End="-169.006352513664,53.2385631466957" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-169.006352513664,53.2385631466957"
-                    Point2="-173.006352513664,53.2385631466957"
-                    Point3="-173.006352513664,57.2385631466957" />
-                  <mssgle:LineSegment
-                    End="-173.006352513664,98.9771262933913" />
+                    End="136.728577413365,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-109.785754381832,58.2385631466957,46.56515625,9.451171875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="259.2,41.6"
-          Id="Package\Conditional Split (Create 2 flat files based on rules)\Creating txt file for Not Drippy records"
-          TopLeft="550.000009366444,378.529417073438" />
-        <EdgeLayout
-          Id="Package\Conditional Split (Create 2 flat files based on rules).Paths[Not_Drippy]"
-          TopLeft="526.263498314546,271.287584886969">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="153.336511051898,107.241832186469"
-              Start="0,0"
-              End="153.336511051898,99.741832186469">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.3214530020588" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39.3214530020588"
-                    Point2="0,43.3214530020588"
-                    Point3="4,43.3214530020588" />
-                  <mssgle:LineSegment
-                    End="149.336511051898,43.3214530020588" />
-                  <mssgle:CubicBezierSegment
-                    Point1="149.336511051898,43.3214530020588"
-                    Point2="153.336511051898,43.3214530020588"
-                    Point3="153.336511051898,47.3214530020588" />
-                  <mssgle:LineSegment
-                    End="153.336511051898,99.741832186469" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="51.2463219321992,48.3214530020588,50.8438671875,11.3310546875"
+              BoundingBox="3.68924964418241,5,129.350078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6237,7 +6865,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Conditional Split (Create 2 flat files based on rules)\Disney Princess Excel Source">
+    design-time-name="Package\Lookup Exercise - Dinosaurs Exercise\Dino Source File">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6246,6 +6874,29 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Lookup Exercise - Dinosaurs Exercise\Find Corresponding Periods">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Periods_Dino]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
