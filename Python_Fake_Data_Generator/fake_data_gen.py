@@ -26,14 +26,10 @@ def read_ddl_from_file(file_path):
 
 def extract_columns_from_ddl(ddl):
     # Remove unnecessary SQL keywords
-    ddl = re.sub(r'\b(?:CHARACTER SET|NOT CASESPECIFIC|UNICODE|NOT NULL|LATIN|FORMAT|YYYY-MM-DD)\b', '', ddl)
+    ddl = re.sub(r'\b(?:CREATE MULTISET TABLE|UNICODE|NOT NULL|CHARACTER SET|PRIMARY INDEX|Primary Index|PRIMARY KEY)\b', '', ddl)
 
     # Extract column names and data types using regular expressions
-    ##columns_info = re.findall(r'(\w+)\s+(\w+(?:\(\d+\))?)', ddl) 
-    
-    pattern = re.compile(r'(\w+)\s+(\w+(?:\(\d+(?:,\d+)?\))?(?:\s+FORMAT\s+\'[^\']*\'|)?)')
-
-    columns_info = pattern.findall(ddl)
+    columns_info = re.findall(r'(\w+)\s+(\w+(?:\(\d+\))?)', ddl)
 
     # Create a DataFrame with the extracted information
     df = pd.DataFrame(columns_info, columns=['ColumnName', 'ColumnDataType'])
@@ -48,14 +44,8 @@ def generate_bigint():
 def generate_integer():
     return random.randint(0, 2147483647)
 
-def generate_smallInt():
-    return random.randint(0, 32767)
-
-def generate_byteInt():
-    return random.randint(0, 127)
-
-def generate_decimal(total_digits, decimal_points):
-    return round(random.uniform(0, 10**total_digits), decimal_points)
+def generate_decimal(x):
+    return round(random.uniform(0, 10**x), 3)
 
 def generate_character(length):
     return ''.join(random.choice(string.ascii_letters) for _ in range(length))
@@ -101,32 +91,9 @@ def generate_mock_data(row, num_rows):
                 row_data.append(generate_date())
             elif 'TIMESTAMP' in col_type:
                 row_data.append(generate_timestamp())
-            # elif 'DECIMAL' in col_type or 'NUMBER' in col_type:
-            #     # Extract total digits and decimal points from the type
-            #     match = re.match(r'\D*(\d+)(?:\D*(\d+))?\D*', col_type)
-            #     total_digits = int(match.group(1))
-            #     decimal_points = int(match.group(2)) if match.group(2) else 0
-            #     row_data.append(generate_decimal(total_digits, decimal_points))
-            elif 'DECIMAL' in col_type or 'NUMBER' in col_type:
-                # Extract total digits and decimal points from the type
-                match = re.match(r'\D*(\d+)(?:\D*(\d+))?\D*', col_type)
-                total_digits = int(match.group(1))
-                decimal_points = int(match.group(2)) if match.group(2) else 0
-
-                if total_digits <= 3:
-                    row_data.append(generate_byteInt())
-                elif total_digits <= 5:
-                    row_data.append(generate_smallInt())
-                elif total_digits <= 10:
-                    row_data.append(generate_integer())
-                elif total_digits <= 19:
-                    row_data.append(generate_bigint())
-                else:
-                    row_data.append(generate_bigint())
-
-                # Round the generated value to the specified decimal points
-                if decimal_points > 0:
-                    row_data[-1] = round(row_data[-1], decimal_points)
+            elif col_type.find('DECIMAL') != 1:
+                length = int(col_type[col_type.index('(') + 1:col_type.index(')')])
+                row_data.append(generate_decimal(length))
             else:
                 raise ValueError(f"Unsupported data type: {col_type}")
 
@@ -158,7 +125,7 @@ def main():
     # Print the generated mock data
     print(mock_df)
     
-    mock_df.to_csv('mock_cust_data.csv')
+    ##mock_df.to_csv('mock_cust_data.csv')
     
 if __name__ == "__main__":
     main()
