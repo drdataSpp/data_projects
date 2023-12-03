@@ -72,7 +72,7 @@ def generate_timestamp():
     random_timestamp = start_timestamp + timedelta(
         microseconds=random.randint(0, (end_timestamp - start_timestamp).microseconds)
     )
-    return random_timestamp.strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]
+    return random_timestamp.strftime('%Y-%m-%d %H:%M:%S.%f')#[:-3]
 
 
 def generate_mock_data(row, num_rows):
