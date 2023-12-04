@@ -1,5 +1,3 @@
-{{ config(materialized='view') }}
-
 with cte_analysis_accepted_prods as (
 
     select fct.ProductCode as product_id,
