@@ -6,3 +6,10 @@ sources:
     schema: dbo
     tables:
       - name: DimProduct
+
+
+  - name: RAW
+    database: PY_ELT_Acquisition_Db
+    schema: dbo
+    tables:
+      - name: cust    
