@@ -7,7 +7,8 @@
       unique_key='cust_id',
 
       strategy='check',
-      check_cols=['first_name','last_name','email','gender','cust_street_addr'],
+      check_cols=['email','cust_street_addr'],
+      invalidate_hard_deletes=True,
     )
 }}
 
