@@ -12,4 +12,10 @@ sources:
     database: PY_ELT_Acquisition_Db
     schema: dbo
     tables:
-      - name: cust    
+      - name: cust 
+
+  - name: RAW_SuperStore_tbl
+    database: DEV 
+    schema: dbo
+    tables:
+      - name: RAW_SuperStore
