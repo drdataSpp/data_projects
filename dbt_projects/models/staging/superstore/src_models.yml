@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: RAW_SuperStore_tbl
+    database: DEV 
+    schema: dbo
+    tables:
+      - name: RAW_SuperStore

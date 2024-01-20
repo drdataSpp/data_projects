@@ -1,6 +1,7 @@
 with cte_products as 
 (
     select 
+        
         Product_ID                              as PRODUCT_ID_NK,
         CAST(Product_Name AS VARCHAR(500))      as PRODUCT_NAME,
         Category                                as PRODUCT_CATEGORY,
