@@ -31,7 +31,7 @@ To access a Snowflake instance, we don't have to log in to the cloud provider co
 - **Databases:** Under Data > Databases, we can find the list of available databases, the owner of the DB, the time when it was created, and we can create new DBs if we have the right privileges.
 - **Warehouses:** Under Admin > Warehouses, we can find the list of available Warehouses, the configuration of the Warehouse, the owner of the Warehouse, and the time when it was created, and we can create new Warehouses if we have the right privileges.
 
-## Exercise 3: Creating a new DB, new Table, and querying in the Multi-cluster Warehouse
+## Exercise 3: Creating a new DB and Schema in the Multi-cluster Warehouse
 
 - Worksheets can be renamed and organized under a folder, I have created a new folder called 'Self learning' and saved my SQL worksheets based on the query and purpose for better documentation purposes.
 
@@ -67,4 +67,10 @@ To access a Snowflake instance, we don't have to log in to the cloud provider co
 	
 	- Whenever a new database is created a 'public' schema is created by default along with 'information schema'. The information schema will hold the metadata information like tables, their column and data types.
 	
-	
+## Exercise 4: Creating a new Table in the Multi-cluster Warehouse
+
+- Open a worksheet, select the database and schema where you wish to create the table and use the CREATE TABLE SQL to create the new table.
+
+- To verify the table creation and metadata information, use `DESCRIBE TABLE {table_name};` sql. This shows all the column and column's information in that table.
+
+- If a table's column is created with a wrong datatype or name, we can either use ALTER TABLE sql to update the column, or use the new DDL but with `CREATE OT REPLACE TABLE` sql.

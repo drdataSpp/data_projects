@@ -42,3 +42,16 @@ COMMENT = 'This is Pre-Production Schema';
 USE DATABASE temporary_database
 CREATE SCHEMA test_env
 COMMENT = 'This is test env schema';
+
+
+
+--Creating a database for ETL purposes
+CREATE TRANSIENT DATABASE DEV
+DATA_RETENTION_TIME_IN_DAYS = 0
+COMMENT = 'Development DB';
+
+CREATE SCHEMA RAW
+COMMENT = 'RAW schema holds all source data as it is with 0 txfms';
+
+CREATE SCHEMA TXFM
+COMMENT = 'TXFM schema holds transformed data from RAW schema';
