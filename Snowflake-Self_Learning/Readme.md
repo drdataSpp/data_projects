@@ -7,7 +7,7 @@ Snowflake is a Software as a Service (Saas), it is hosted on one of the major cl
 
 To access a Snowflake instance, we don't have to log in to the cloud provider console but can use a URL link to access the Snowflake instance. Snowflake offers users a single and consistent entry point (that ends with snowflakecomputing.com).
 
-## Exercise 1: Creating a Multi-cluster Warehouse
+## Topic 1: Creating a Multi-cluster Warehouse
 
 - To create an MC WH, we must switch to **SYSADMIN** or a higher role
 - Understanding the configuration of the Multi-cluster Warehouse:
@@ -25,13 +25,13 @@ To access a Snowflake instance, we don't have to log in to the cloud provider co
 	- AUTO_RESUME will automatically resume a suspended WH once it receives a query.
 	- INITIALLY_SUSPENDED, setting true will create the WH in a suspended state.
 	
-## Exercise 2: Understanding the Snowflake UI
+## Topic 2: Understanding the Snowflake UI
 
 - **Worksheets:** Worksheets is the default view that shows up when we open a Snowflake instance and that's where we can write and execute our queries.
 - **Databases:** Under Data > Databases, we can find the list of available databases, the owner of the DB, the time when it was created, and we can create new DBs if we have the right privileges.
 - **Warehouses:** Under Admin > Warehouses, we can find the list of available Warehouses, the configuration of the Warehouse, the owner of the Warehouse, and the time when it was created, and we can create new Warehouses if we have the right privileges.
 
-## Exercise 3: Creating a new DB and Schema in the Multi-cluster Warehouse
+## Topic 3: Creating a new DB and Schema in the Multi-cluster Warehouse
 
 - Worksheets can be renamed and organized under a folder, I have created a new folder called 'Self learning' and saved my SQL worksheets based on the query and purpose for better documentation purposes.
 
@@ -67,10 +67,25 @@ To access a Snowflake instance, we don't have to log in to the cloud provider co
 	
 	- Whenever a new database is created a 'public' schema is created by default along with 'information schema'. The information schema will hold the metadata information like tables, their column and data types.
 	
-## Exercise 4: Creating a new Table in the Multi-cluster Warehouse
+## Topic 4: Creating a new Table in the Multi-cluster Warehouse
 
 - Open a worksheet, select the database and schema where you wish to create the table and use the CREATE TABLE SQL to create the new table.
 
 - To verify the table creation and metadata information, use `DESCRIBE TABLE {table_name};` sql. This shows all the column and column's information in that table.
 
 - If a table's column is created with a wrong datatype or name, we can either use ALTER TABLE sql to update the column, or use the new DDL but with `CREATE OT REPLACE TABLE` sql.
+
+- `REPLACE` is a shorthand for this tradional SQL `DROP TABLE IF EXISTS; CREATE TABLE;`.
+
+- Difference between Deep copy and Shallow copy in Tables:
+	- Deep copy is performed using *CTAS* or `CREATE OR REPLACE TABLE customers_deep_copy AS SELECT * FROM customers;` sql, where we copy the table's structure along with the data in it.
+	- Shallow copy is copying just the table structure but not the data, `CREATE OR REPLACE TABLE customers_shallow_copy LIKE customers;`.
+
+- Difference between Temporary and Transient Tables:
+	- `CREATE TABLE` will create tables with permanent life, where as, `CREATE TEMPORARY TABLE AS` or `CREATE TRANSIENT TABLE AS` will create temporary and transient tables. The temporary tables will be gone once the UI session is killed, but the transient tables will be preserved across sessions but does not consume fail-safe storage.
+	
+	- Temporary table will exist only till the user's UI session is active and temporary table cannot be viewed or queried by other users.
+	
+	- Transient tables will exist until explicitly dropped and are visible to any user with the appropriate privileges. Transient tables have a lower level of data protection than permanent tables.
+	
+	
