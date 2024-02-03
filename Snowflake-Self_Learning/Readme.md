@@ -40,3 +40,20 @@ To access a Snowflake instance, we don't have to log in to the cloud provider co
 - Once the DB is created, write the SQL to create a table and execute it.
 
 - Worksheets can have it's combination of role, virtual warehouse, database, and schema. To execute a query successfully, the user should have a valid role and virtual warehouse. To query a table from a different database and not the one under the database selected in the worksheet, one can fully qualify the database, schema, and table name to do so.
+
+- To check a newly created Database in Snowflake, Use `SHOW DATABASES LIKE '{database_name}' `
+
+- retention_time:
+	- When creating a new database using the standard `CREATE DATABASE ` SQL statement, the retention_time of that Database is defaulted to 1 or 1 day. This means Snowflake preserves the state of a data for a day.
+	
+	- To preserve data more than one day, we need the Enterprise edition and need to set the retention_time while creating an object using the parameter **DATA_RETENTION_TIME_IN_DAYS**
+	
+	- Time travel option is highly recommended for production databases but not for development and temporary databases. Removing time travel and fail-safe storage options in development regions will help in reduction of storage costs.
+	
+	- To remove fail-safe storage option while creating a database, use `CREATE TRANSIENT DATABASE` sql over `CREATE DATABASE` sql.
+	
+	- Time travel option can be configured later after creating a database using the `ALTER DATABASE {name} SET DATA_RETENTION_TIME_IN_DAYS = ` sql.
+	
+	- ETL processing databases and tables (in Development region) should be created as transient ones and DATA_RETENTION_TIME_IN_DAYS should be set to zero. These tables will often get new data, updates in existing data and deletes, if these tables are created with fail-safe storage and time travel option, we will end up incurring costs for every change that will happen to that table.
+	
+	- Creating a new database with DATA_RETENTION_TIME_IN_DAYS set to zero and no fail-safe storage option will create the objects within that database with the same configs, but this configs can be manually over-written while creating tables under that database.
