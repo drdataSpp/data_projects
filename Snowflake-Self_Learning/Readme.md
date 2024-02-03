@@ -57,3 +57,14 @@ To access a Snowflake instance, we don't have to log in to the cloud provider co
 	- ETL processing databases and tables (in Development region) should be created as transient ones and DATA_RETENTION_TIME_IN_DAYS should be set to zero. These tables will often get new data, updates in existing data and deletes, if these tables are created with fail-safe storage and time travel option, we will end up incurring costs for every change that will happen to that table.
 	
 	- Creating a new database with DATA_RETENTION_TIME_IN_DAYS set to zero and no fail-safe storage option will create the objects within that database with the same configs, but this configs can be manually over-written while creating tables under that database.
+	
+- Schema:
+	- Creating schema under a database will create the schema same as the Database config unless specified.
+	
+	- To create a new schema `USE DATABASE {db_name} CREATE SCHEMA {schema_name}` , to view a created schema, `SHOW SCHEMAS LIKE '%{schema_name}%' IN DATABASE {db_name};`
+	
+	- Similar to Databases, schemas can also be created using `CREATE TRANSIENT SCHEMA` to save in storage costs.
+	
+	- Whenever a new database is created a 'public' schema is created by default along with 'information schema'. The information schema will hold the metadata information like tables, their column and data types.
+	
+	

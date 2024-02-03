@@ -30,3 +30,15 @@ COMMENT = 'Critical production database';
 CREATE TRANSIENT DATABASE temporary_database
 DATA_RETENTION_TIME_IN_DAYS = 0
 COMMENT = 'Temporary database for ETL processing';
+
+--Creating two new schemas
+
+--Schema One under production_database, this will have all configs as prod db
+USE DATABASE production_database
+CREATE SCHEMA pre_prod
+COMMENT = 'This is Pre-Production Schema';
+
+--Schema Two under temporary_database, this will have all configs as temp db
+USE DATABASE temporary_database
+CREATE SCHEMA test_env
+COMMENT = 'This is test env schema';
