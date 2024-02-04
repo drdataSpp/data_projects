@@ -15,11 +15,11 @@ To access a Snowflake instance, we don't have to log in to the cloud provider co
 	- Choosing 'Economy' as the scaling policy will scale the WH only when there are enough queries to keep the additional cluster busy for 6 minutes.
 	- AUTO_SUSPEND will automatically suspend the WH if there's no activity for the minutes mentioned.
 	- Nodes and WH size:
-		- XS 	= 1 Node
-		- S 	= 2 Nodes
-		- M		= 4 Nodes
-		- L		= 8 Nodes
-		- XL	= 16 Nodes
+			- XS 	= 1 Node
+			- S 	= 2 Nodes
+			- M		= 4 Nodes
+			- L		= 8 Nodes
+			- XL	= 16 Nodes
 	
 		- Having the highest number of nodes will not always come up with the highest performance, WH's nodes and size should be decided based on the activity that's going to take place on the WH, for example, DBA and admins can benefit out of S, Reporting queries can use M, Data Scientists can use XL and Interactive queries can happen on a L MC WH.
 	- AUTO_RESUME will automatically resume a suspended WH once it receives a query.
@@ -104,5 +104,10 @@ To access a Snowflake instance, we don't have to log in to the cloud provider co
 	- *Database tables* point to the data inside a database.
 	- *External tables* point to the data present in the files that exists in a staging area.
 	- Data present in a database table can be exposed to CRUD operations but external tables are read-only table.
+	- External table's rows are created in JSON format with a key-value pair, where the key is column name and the value is row value.
 	
-- 
+- A created stage can be viewed similar to database and table using `SHOW STAGES LIKE '{stage_name}';`, this will return information like database and schema in which the stage is created, URL of the stage, cloud in which it is stored, etc.
+
+- An external table can be created using `create or replace external table {tbl_name} with location = @{stage_name} file_format = (type = csv) pattern = '.*{file_pattern}[.]csv';`.
+
+- Once an external table is created, we can use `SELECT value:c1::float as {column_name} from ext_table;`. Here, we are selecting all values from column one, cast them into float datatype and aliasing the column.
