@@ -123,3 +123,6 @@ To access a Snowflake instance, we don't have to log in to the cloud provider co
 - Difference between view and materialized view:
 	- Materialized view takes more time while creating but not querying, views are quicker to create but longer to query.
 	- Views store the SQL DDL to fetch the data, whereas, materialized views store the actual data in them.
+	- Normal views are queried, then the underlying SQL is queried to the user. That's the reason behind the wait time. More complex the underlying query, higher the time it takes to output the result set.
+	- Normal views are recommended when creating a 1-to-1 copy of a table or while selecting just the active records from a SCD table.
+	- Materialized views are recommended when creating views is complex and reusable logics. Materialized views run the query as soon as the view gets created and stores the data in them and not just the SQL behind the data. This is why it's take some time when created for first time but quicker when quering.
