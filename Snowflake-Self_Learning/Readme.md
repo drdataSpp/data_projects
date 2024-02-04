@@ -108,6 +108,18 @@ To access a Snowflake instance, we don't have to log in to the cloud provider co
 	
 - A created stage can be viewed similar to database and table using `SHOW STAGES LIKE '{stage_name}';`, this will return information like database and schema in which the stage is created, URL of the stage, cloud in which it is stored, etc.
 
+- Using the last_modified_date column values from external stage, we can set up triggers to run ETL jobs to update data in external tables.
+
 - An external table can be created using `create or replace external table {tbl_name} with location = @{stage_name} file_format = (type = csv) pattern = '.*{file_pattern}[.]csv';`.
 
 - Once an external table is created, we can use `SELECT value:c1::float as {column_name} from ext_table;`. Here, we are selecting all values from column one, cast them into float datatype and aliasing the column.
+
+## Topic 6: Views in Snowflake
+
+- Snowflake views can be created using the `CREATE VIEW ...` sql.
+
+- Creating simple views in Snowflake and querying it will take a reasonalble amount of time to return the output, in my case, it took 41s to return 2.5K rows. This issue can be tackled with the help of materialized view. To create materialized views, we need at least Enterprise edition.
+
+- Difference between view and materialized view:
+	- Materialized view takes more time while creating but not querying, views are quicker to create but longer to query.
+	- Views store the SQL DDL to fetch the data, whereas, materialized views store the actual data in them.
