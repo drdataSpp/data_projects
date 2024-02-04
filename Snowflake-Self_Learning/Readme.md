@@ -118,6 +118,8 @@ To access a Snowflake instance, we don't have to log in to the cloud provider co
 
 - Snowflake views can be created using the `CREATE VIEW ...` sql.
 
+- Snowflake materialized views can be created using the `CREATE MATERIALIZED VIEW ...` sql.
+
 - Creating simple views in Snowflake and querying it will take a reasonalble amount of time to return the output, in my case, it took 41s to return 2.5K rows. This issue can be tackled with the help of materialized view. To create materialized views, we need at least Enterprise edition.
 
 - Difference between view and materialized view:
