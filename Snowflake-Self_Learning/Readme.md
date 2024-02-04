@@ -15,11 +15,11 @@ To access a Snowflake instance, we don't have to log in to the cloud provider co
 	- Choosing 'Economy' as the scaling policy will scale the WH only when there are enough queries to keep the additional cluster busy for 6 minutes.
 	- AUTO_SUSPEND will automatically suspend the WH if there's no activity for the minutes mentioned.
 	- Nodes and WH size:
-		XS 	= 1 Node
-		S 	= 2 Nodes
-		M	= 4 Nodes
-		L	= 8 Nodes
-		Xl	= 16 Nodes
+		- XS 	= 1 Node
+		- S 	= 2 Nodes
+		- M		= 4 Nodes
+		- L		= 8 Nodes
+		- XL	= 16 Nodes
 	
 		- Having the highest number of nodes will not always come up with the highest performance, WH's nodes and size should be decided based on the activity that's going to take place on the WH, for example, DBA and admins can benefit out of S, Reporting queries can use M, Data Scientists can use XL and Interactive queries can happen on a L MC WH.
 	- AUTO_RESUME will automatically resume a suspended WH once it receives a query.
@@ -87,5 +87,22 @@ To access a Snowflake instance, we don't have to log in to the cloud provider co
 	- Temporary table will exist only till the user's UI session is active and temporary table cannot be viewed or queried by other users.
 	
 	- Transient tables will exist until explicitly dropped and are visible to any user with the appropriate privileges. Transient tables have a lower level of data protection than permanent tables.
+
+	- 1 day of retention data period by default, no fail-safe storage option available.
+
+	- We can create a transient table from temporary and a temporary table from a transient but using either of these two we cannot create a permanent table.
 	
+## Topic 5: Stage in Snowflake
+
+- A Stage is a logical concept of a filesystem location that is external (AWS S3) or internal (Example, User's can create their own Stage) to Snowflake.
+
+- A stage can be created using  `CREATE OR REPLACE STAGE {name} URL= {cloud_URL}` sql in a worksheet after selecting the WH, DATABASE, Schema and with required privileges.
+
+- After creating an internal or external STAGE, we can use `LIST @{stage_name}` sql to view all the stages files under that STAGE.
+
+- Difference between Database tables and External tables?
+	- *Database tables* point to the data inside a database.
+	- *External tables* point to the data present in the files that exists in a staging area.
+	- Data present in a database table can be exposed to CRUD operations but external tables are read-only table.
 	
+- 
