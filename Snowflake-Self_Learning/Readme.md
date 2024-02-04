@@ -15,11 +15,11 @@ To access a Snowflake instance, we don't have to log in to the cloud provider co
 	- Choosing 'Economy' as the scaling policy will scale the WH only when there are enough queries to keep the additional cluster busy for 6 minutes.
 	- AUTO_SUSPEND will automatically suspend the WH if there's no activity for the minutes mentioned.
 	- Nodes and WH size:
-			- XS 	= 1 Node
-			- S 	= 2 Nodes
-			- M		= 4 Nodes
-			- L		= 8 Nodes
-			- XL	= 16 Nodes
+			XS 	= 1 Node
+			,S 	= 2 Nodes
+			,M	= 4 Nodes
+			,L	= 8 Nodes
+			,XL	= 16 Nodes
 	
 		- Having the highest number of nodes will not always come up with the highest performance, WH's nodes and size should be decided based on the activity that's going to take place on the WH, for example, DBA and admins can benefit out of S, Reporting queries can use M, Data Scientists can use XL and Interactive queries can happen on a L MC WH.
 	- AUTO_RESUME will automatically resume a suspended WH once it receives a query.
