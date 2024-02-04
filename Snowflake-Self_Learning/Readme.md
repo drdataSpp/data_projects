@@ -44,45 +44,45 @@ To access a Snowflake instance, we don't have to log in to the cloud provider co
 - To check a newly created Database in Snowflake, Use `SHOW DATABASES LIKE '{database_name}' `
 
 - retention_time:
-	- When creating a new database using the standard `CREATE DATABASE ` SQL statement, the retention_time of that Database is defaulted to 1 or 1 day. This means Snowflake preserves the state of a data for a day.
+	- When creating a new database using the standard `CREATE DATABASE ` SQL statement, the retention_time of that Database is defaulted to 1 or 1 day. This means Snowflake preserves the state of data for a day.
 	
-	- To preserve data more than one day, we need the Enterprise edition and need to set the retention_time while creating an object using the parameter **DATA_RETENTION_TIME_IN_DAYS**
+	- To preserve data for more than one day, we need the Enterprise edition and need to set the retention_time while creating an object using the parameter **DATA_RETENTION_TIME_IN_DAYS**
 	
-	- Time travel option is highly recommended for production databases but not for development and temporary databases. Removing time travel and fail-safe storage options in development regions will help in reduction of storage costs.
+	- The time travel option is highly recommended for production databases but not for development and temporary databases. Removing time travel and fail-safe storage options in development regions will help in the reduction of storage costs.
 	
-	- To remove fail-safe storage option while creating a database, use `CREATE TRANSIENT DATABASE` sql over `CREATE DATABASE` sql.
+	- To remove the fail-safe storage option while creating a database, use `CREATE TRANSIENT DATABASE` SQL over `CREATE DATABASE` SQL.
 	
-	- Time travel option can be configured later after creating a database using the `ALTER DATABASE {name} SET DATA_RETENTION_TIME_IN_DAYS = ` sql.
+	- Time travel option can be configured later after creating a database using the `ALTER DATABASE {name} SET DATA_RETENTION_TIME_IN_DAYS = ` SQL.
 	
-	- ETL processing databases and tables (in Development region) should be created as transient ones and DATA_RETENTION_TIME_IN_DAYS should be set to zero. These tables will often get new data, updates in existing data and deletes, if these tables are created with fail-safe storage and time travel option, we will end up incurring costs for every change that will happen to that table.
+	- ETL processing databases and tables (in the Development region) should be created as transient ones and DATA_RETENTION_TIME_IN_DAYS should be set to zero. These tables will often get new data, updates in existing data, and deletes, if these tables are created with fail-safe storage and time travel option, we will end up incurring costs for every change that will happen to that table.
 	
-	- Creating a new database with DATA_RETENTION_TIME_IN_DAYS set to zero and no fail-safe storage option will create the objects within that database with the same configs, but this configs can be manually over-written while creating tables under that database.
+	- Creating a new database with DATA_RETENTION_TIME_IN_DAYS set to zero and no fail-safe storage option will create the objects within that database with the same configs, but this config can be manually over-written while creating tables under that database.
 	
 - Schema:
-	- Creating schema under a database will create the schema same as the Database config unless specified.
+	- Creating schema under a database will create the schema the same as the Database config unless specified.
 	
-	- To create a new schema `USE DATABASE {db_name} CREATE SCHEMA {schema_name}` , to view a created schema, `SHOW SCHEMAS LIKE '%{schema_name}%' IN DATABASE {db_name};`
+	- To create a new schema `USE DATABASE {db_name} CREATE SCHEMA {schema_name}`, to view a created schema, `SHOW SCHEMAS LIKE '%{schema_name}%' IN DATABASE {db_name};`
 	
-	- Similar to Databases, schemas can also be created using `CREATE TRANSIENT SCHEMA` to save in storage costs.
+	- Similar to Databases, schemas can also be created using `CREATE TRANSIENT SCHEMA` to save on storage costs.
 	
-	- Whenever a new database is created a 'public' schema is created by default along with 'information schema'. The information schema will hold the metadata information like tables, their column and data types.
+	- Whenever a new database is created a 'public' schema is created by default along with 'information schema'. The information schema will hold the metadata information like tables, columns, and data types.
 	
 ## Topic 4: Creating a new Table in the Multi-cluster Warehouse
 
-- Open a worksheet, select the database and schema where you wish to create the table and use the CREATE TABLE SQL to create the new table.
+- Open a worksheet, select the database and schema where you wish to create the table, and use the CREATE TABLE SQL to create the new table.
 
-- To verify the table creation and metadata information, use `DESCRIBE TABLE {table_name};` sql. This shows all the column and column's information in that table.
+- To verify the table creation and metadata information, use `DESCRIBE TABLE {table_name};` SQL. This shows all the column and column information in that table.
 
-- If a table's column is created with a wrong datatype or name, we can either use ALTER TABLE sql to update the column, or use the new DDL but with `CREATE OT REPLACE TABLE` sql.
+- If a table's column is created with a wrong datatype or name, we can either use ALTER TABLE SQL to update the column, or use the new DDL but with `CREATE OT REPLACE TABLE` SQL.
 
-- `REPLACE` is a shorthand for this tradional SQL `DROP TABLE IF EXISTS; CREATE TABLE;`.
+- `REPLACE` is a shorthand for this traditional SQL `DROP TABLE IF EXISTS; CREATE TABLE;`.
 
 - Difference between Deep copy and Shallow copy in Tables:
-	- Deep copy is performed using *CTAS* or `CREATE OR REPLACE TABLE customers_deep_copy AS SELECT * FROM customers;` sql, where we copy the table's structure along with the data in it.
+	- Deep copy is performed using *CTAS* or `CREATE OR REPLACE TABLE customers_deep_copy AS SELECT * FROM customers;` SQL, where we copy the table's structure along with the data in it.
 	- Shallow copy is copying just the table structure but not the data, `CREATE OR REPLACE TABLE customers_shallow_copy LIKE customers;`.
 
 - Difference between Temporary and Transient Tables:
-	- `CREATE TABLE` will create tables with permanent life, where as, `CREATE TEMPORARY TABLE AS` or `CREATE TRANSIENT TABLE AS` will create temporary and transient tables. The temporary tables will be gone once the UI session is killed, but the transient tables will be preserved across sessions but does not consume fail-safe storage.
+	- `CREATE TABLE` will create tables with permanent life, whereas, `CREATE TEMPORARY TABLE AS` or `CREATE TRANSIENT TABLE AS` will create temporary and transient tables. The temporary tables will be gone once the UI session is killed, but the transient tables will be preserved across sessions but do not consume fail-safe storage.
 	
 	- Temporary table will exist only till the user's UI session is active and temporary table cannot be viewed or queried by other users.
 	
@@ -90,41 +90,41 @@ To access a Snowflake instance, we don't have to log in to the cloud provider co
 
 	- 1 day of retention data period by default, no fail-safe storage option available.
 
-	- We can create a transient table from temporary and a temporary table from a transient but using either of these two we cannot create a permanent table.
+	- We can create a transient table from a temporary and a temporary table from a transient but using either of these two we cannot create a permanent table.
 	
 ## Topic 5: Stage in Snowflake
 
-- A Stage is a logical concept of a filesystem location that is external (AWS S3) or internal (Example, User's can create their own Stage) to Snowflake.
+- A Stage is a logical concept of a filesystem location that is external (AWS S3) or internal (For example, users can create their Stage) to Snowflake.
 
-- A stage can be created using  `CREATE OR REPLACE STAGE {name} URL= {cloud_URL}` sql in a worksheet after selecting the WH, DATABASE, Schema and with required privileges.
+- A stage can be created using  `CREATE OR REPLACE STAGE {name} URL= {cloud_URL}` SQL in a worksheet after selecting the WH, DATABASE, Schema, and with required privileges.
 
-- After creating an internal or external STAGE, we can use `LIST @{stage_name}` sql to view all the stages files under that STAGE.
+- After creating an internal or external STAGE, we can use `LIST @{stage_name}` SQL to view all the stage files under that STAGE.
 
 - Difference between Database tables and External tables?
 	- *Database tables* point to the data inside a database.
-	- *External tables* point to the data present in the files that exists in a staging area.
-	- Data present in a database table can be exposed to CRUD operations but external tables are read-only table.
-	- External table's rows are created in JSON format with a key-value pair, where the key is column name and the value is row value.
+	- *External tables* point to the data present in the files that exist in a staging area.
+	- Data present in a database table can be exposed to CRUD operations but external tables are read-only tables.
+	- External table's rows are created in JSON format with a key-value pair, where the key is the column name and the value is the row value.
 	
-- A created stage can be viewed similar to database and table using `SHOW STAGES LIKE '{stage_name}';`, this will return information like database and schema in which the stage is created, URL of the stage, cloud in which it is stored, etc.
+- A created stage can be viewed similarly to a database and table using `SHOW STAGES LIKE '{stage_name}';`, this will return information like the database and schema in which the stage is created, URL of the stage, cloud in which it is stored, etc.
 
-- Using the last_modified_date column values from external stage, we can set up triggers to run ETL jobs to update data in external tables.
+- Using the last_modified_date column values from the external stage, we can set up triggers to run ETL jobs to update data in external tables.
 
 - An external table can be created using `create or replace external table {tbl_name} with location = @{stage_name} file_format = (type = csv) pattern = '.*{file_pattern}[.]csv';`.
 
-- Once an external table is created, we can use `SELECT value:c1::float as {column_name} from ext_table;`. Here, we are selecting all values from column one, cast them into float datatype and aliasing the column.
+- Once an external table is created, we can use `SELECT value:c1::float as {column_name} from ext_table;`. Here, we select all values from column one, cast them into float datatype, and alias the column.
 
 ## Topic 6: Views in Snowflake
 
-- Snowflake views can be created using the `CREATE VIEW ...` sql.
+- Snowflake views can be created using the `CREATE VIEW ...` SQL.
 
-- Snowflake materialized views can be created using the `CREATE MATERIALIZED VIEW ...` sql.
+- Snowflake materialized views can be created using the `CREATE MATERIALIZED VIEW ...` SQL.
 
-- Creating simple views in Snowflake and querying it will take a reasonalble amount of time to return the output, in my case, it took 41s to return 2.5K rows. This issue can be tackled with the help of materialized view. To create materialized views, we need at least Enterprise edition.
+- Creating simple views in Snowflake and querying it will take a reasonable amount of time to return the output, in my case, it took 41s to return 2.5K rows. This issue can be tackled with the help of a materialized view. To create materialized views, we need at least an Enterprise edition.
 
 - Difference between view and materialized view:
-	- Materialized view takes more time while creating but not querying, views are quicker to create but longer to query.
+	- Materialized view takes more time to create but not querying, views are quicker to create but longer to query.
 	- Views store the SQL DDL to fetch the data, whereas, materialized views store the actual data in them.
-	- Normal views are queried, then the underlying SQL is queried to the user. That's the reason behind the wait time. More complex the underlying query, higher the time it takes to output the result set.
-	- Normal views are recommended when creating a 1-to-1 copy of a table or while selecting just the active records from a SCD table.
-	- Materialized views are recommended when creating views is complex and reusable logics. Materialized views run the query as soon as the view gets created and stores the data in them and not just the SQL behind the data. This is why it's take some time when created for first time but quicker when quering.
+	- Normal views are queried, then the underlying SQL is queried to the user. That's the reason behind the wait time. The more complex the underlying query, the higher the time it takes to output the result set.
+	- Normal views are recommended when creating a 1-to-1 copy of a table or while selecting just the active records from an SCD table.
+	- Materialized views are recommended when creating views with complex and reusable logic. Materialized views run the query as soon as the view gets created and store the data in them and not just the SQL behind the data. This is why it takes some time when created for the first time but quicker when querying.
