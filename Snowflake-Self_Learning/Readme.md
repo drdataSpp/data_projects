@@ -129,34 +129,34 @@ To access a Snowflake instance, we don't have to log in to the cloud provider co
 	- Normal views are recommended when creating a 1-to-1 copy of a table or while selecting just the active records from an SCD table.
 	- Materialized views are recommended when creating views with complex and reusable logic. Materialized views run the query as soon as the view gets created and store the data in them and not just the SQL behind the data. This is why it takes some time when created for the first time but quicker when querying.
 	
-## Topic 7: Loading data in and Extracting data out of Snowflake
+## Topic 7: Loading Data in and Extracting data out of Snowflake
 
 ### How to load delimited data from cloud storage?
 
-- To load delimited data from a cloud storage, we will be creating an *External Stage* and using the COPY INTO command to load the data into a table.
+- To load delimited data from cloud storage, we will be creating an *External Stage* and using the COPY INTO command to load the data into a table.
 
 - Why create an external stage?
-	- In Snowflake, External stage can be understood as a virtual location that exists inside Snowflake but refers to file present in an external storage like AWS S3, Azure Blob Storage. 
-	- The external stage itself doesn't holds any data files but it talks to external parties and list the files that they might hold.
+	- In Snowflake, the External stage can be understood as a virtual location that exists inside Snowflake but refers to files present in an external storage like AWS S3, or Azure Blob Storage. 
+	- The external stage itself doesn't hold any data files but it talks to external parties and lists the files that they might hold.
 	- This is where the `LIST @your_stage_name` SQL comes in handy.
-	- Even before trying to load the data, we can do a LIST SQL on the external stage that we created in order to confirm that Snowflake can talk with the external parties and read the files available. This will give us an additional confidence to prove that Snowflake has all the read-access rights to fetch the data present elsewhere.
+	- Even before trying to load the data, we can do a LIST SQL on the external stage that we created to confirm that Snowflake can talk with the external parties and read the files available. This will give us additional confidence to prove that Snowflake has all the read-access rights to fetch the data present elsewhere.
 
-- Alternative for creating external stage is to use the S3 bucket's or Azure Blob storage's URL directly in your COPY statement.
+An alternative for creating an external stage is to use the S3 bucket's or Azure Blob storage's URL directly in your COPY INTO statement.
 
 - The Sequence of actions will be in this order:
 	- Create a Database, if one is not created already. For ETL purposes, always create transient databases, so that we can save some of our free credits.
 	
-	- Create a staging schema,this is advisable to segregate raw table and transformed tables.
+	- Create a staging schema, this is advisable to segregate raw tables and transformed tables.
 	
-	- Create the target table using generic `CREATE TABLE ` SQL. As the database is a transient one, we don't need to create the table as a transient one, the properties will be inherited from the DB. To double check this, use `SHOW DATABASES LIKE ''` and `SHOW TABLES LIKE ''` and look for the values under retention_time and options.
+	- Create the target table using generic `CREATE TABLE ` SQL. As the database is a transient one, we don't need to create the table as a transient one, the properties will be inherited from the DB. To double-check this, use `SHOW DATABASES LIKE ''` and `SHOW TABLES LIKE ''` and look for the values under retention_time and options.
 	
 	- Create a FILE FORMAT. In Snowflake, a FILE FORMAT is an object that defines how to interpret and parse the contents of files when loading or unloading data. It specifies the file format properties such as field delimiters, record delimiters, character encoding, and other options. This can be later used in COPY INTO or COPY FROM statements and we don't have to rewrite all the properties again.
 	
 	- Create an external stage pointing to the cloud URL and FILE_FORMAT should be set to the FILE_FORMAT created in the above step.
 	
-	- Load the data into target table using this SQL: `COPY INTO CREDIT_CARDS FROM @C3_R2_STAGE;`. Your external stage might have multiple files, to load specific files, use `COPY INTO CREDIT_CARDS FROM @C3_R2_STAGE/sub_dir/file_name.csv;`.
+	- Load the data into the target table using this SQL: `COPY INTO CREDIT_CARDS FROM @YOUR_STAGE;`. Your external stage might have multiple files, to load specific files, use `COPY INTO CREDIT_CARDS FROM @YOUR_STAGE/sub_dir/file_name.csv;`.
 	
-	- By executing the above-mentioned COPY INTO statement, you can see the status of the load, rows parsed and loaded, total error seen.
+	- By executing the above-mentioned COPY INTO statement, you can see the status of the load, rows parsed and loaded, and total error is seen.
 	
 	- While doing a COPY INTO, Snowflake will use the target table's column data type to cast the value while loading and we cannot do an explicit casting in COPY INTO.
 	
