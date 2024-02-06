@@ -128,3 +128,28 @@ To access a Snowflake instance, we don't have to log in to the cloud provider co
 	- Normal views are queried, then the underlying SQL is queried to the user. That's the reason behind the wait time. The more complex the underlying query, the higher the time it takes to output the result set.
 	- Normal views are recommended when creating a 1-to-1 copy of a table or while selecting just the active records from an SCD table.
 	- Materialized views are recommended when creating views with complex and reusable logic. Materialized views run the query as soon as the view gets created and store the data in them and not just the SQL behind the data. This is why it takes some time when created for the first time but quicker when querying.
+	
+## Topic 7: Loading data in and Extracting data out of Snowflake
+
+### How to load delimited data from cloud storage?
+
+- To load delimited data from a cloud storage, we will be creating an *External Stage* and using the COPY INTO command to load the data into a table.
+
+- The Sequence of actions will be in this order:
+	- Create a Database, if one is not created already. For ETL purposes, always create transient databases, so that we can save some of our free credits.
+	
+	- Create a staging schema,this is advisable to segregate raw table and transformed tables.
+	
+	- Create the target table using generic `CREATE TABLE ` SQL. As the database is a transient one, we don't need to create the table as a transient one, the properties will be inherited from the DB. To double check this, use `SHOW DATABASES LIKE ''` and `SHOW TABLES LIKE ''` and look for the values under retention_time and options.
+	
+	- Create a FILE FORMAT. In Snowflake, a FILE FORMAT is an object that defines how to interpret and parse the contents of files when loading or unloading data. It specifies the file format properties such as field delimiters, record delimiters, character encoding, and other options. This can be later used in COPY INTO or COPY FROM statements and we don't have to rewrite all the properties again.
+	
+	- Create an external stage pointing to the cloud URL and FILE_FORMAT should be set to the FILE_FORMAT created in the above step.
+	
+	- Load the data into target table using this SQL: `COPY INTO CREDIT_CARDS FROM @C3_R2_STAGE;`. Your external stage might have multiple files, to load specific files, use `COPY INTO CREDIT_CARDS FROM @C3_R2_STAGE/sub_dir/file_name.csv;`.
+	
+	- By executing the above-mentioned COPY INTO statement, you can see the status of the load, rows parsed and loaded, total error seen.
+	
+	- While doing a COPY INTO, Snowflake will use the target table's column data type to cast the value while loading and we cannot do an explicit casting in COPY INTO.
+	
+	- To check the contents of the TGT table, you can do either a `SELECT * ..` or `SELECT COUNT(*)` on your target table.
