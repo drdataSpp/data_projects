@@ -135,6 +135,14 @@ To access a Snowflake instance, we don't have to log in to the cloud provider co
 
 - To load delimited data from a cloud storage, we will be creating an *External Stage* and using the COPY INTO command to load the data into a table.
 
+- Why create an external stage?
+	- In Snowflake, External stage can be understood as a virtual location that exists inside Snowflake but refers to file present in an external storage like AWS S3, Azure Blob Storage. 
+	- The external stage itself doesn't holds any data files but it talks to external parties and list the files that they might hold.
+	- This is where the `LIST @your_stage_name` SQL comes in handy.
+	- Even before trying to load the data, we can do a LIST SQL on the external stage that we created in order to confirm that Snowflake can talk with the external parties and read the files available. This will give us an additional confidence to prove that Snowflake has all the read-access rights to fetch the data present elsewhere.
+
+- Alternative for creating external stage is to use the S3 bucket's or Azure Blob storage's URL directly in your COPY statement.
+
 - The Sequence of actions will be in this order:
 	- Create a Database, if one is not created already. For ETL purposes, always create transient databases, so that we can save some of our free credits.
 	
