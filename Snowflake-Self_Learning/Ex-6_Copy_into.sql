@@ -30,3 +30,10 @@ COPY INTO RAW.CREDIT_CARDS
 FROM @C3_R2_STAGE/cc_info.csv;
 
 --In the above statement, we have specified the path until 's3://snowflake-cookbook/Chapter03/r2', when loading data, I am adding the file name so that Snowflake will understand and load only one file.
+
+--Loading data from internal named stage to table
+COPY INTO CUSTOMER
+FROM @CUSTOMER_STAGE;
+
+--Once data loading is successful, then let's remove the contents in the internal stage to save cost.
+REMOVE @CUSTOMER_STAGE;

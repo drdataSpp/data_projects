@@ -133,6 +133,7 @@ To access a Snowflake instance, we don't have to log in to the cloud provider co
 
 ### How to load delimited data from cloud storage?
 
+#### External Stage
 - To load delimited data from cloud storage, we will be creating an *External Stage* and using the COPY INTO command to load the data into a table.
 
 - Why create an external stage?
@@ -161,3 +162,37 @@ An alternative for creating an external stage is to use the S3 bucket's or Azure
 	- While doing a COPY INTO, Snowflake will use the target table's column data type to cast the value while loading and we cannot do an explicit casting in COPY INTO.
 	
 	- To check the contents of the TGT table, you can do either a `SELECT * ..` or `SELECT COUNT(*)` on your target table.
+
+#### Internal Stage
+
+- To load delimited data from local storage, we will be creating an *Internal Stage* and using the COPY INTO command to load the data into a table.
+
+- Different type of internal stages:
+	- User stage: 
+		- Each user gets an user stage by default to store files.
+		- Command to view the contents in an user stage: `LIST @~`
+		- User stage is handy as a single user who is trying to load files into multiple table.
+		- User stage cannot be altered or dropped.
+		- Other user cannot view the contents in your stage and you cannot view other user's stage contents.
+		- User stage doesn't support the use of FILE FORMAT, instead, while doing the COPY INTO statement you have to define them.
+		
+	- Table stage:
+		- Each table gets a table stage by default to store files.
+		- Command to view the contents in a table stage: `LIST @%table_name` 
+		- Table stage can be accessed by multiple users but the contents in a table stage can be copied only to a single table.
+		
+	- Named Stage:
+		- This stage should be created manually similar to external stage. Instead of providing the URL, here, we will be providing the information about the files, example, file format, delimiters, qouted data or not, etc.
+		- Uploading files to an internal named stage can be done via SnowSQL or using GUI techniques.
+		- Command to view the contents in an user stage: `LIST @{NAMED_STAGE}`
+		
+- Once the source files are placed in the named stage, use the `COPY INTO TABLENAME` SQL, if the file format wasn't mentioned during the time of named stage creation then we can mention them while doing a COPY INTO SQL.
+
+- Once the data is loaded into the target table, it's advisable to do an `REMOVE @{NAMED_STAGE};` as storing file in named stage attract billing.
+
+- Difference between an internal and external stage?
+	- When creating a stage, if have you used an URL to specify the path of the files, then it is an *External Stage*, else it is an *Internal Stage*.
+	- `SHOW STAGES LIKE'%STAGE'` SQL will list all the stage under current DB and schema, you can scroll towards your right in the result set to find the column called "Type". That column describes whether it is internal or extenal.
+	- External stage mirrors the files present elsewhere outside of Snowflake.
+	- Internal stage holds the files within Snowflake.
+	- External stage doesn't attract additional billing but Internal stage does attract additional billing.

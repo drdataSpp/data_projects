@@ -24,3 +24,16 @@ select
 	value:c3::float as card_sum, --selecting column 3 as card_sum, casting the values into float datatype
 	value:c2::string as period --selecting column 2 as period, casting the values into string datatype
 from ext_card_data;
+
+
+--Creating an internal named stage
+
+CREATE FILE FORMAT PIPE_DELIM
+TYPE = CSV
+FIELD_DELIMITER = '|'
+FIELD_OPTIONALLY_ENCLOSED_BY = '"'
+SKIP_HEADER = 1
+DATE_FORMAT = 'YYYY-MM-DD';
+
+CREATE OR REPLACE STAGE CUSTOMER_STAGE
+FILE_FORMAT = PIPE_DELIM; --Here, if you provide an URL, then it is an external stage.
