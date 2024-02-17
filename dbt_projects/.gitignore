@@ -2,3 +2,5 @@
 target/
 dbt_packages/
 logs/
+# Ignore profiles.yml file
+profiles.yml
