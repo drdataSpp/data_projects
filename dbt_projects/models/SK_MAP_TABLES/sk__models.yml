@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: SK_PRODUCT_LINE_MAP
+    description: "This model has product line and surrogate key for each product line."
+    columns:
+      - name: Product_line_sk
+        description: "Unique SK value for a product line."
+        tests:
+          - unique
+          - not_null
+      - name: Source_value
+        description: "Source value for a product line."
+        tests:
+          - not_null
+          - unique
+
+  - name: SK_CUSTOMER_TYPE_MAP
+    description: "This model has Customer Type and surrogate key for each Customer Type."
+    columns:
+      - name: Customer_Type_sk
+        description: "Unique SK value for a Customer Type."
+        tests:
+          - unique
+          - not_null
+      - name: Source_value
+        description: "Source value for a Customer Type."
+        tests:
+          - not_null
+          - unique
+
+    meta:
+      documentation:
+        sources:
+          - name: SALES_TBL
+            description: "Source for this SK mapping table."

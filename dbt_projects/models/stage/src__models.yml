@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: Sales_Src
+    database: DEV 
+    schema: RAW
+    tables:
+      - name: Sales
