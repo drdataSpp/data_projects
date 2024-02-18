@@ -29,6 +29,20 @@ models:
           - not_null
           - unique
 
+  - name: SK_PAYMENT_TYPE_MAP
+    description: "This model has Payment Type and surrogate key for each Payment Type."
+    columns:
+      - name: Payment_sk
+        description: "Unique SK value for a Payment Type."
+        tests:
+          - unique
+          - not_null
+      - name: Source_value
+        description: "Source value for a Payment Type."
+        tests:
+          - not_null
+          - unique
+
     meta:
       documentation:
         sources:

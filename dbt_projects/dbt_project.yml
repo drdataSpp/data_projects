@@ -38,3 +38,6 @@ models:
     SK_MAP_TABLES:
         +materialized: table
         +schema: SURROGATE_KEYS
+    DIM:
+        +materialized: view
+        +schema: DIMENSIONS
