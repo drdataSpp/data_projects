@@ -41,3 +41,6 @@ models:
     DIM:
         +materialized: view
         +schema: DIMENSIONS
+    FACT:
+        +materialized: table
+        +schema: FACT

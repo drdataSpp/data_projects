@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: STORE_FACT
+    description: "Fact model with dimension SK columns and measurable columns."
+    columns:
+      - name: SALES_INVOICE_ID
+        description: "Unique sales invoice ID, acts as an unique identitfier for the fact table."
+        tests:
+          - unique
+          - not_null
