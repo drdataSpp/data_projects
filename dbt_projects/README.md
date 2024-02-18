@@ -10,15 +10,21 @@ The project is structured as follows:
 
 - **dbt Projects**: The `dbt_projects` directory contains the dbt projects used for data transformation.
   - **Stage**: Initial loading of raw data from various sources.
-  - **SK_MAP_TABLES**: Surrogate key mapping table is a type of table used in data warehousing to manage the relationships between natural keys (business keys) and surrogate keys.
+  - **SK_MAP_TABLES**: A surrogate key mapping table is a type of table used in data warehousing to manage the relationships between natural keys (business keys) and surrogate keys.
   - **Dimensions**: Creation of dimension tables representing business entities such as customers, products, and time.
   - **Facts**: Creation of fact tables containing transactional data such as sales.
 
+<img src="https://github.com/drdataSpp/data_projects/blob/master/dbt_projects/dbt_docs/DBT_docs.png" width="250%" height="200%">
+
 ## Data Lineage Diagram
 
-<img src="dbt_projects\dbt_docs\DBT_docs.png" alt="data_lineage" width="500" height="200"/>
+<img src="https://github.com/drdataSpp/data_projects/blob/master/dbt_projects/dbt_docs/SALES_data_lineage.png" width="250%" height="200%">
 
-## Key Components
+## Sample Analysis Query
+
+<img src="https://github.com/drdataSpp/data_projects/blob/master/dbt_projects/dbt_docs/Sample_Analysis_Query.png" width="250%" height="200%">
+
+## Key Components of this Project
 
 - **Snowflake**: The project leverages Snowflake as the cloud data warehouse for storing and processing data. Snowflake's scalability and performance make it suitable for handling large volumes of data.
   
