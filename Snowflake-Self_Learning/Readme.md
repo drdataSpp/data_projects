@@ -196,3 +196,29 @@ An alternative for creating an external stage is to use the S3 bucket's or Azure
 	- External stage mirrors the files present elsewhere outside of Snowflake.
 	- Internal stage holds the files within Snowflake.
 	- External stage doesn't attract additional billing but Internal stage does attract additional billing.
+
+	
+## Topic 8: IAM in Snowflake
+
+### What means Identity?
+
+- Identity talks about who you are?
+- It's an one-time process and it is checked by "Authenticator" using your credentials.
+
+### What means Authorization?
+
+- Once Identity is approved, authorization process kicks in.
+- It's an ongoing process and it is checked by "Authorizer" using RBAC.
+- Your username and password matters only when you login for the first time, but the roles that are assigned to your user matters whenever you query or create a database object in Snowflake.
+	- ACCOUNTADMIN has got the highest privileges within Snowflake.
+	- SECURITYADMIN & USERADMIN are gate-keeping and enforcement roles.
+	- SYSADMIN is the role to create Warehoused, DBs and Tables in Snowflake.
+	
+### What means Discretionary Access Control (DAC) in Snowflake?
+
+Snowflake uses a combination of RBAC and DAC, when we create something, the ROLE we were using at the time we created it, is the role that OWNS it and not the user who created it.
+
+### What means Custodial Oversight in Snowflake?
+
+- A parent can enter a child's room and check if there's anything doggy, likewise, ACCOUNTADMIN can delete, rename or modify SECURITYADMIN created objects. 
+- Each role in the upper tree will have access to lower tree's role objects but not the other way around.
